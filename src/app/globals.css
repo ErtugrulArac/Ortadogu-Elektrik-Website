@@ -14,8 +14,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #000;
   }
 }
 
@@ -24,3 +24,22 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes drift {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  50%  { transform: translate3d(12px,-10px,0) scale(1.06); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+@keyframes drift2 {
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  50%  { transform: translate3d(-14px,8px,0) scale(1.05); }
+  100% { transform: translate3d(0,0,0) scale(1); }
+}
+@keyframes dash {
+  to { stroke-dashoffset: -220; }
+}
+
+/* Tailwind v4 custom utilities */
+@utility animate-drift   { animation: drift 24s ease-in-out infinite; }
+@utility animate-drift2  { animation: drift2 28s ease-in-out infinite; }
+@utility animate-dash    { animation: dash 9s linear infinite; }
