@@ -42,6 +42,7 @@ const features: Feature[] = [
 function ElectricBackdrop() {
   return (
     <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      {/* dotted grid */}
       <svg className="absolute inset-0 h-full w-full opacity-[0.06]" aria-hidden="true">
         <defs>
           <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
@@ -51,6 +52,7 @@ function ElectricBackdrop() {
         <rect width="100%" height="100%" fill="url(#dots)" />
       </svg>
 
+      {/* conic gradient beams */}
       <div
         className="absolute -left-40 top-1/2 h-[90vh] w-[90vh] -translate-y-1/2 rounded-full blur-3xl opacity-35"
         style={{
@@ -70,6 +72,7 @@ function ElectricBackdrop() {
         }}
       />
 
+      {/* top halo */}
       <div
         className="absolute left-1/2 top-6 h-40 w-40 -translate-x-1/2 rounded-full"
         style={{
@@ -79,46 +82,92 @@ function ElectricBackdrop() {
         }}
       />
 
-      {/* neon waves (büyük) */}
+      {/* neon waves — MOBILE: ÇOK DAHA BÜYÜK */}
       <svg
-        className="absolute left-1/2 top-[16%] -translate-x-1/2 w-[1600px] sm:w-[1800px] lg:w-[2000px] max-w-[150vw] h-auto opacity-50"
-        viewBox="0 0 2000 360"
+        className="block sm:hidden absolute left-1/2 top-[8%] -translate-x-1/2 transform scale-[1.65] w-[3200px] max-w-[280vw] h-auto opacity-65"
+        viewBox="0 0 3200 520"
         fill="none"
         preserveAspectRatio="xMidYMid meet"
         aria-hidden="true"
       >
         <defs>
-          <linearGradient id="greenArc" x1="0" y1="0" x2="2000" y2="0">
+          <linearGradient id="m-greenArc" x1="0" y1="0" x2="3200" y2="0">
             <stop stopColor="#10b981" stopOpacity="0.95" />
             <stop offset="1" stopColor="#22c55e" stopOpacity="0.95" />
           </linearGradient>
-          <linearGradient id="blueArc" x1="0" y1="0" x2="2000" y2="0">
+          <linearGradient id="m-blueArc" x1="0" y1="0" x2="3200" y2="0">
             <stop stopColor="#3b82f6" stopOpacity="0.95" />
             <stop offset="1" stopColor="#2563eb" stopOpacity="0.95" />
           </linearGradient>
-          <linearGradient id="cyanArc" x1="0" y1="0" x2="2000" y2="0">
+          <linearGradient id="m-cyanArc" x1="0" y1="0" x2="3200" y2="0">
             <stop stopColor="#06b6d4" stopOpacity="0.95" />
             <stop offset="1" stopColor="#0ea5e9" stopOpacity="0.95" />
           </linearGradient>
         </defs>
 
-        <path d="M0 160 C 220 60, 440 240, 660 160 S 1100 60, 1320 160 1760 260, 2000 160"
-              stroke="url(#greenArc)" strokeWidth="2.5" strokeLinecap="round" strokeDasharray="18 14">
-          <animate attributeName="stroke-dashoffset" from="0" to="-360" dur="8s" repeatCount="indefinite" />
+        <path d="M0 230 C 360 90, 720 380, 1080 230 S 1800 90, 2160 230 2840 370, 3200 230"
+              stroke="url(#m-greenArc)" strokeWidth="4.2" strokeLinecap="round" strokeDasharray="36 26">
+          <animate attributeName="stroke-dashoffset" from="0" to="-720" dur="8s" repeatCount="indefinite" />
         </path>
-        <path d="M0 210 C 260 100, 520 260, 780 180 S 1280 90, 1560 180 1840 280, 2000 210"
-              stroke="url(#blueArc)" strokeWidth="2" strokeLinecap="round" strokeDasharray="16 14" opacity="0.75">
-          <animate attributeName="stroke-dashoffset" from="0" to="-320" dur="10s" repeatCount="indefinite" />
+        <path d="M0 300 C 420 150, 840 390, 1260 260 S 2040 130, 2460 260 2920 400, 3200 300"
+              stroke="url(#m-blueArc)" strokeWidth="3.8" strokeLinecap="round" strokeDasharray="34 26" opacity="0.78">
+          <animate attributeName="stroke-dashoffset" from="0" to="-640" dur="10s" repeatCount="indefinite" />
         </path>
-        <path d="M0 100 C 240 20, 480 200, 720 100 S 1200 20, 1440 100 1760 200, 2000 100"
-              stroke="url(#cyanArc)" strokeWidth="1.8" strokeLinecap="round" strokeDasharray="16 16" opacity="0.65">
-          <animate attributeName="stroke-dashoffset" from="0" to="-280" dur="12s" repeatCount="indefinite" />
+        <path d="M0 150 C 380 30, 760 330, 1140 150 S 1900 30, 2280 150 2840 330, 3200 150"
+              stroke="url(#m-cyanArc)" strokeWidth="3.4" strokeLinecap="round" strokeDasharray="34 28" opacity="0.68">
+          <animate attributeName="stroke-dashoffset" from="0" to="-580" dur="12s" repeatCount="indefinite" />
         </path>
-        <path d="M0 260 C 300 140, 600 280, 900 200 S 1500 120, 1800 200 1900 280, 2000 260"
-              stroke="url(#blueArc)" strokeWidth="1.6" strokeLinecap="round" strokeDasharray="20 16" opacity="0.55">
-          <animate attributeName="stroke-dashoffset" from="0" to="-400" dur="14s" repeatCount="indefinite" />
+        <path d="M0 370 C 500 210, 1000 390, 1500 290 S 2500 190, 3000 290 3080 390, 3200 370"
+              stroke="url(#m-blueArc)" strokeWidth="3.1" strokeLinecap="round" strokeDasharray="40 28" opacity="0.6">
+          <animate attributeName="stroke-dashoffset" from="0" to="-760" dur="14s" repeatCount="indefinite" />
         </path>
       </svg>
+
+      {/* neon waves — TABLET/DESKTOP */}
+      <svg
+        className="hidden sm:block absolute left-1/2 top-[16%] -translate-x-1/2 w-[2200px] md:w-[2400px] lg:w-[2600px] max-w-[180vw] h-auto opacity-50"
+        viewBox="0 0 2600 420"
+        fill="none"
+        preserveAspectRatio="xMidYMid meet"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="greenArc" x1="0" y1="0" x2="2600" y2="0">
+            <stop stopColor="#10b981" stopOpacity="0.95" />
+            <stop offset="1" stopColor="#22c55e" stopOpacity="0.95" />
+          </linearGradient>
+          <linearGradient id="blueArc" x1="0" y1="0" x2="2600" y2="0">
+            <stop stopColor="#3b82f6" stopOpacity="0.95" />
+            <stop offset="1" stopColor="#2563eb" stopOpacity="0.95" />
+          </linearGradient>
+          <linearGradient id="cyanArc" x1="0" y1="0" x2="2600" y2="0">
+            <stop stopColor="#06b6d4" stopOpacity="0.95" />
+            <stop offset="1" stopColor="#0ea5e9" stopOpacity="0.95" />
+          </linearGradient>
+        </defs>
+
+        <path d="M0 180 C 300 70, 600 280, 900 180 S 1500 70, 1800 180 2300 290, 2600 180"
+              stroke="url(#greenArc)" strokeWidth="3" strokeLinecap="round" strokeDasharray="24 18">
+          <animate attributeName="stroke-dashoffset" from="0" to="-460" dur="8s" repeatCount="indefinite" />
+        </path>
+        <path d="M0 230 C 360 110, 720 300, 1080 200 S 1800 100, 2160 200 2360 310, 2600 230"
+              stroke="url(#blueArc)" strokeWidth="2.6" strokeLinecap="round" strokeDasharray="22 16" opacity="0.75">
+          <animate attributeName="stroke-dashoffset" from="0" to="-420" dur="10s" repeatCount="indefinite" />
+        </path>
+        <path d="M0 120 C 340 20, 680 260, 1020 120 S 1700 20, 2040 120 2320 260, 2600 120"
+              stroke="url(#cyanArc)" strokeWidth="2.3" strokeLinecap="round" strokeDasharray="22 18" opacity="0.65">
+          <animate attributeName="stroke-dashoffset" from="0" to="-380" dur="12s" repeatCount="indefinite" />
+        </path>
+        <path d="M0 300 C 420 160, 840 320, 1260 240 S 1980 160, 2340 240 2460 320, 2600 300"
+              stroke="url(#blueArc)" strokeWidth="2" strokeLinecap="round" strokeDasharray="26 18" opacity="0.58">
+          <animate attributeName="stroke-dashoffset" from="0" to="-520" dur="14s" repeatCount="indefinite" />
+        </path>
+      </svg>
+
+      <style jsx global>{`
+        @keyframes slow-rotate { 0%{transform:rotate(0)} 100%{transform:rotate(360deg)} }
+        @keyframes slow-rotate-rev { 0%{transform:rotate(0)} 100%{transform:rotate(-360deg)} }
+      `}</style>
     </div>
   );
 }
@@ -149,7 +198,6 @@ function BrandCard({
         className,
       ].join(" ")}
     >
-      {/* iki renkli radial gradyanlar */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(140px_140px_at_28%_18%,rgba(34,197,94,0.22),transparent_60%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(220px_220px_at_85%_85%,rgba(147,51,234,0.25),transparent_60%)]" />
@@ -171,10 +219,7 @@ function BrandCard({
         </div>
 
         <div className="mt-3 h-px w-10 mx-auto bg-white/10 rounded-full" />
-
-        <p className="mt-3 text-center text-[11.5px] sm:text-[12px] leading-relaxed text-white/75">
-          {detail}
-        </p>
+        <p className="mt-3 text-center text-[11.5px] sm:text-[12px] leading-relaxed text-white/75">{detail}</p>
       </div>
     </a>
   );
@@ -193,7 +238,7 @@ export default function Hero() {
             Ortadoğu Elektrik
           </p>
 
-        <h1 className="mx-auto max-w-5xl font-poppins text-[28px] sm:text-4xl leading-tight tracking-tight md:text-5xl">
+          <h1 className="mx-auto max-w-5xl font-poppins text-[28px] sm:text-4xl leading-tight tracking-tight md:text-5xl">
             Daha fazla referans kazandıran
             <br />
             <span className="text-foreground/90">güvenli elektrik çözümleri</span>
@@ -288,7 +333,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* <lg için kartlar: telefonun altında — otomatik yükseklik */}
+          {/* <lg için kartlar: telefonun altında */}
           <div className="lg:hidden order-4 col-span-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <BrandCard
