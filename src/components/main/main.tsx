@@ -172,7 +172,6 @@ function ElectricBackdrop() {
   );
 }
 
-/* ---------------- BrandCard (otomatik yükseklik + gradient + TAMAMI TIKLANABİLİR) ---------------- */
 function BrandCard({
   titleLines,
   subtitle,
@@ -225,14 +224,14 @@ function BrandCard({
   );
 }
 
-/* ---------------- Main ---------------- */
+
 export default function Hero() {
   return (
     <section aria-label="Ortadoğu Elektrik ana tanıtım" className="relative isolate">
       <ElectricBackdrop />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-16 lg:pt-24 pb-14">
-        {/* HEADER */}
+        
         <div className="grid place-items-center text-center gap-3 sm:gap-4 min-h-[28vh] sm:min-h-[32vh]">
           <p className="rounded-full bg-foreground/5 px-3 py-1 text-[11px] sm:text-xs font-medium text-foreground/70">
             Ortadoğu Elektrik
@@ -264,9 +263,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* CONTENT GRID */}
+       
         <div className="mt-10 sm:mt-12 grid items-start gap-8 sm:gap-10 lg:grid-cols-[1.05fr_minmax(0,560px)_1.05fr]">
-          {/* SOL */}
+         
           <div className="order-2 grid gap-6 lg:order-1 lg:gap-10">
             <ul className="grid gap-6 sm:gap-8">
               {features.slice(0, 2).map((f) => (
@@ -282,7 +281,7 @@ export default function Hero() {
               ))}
             </ul>
 
-            {/* Kart #1 (yalnızca lg+ solda) */}
+           
             <div className="hidden lg:block">
               <div className="max-w-[300px]">
                 <BrandCard
@@ -295,16 +294,16 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ORTA TELEFON */}
+          
           <div className="order-1 relative mx-auto w-full max-w-[520px] sm:max-w-[560px] lg:order-2">
             <img
-              src="/mockuptel.png"
+              src="/mockuptel.webp"
               alt="Ortadoğu Elektrik"
               className="w-full h-auto object-contain mx-auto drop-shadow-xl"
             />
           </div>
 
-          {/* SAĞ */}
+          
           <div className="order-3 grid gap-6 lg:gap-10">
             <ul className="grid gap-6 sm:gap-8">
               {features.slice(2, 4).map((f) => (
@@ -320,7 +319,7 @@ export default function Hero() {
               ))}
             </ul>
 
-            {/* Kart #2 (yalnızca lg+ sağda) */}
+            
             <div className="hidden lg:block lg:justify-self-end">
               <div className="max-w-[300px]">
                 <BrandCard
@@ -333,7 +332,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* <lg için kartlar: telefonun altında */}
+        
           <div className="lg:hidden order-4 col-span-full">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <BrandCard

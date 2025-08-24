@@ -29,15 +29,15 @@ const TinyLineChart = ({ up = true }: { up?: boolean }) => (
 export default function IntroSection() {
   return (
     <section className="relative overflow-hidden bg-white">
-      {/* yumuşak arka plan efekti */}
+      {/*  arka plan  */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(1200px_600px_at_70%_20%,rgba(99,102,241,0.10)_0%,rgba(99,102,241,0.04)_35%,transparent_70%)]" />
 
       <div className="relative mx-auto w-[92%] max-w-7xl py-14 md:py-24 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        {/* SOL METİN */}
+        {/* Ssol taraf */}
         <div className="max-w-xl">
           <span className="text-xs font-semibold tracking-wide text-indigo-500">Proje & Taahhüt</span>
 
-          {/* H1: SEO anahtar kelime */}
+          {/* H1 anahtar kelime kulanırldı  */}
           <h1 className="mt-3 text-4xl md:text-4xl font-bold tracking-tight text-slate-900">
             Ortadoğu Elektrik <br />  Gücün Ebedi Yankısı
           </h1>
@@ -48,8 +48,8 @@ export default function IntroSection() {
             zayıf akım ve kabul testlerine kadar tüm süreçleri yönetmeliklere uygun biçimde yürütür.
           </p>
 
-          {/* özellik listesi */}
-          <ul className="mt-6 space-y-3">
+          {/* özellik liste */}
+          <ul className="mt-6 space-y-3">""
             {[
               "İhale dosyasına ve keşif metrajına uygun projelendirme",
               "Daire içi tesisat, kolon hattı, kaçak akım ve sigorta seçimi",
@@ -64,7 +64,7 @@ export default function IntroSection() {
             ))}
           </ul>
 
-          {/* CTA */}
+        
           <a
             href="#trial"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-slate-100 px-5 py-2.5 text-slate-900 font-medium shadow-sm hover:bg-slate-200 transition"
@@ -77,12 +77,12 @@ export default function IntroSection() {
           </a>
         </div>
 
-        {/* SAĞ: IMG */}
+        
         <div className="relative flex justify-center lg:justify-end">
           <div className="w-[520px] max-w-full rounded-3xl">
-            {/* kendi görsel yolunu buraya koy (public/ içine) */}
+           
             <img
-              src="/tecrübemock.png"
+              src="/tecrübemock.webp"
               alt="Ortadoğu Elektrik site ve daire elektrik altyapısı"
               className="w-full h-auto rounded-2xl object-contain"
               loading="eager"
