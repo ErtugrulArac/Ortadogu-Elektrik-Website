@@ -4,6 +4,7 @@ import Main from "@/components/main/main"
 import Banner from "@/components/mainalttarafi/banner"
 import Grafik from "@/components/grafik/index"
 import Elgüç from "@/components/elektriğingücü/index"
+import Yönlendirme from "@/components/yönlendirmeseo/index"
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
     <Banner/>
     <Grafik/>
     <Elgüç/>
+    <Yönlendirme/>
     </div>
   );
 }
