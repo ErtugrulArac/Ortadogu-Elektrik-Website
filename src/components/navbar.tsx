@@ -15,7 +15,7 @@ const links = [
   { label: "Hakkımda", href: "#", icon: <FaUserAlt /> },
   { label: "Servis", href: "#", icon: <FaTools /> },
   { label: "Portföy", href: "#", icon: <FaBriefcase /> },
-  { label: "Galeri", href: "#", icon: <FaFileAlt /> },
+  { label: "Galeri", href: "/galeri", icon: <FaFileAlt /> },
   { label: "İletişim", href: "#", icon: <FaEnvelope /> },
 ];
 

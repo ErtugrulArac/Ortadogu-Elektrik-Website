@@ -4,8 +4,10 @@ import React from "react";
 export default function WhoWeAreEnelStyleTR() {
   return (
     <section className="bg-white text-neutral-900 py-14 md:py-20">
-      <div className="mx-auto w-[92%] max-w-5xl text-left">
-        <div className="-ml-4 sm:-ml-6 md:-ml-12 lg:-ml-20 xl:-ml-24">
+      {/* Mobilde sol iç boşluk (~1 cm), daha büyük ekranlarda sıfır */}
+      <div className="mx-auto w-[92%] max-w-5xl text-left pl-9 sm:pl-0">
+        {/* Negatif margin sadece md+ ekranlarda aktif */}
+        <div className="ml-0 md:-ml-12 lg:-ml-20 xl:-ml-24">
           <p className="text-sm font-bold text-neutral-500">- Ortadoğu Elektrik - </p>
 
           <h2 className="mt-2 text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
@@ -28,9 +30,13 @@ export default function WhoWeAreEnelStyleTR() {
           </div>
         </div>
 
+        {/* Kartlar */}
         <div className="mt-24 md:mt-28 grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12">
           <article className="flex items-start gap-4">
-            <span className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center" aria-hidden>
+            <span
+              className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center"
+              aria-hidden
+            >
               <img
                 src="/iconlar/hikayemiz.webp"
                 alt=""
@@ -55,13 +61,18 @@ export default function WhoWeAreEnelStyleTR() {
                            transition-all duration-200 hover:underline hover:opacity-95 hover:translate-x-0.5"
               >
                 Daha fazla keşfet
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>›</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>
+                  ›
+                </span>
               </a>
             </div>
           </article>
 
           <article className="flex items-start gap-4">
-            <span className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center" aria-hidden>
+            <span
+              className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center"
+              aria-hidden
+            >
               <img
                 src="/iconlar/vizyon.webp"
                 alt=""
@@ -86,13 +97,18 @@ export default function WhoWeAreEnelStyleTR() {
                            transition-all duration-200 hover:underline hover:opacity-95 hover:translate-x-0.5"
               >
                 Daha fazla keşfet
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>›</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>
+                  ›
+                </span>
               </a>
             </div>
           </article>
 
           <article className="flex items-start gap-4">
-            <span className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center" aria-hidden>
+            <span
+              className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center"
+              aria-hidden
+            >
               <img
                 src="/iconlar/lokasyon.webp"
                 alt=""
@@ -117,13 +133,18 @@ export default function WhoWeAreEnelStyleTR() {
                            transition-all duration-200 hover:underline hover:opacity-95 hover:translate-x-0.5"
               >
                 Daha fazla keşfet
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>›</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>
+                  ›
+                </span>
               </a>
             </div>
           </article>
 
           <article className="flex items-start gap-4">
-            <span className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center" aria-hidden>
+            <span
+              className="mt-0.5 inline-flex shrink-0 h-12 w-12 md:h-14 md:w-14 items-center justify-center"
+              aria-hidden
+            >
               <img
                 src="/iconlar/yönetimekibi.webp"
                 alt=""
@@ -148,7 +169,9 @@ export default function WhoWeAreEnelStyleTR() {
                            transition-all duration-200 hover:underline hover:opacity-95 hover:translate-x-0.5"
               >
                 Daha fazla keşfet
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>›</span>
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5" aria-hidden>
+                  ›
+                </span>
               </a>
             </div>
           </article>
