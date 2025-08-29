@@ -1,6 +1,7 @@
 // components/GaleriHeading.tsx
 "use client";
 
+
 export default function GaleriHeading() {
   return (
     <section className="relative pt-4 md:pt-6 pb-10">
@@ -33,6 +34,9 @@ export default function GaleriHeading() {
           ile uzun ömürlü altyapı taahhüdümüzü koruyoruz. Her projede kalite, güven ve
           sürdürülebilir değer üretmek temel ilkemizdir.
         </p>
+      </div>
+      <div>
+      
       </div>
     </section>
   );
