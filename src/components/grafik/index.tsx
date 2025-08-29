@@ -3,9 +3,11 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+/* ---------------------- Tipler ---------------------- */
 type MetricKey = "topraklama" | "kacak" | "kompanzasyon";
 type PhaseKey = "KESİF" | "TESİSAT" | "PANO" | "KABUL";
 
+/* ---------------------- Veriler ---------------------- */
 const weekly = [88, 92, 90, 94, 91, 96, 93, 97];
 
 const metricData: Record<
@@ -16,56 +18,55 @@ const metricData: Record<
     title: "Topraklama",
     value: 96,
     notes: [
-      "Ölçüm referansı: TS EN 62305",
-      "Ana bara bağlantıları kontrol edildi",
-      "Etiketleme ve dokümantasyon tamam",
+      "Topraklama ölçümleri TS EN 62305’e göre yapılır",
+      "Ana bara ve eşpotansiyel bağlantılar sıkılık kontrolüyle doğrulanır",
+      "Etiketleme, ölçüm tutanakları ve fotoğraflar arşivlenir",
     ],
   },
   kacak: {
     title: "Kaçak Akım",
     value: 91,
     notes: [
-      "RCD testleri yapıldı",
-      "Daire devreleri dengeli",
-      "Termal görüntüleme raporu oluşturuldu",
+      "RCD (30/300 mA) testleri yapılır, açma süreleri kayıt altına alınır",
+      "Devre yük dağılımı dengelenir, termal riskler giderilir",
+      "Termal kamera taraması raporlanır ve uygunsuzluklar kapatılır",
     ],
   },
   kompanzasyon: {
     title: "Kompanzasyon",
     value: 88,
     notes: [
-      "Reaktif oran limit altında",
-      "Kapasitör bank bakımı yapıldı",
-      "Otomasyon ayarları güncellendi",
+      "Reaktif güç oranı mevzuat sınırlarının altında tutulur",
+      "Kapasitör bank ve kontaktör bakımı yapılır, arızalı elemanlar yenilenir",
+      "Reaktif röle/otomasyon ayarları güncellenir ve test edilir",
     ],
   },
 };
 
 const phaseNotes: Record<PhaseKey, string[]> = {
   KESİF: [
-    "Metraj ve malzeme listesi çıkarıldı",
-    "Riske açık noktalar işaretlendi",
-    "Saha fotoğrafları arşivlendi",
+    "Metraj ve malzeme listesi çıkarılır",
+    "Riskli noktalar saha üzerinde işaretlenir",
+    "Saha fotoğrafları ve keşif raporu arşivlenir",
   ],
   TESİSAT: [
-    "Boru ve kablo kanalları tamamlandı",
-    "Yangın durdurucu uygulandı",
-    "Test için geçici enerji hazırlandı",
+    "Boru ve kablo kanalları açılır ve tamamlanır",
+    "Yangın durdurucu uygulamaları yapılır",
+    "Test için geçici enerji hazırlanır, güvenlik kontrolleri yapılır",
   ],
   PANO: [
-    "Tip testli panolar yerleştirildi",
-    "Etiketleme ve tek-hat şeması asıldı",
-    "Fonksiyon testleri yapıldı",
+    "Tip testli panolar yerleştirilir ve mekanik sabitleme yapılır",
+    "Etiketleme ve tek-hat şeması panoya asılır",
+    "Fonksiyon ve yön testleri gerçekleştirilir, kayıt tutulur",
   ],
   KABUL: [
-    "İdare kontrol listesi tamamlandı",
-    "As-built çizimler teslim edildi",
-    "Kullanım kılavuzları verildi",
+    "İdare kontrol listesi tüm maddeleri tamamlanır",
+    "As-built çizimler ve dokümanlar teslim edilir",
+    "Kullanım ve bakım kılavuzları kullanıcıya verilir",
   ],
 };
 
 /* ---------------------- küçük yardımcılar ---------------------- */
-
 function useMouseVars() {
   const ref = useRef<HTMLDivElement>(null);
   const [vars, setVars] = useState({ px: 50, py: 50, mx: 0, my: 0 });
@@ -78,7 +79,7 @@ function useMouseVars() {
       const r = el.getBoundingClientRect();
       const x = ((e.clientX - r.left) / r.width) * 100;
       const y = ((e.clientY - r.top) / r.height) * 100;
-      // normalize: [-1,1]
+      // normalize: [-1, 1]
       const mx = x / 50 - 1;
       const my = y / 50 - 1;
       setVars({ px: x, py: y, mx, my });
@@ -100,6 +101,7 @@ function useMouseVars() {
 function useMagnetic() {
   const ref = useRef<HTMLButtonElement>(null);
   const [t, setT] = useState({ x: 0, y: 0 });
+
   const onFrame = (e: React.MouseEvent) => {
     const el = ref.current;
     if (!el) return;
@@ -112,7 +114,9 @@ function useMagnetic() {
     const pull = Math.max(0, 1 - Math.min(dist / 220, 1));
     setT({ x: dx * 0.15 * pull, y: dy * 0.15 * pull });
   };
+
   const reset = () => setT({ x: 0, y: 0 });
+
   return { ref, t, onFrame, reset };
 }
 
@@ -124,12 +128,7 @@ function TiltCard({
   accent?: "indigo" | "emerald" | "fuchsia" | "cyan";
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [tilt, setTilt] = useState({
-    rx: 0,
-    ry: 0,
-    gx: 50,
-    gy: 50,
-  });
+  const [tilt, setTilt] = useState({ rx: 0, ry: 0, gx: 50, gy: 50 });
 
   const reset = () => setTilt({ rx: 0, ry: 0, gx: 50, gy: 50 });
 
@@ -144,11 +143,9 @@ function TiltCard({
         const y = e.clientY - r.top;
         const px = (x / r.width) * 2 - 1;
         const py = (y / r.height) * 2 - 1;
-
         const maxTilt = 7.5;
         const rx = -(py * maxTilt);
         const ry = px * maxTilt;
-
         setTilt({ rx, ry, gx: (x / r.width) * 100, gy: (y / r.height) * 100 });
       }}
       className="group relative rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_10px_28px_rgba(2,6,23,0.06)] transition-transform duration-200 will-change-transform hover:-translate-y-1.5"
@@ -159,15 +156,18 @@ function TiltCard({
       {/* parıltı / interaktif kenar */}
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(420px 320px at ${tilt.gx}% ${tilt.gy}%, rgba(99,102,241,0.12), rgba(236,72,153,0.10) 40%, rgba(16,185,129,0.08) 70%, transparent 75%)`,
-          mask: "linear-gradient(#000, transparent 65%)",
-          WebkitMask: "linear-gradient(#000, transparent 65%)",
-        }}
+        style={
+          {
+            background: `radial-gradient(420px 320px at ${tilt.gx}% ${tilt.gy}%, rgba(99,102,241,0.12), rgba(236,72,153,0.10) 40%, rgba(16,185,129,0.08) 70%, transparent 75%)`,
+            mask: "linear-gradient(#000, transparent 65%)",
+            WebkitMask: "linear-gradient(#000, transparent 65%)",
+          } as React.CSSProperties
+        }
       />
+
       {/* üst çizgi */}
       <div
-        className={`absolute left-5 right-5 top-0 h-[2px] rounded-full ${
+        className={`absolute left-5 right-5 top-0 h-[2px] rounded-full opacity-80 ${
           accent === "indigo"
             ? "bg-gradient-to-r from-indigo-500 to-indigo-300"
             : accent === "emerald"
@@ -175,7 +175,7 @@ function TiltCard({
             : accent === "fuchsia"
             ? "bg-gradient-to-r from-fuchsia-500 to-fuchsia-300"
             : "bg-gradient-to-r from-cyan-500 to-cyan-300"
-        } opacity-80`}
+        }`}
       />
       {children}
     </div>
@@ -183,7 +183,6 @@ function TiltCard({
 }
 
 /* ---------------------- ANA BÖLÜM ---------------------- */
-
 export default function FeaturesSection() {
   const [openMetric, setOpenMetric] = useState<MetricKey | null>(null);
   const [openPhase, setOpenPhase] = useState<PhaseKey | null>(null);
@@ -193,7 +192,7 @@ export default function FeaturesSection() {
   const cta = useMagnetic();
 
   const parallax = (m = 1) => ({
-    transform: `translate3d(${(vars.mx * 12 * m).toFixed(1)}px, ${(vars.my * 9 * m).toFixed(1)}px,0)`,
+    transform: `translate3d(${(vars.mx * 12 * m).toFixed(1)}px, ${(vars.my * 9 * m).toFixed(1)}px, 0)`,
   });
 
   return (
@@ -202,10 +201,10 @@ export default function FeaturesSection() {
       className="relative w-full overflow-hidden bg-white py-18 md:py-24"
       style={
         {
-          // @ts-ignore - spotlight için değişkenler
-          "--px": `${vars.px}%`,
-          "--py": `${vars.py}%`,
-        }
+          // spotlight için CSS değişkenleri
+          ["--px" as any]: `${vars.px}%`,
+          ["--py" as any]: `${vars.py}%`,
+        } as React.CSSProperties
       }
     >
       {/* spotlight (mouse'u takip eder) */}
@@ -216,6 +215,7 @@ export default function FeaturesSection() {
             "radial-gradient(620px 460px at var(--px) var(--py), rgba(99,102,241,0.09), rgba(236,72,153,0.06) 38%, rgba(16,185,129,0.05) 58%, transparent 70%)",
         }}
       />
+
       {/* parallax halo'lar */}
       <div
         className="pointer-events-none absolute -top-40 -left-28 size-[520px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.18),transparent_60%)] blur-3xl -z-30"
@@ -238,6 +238,7 @@ export default function FeaturesSection() {
             <span className="mx-1 size-1.5 rounded-full bg-emerald-500" />
             Güvenli & Modern Altyapı
           </span>
+
           <h2 className="mt-4 text-[34px] leading-[1.05] font-extrabold text-slate-900 sm:text-[44px] md:text-[56px]">
             Elektriği{" "}
             <span className="bg-gradient-to-r from-indigo-600 via-fuchsia-600 to-emerald-600 bg-clip-text text-transparent">
@@ -245,6 +246,7 @@ export default function FeaturesSection() {
             </span>{" "}
             yönetmenin yalın yolu
           </h2>
+
           <p className="mx-auto mt-3 max-w-2xl text-[13px] text-slate-600 md:text-[14px]">
             Keşiften kabule; ölçüm, raporlama ve izlenebilir süreçlerle projelerinizi güvenle yönetin. Aşağıdaki
             kartlar ve grafikler imlecinize anlık tepki verir.
@@ -260,7 +262,7 @@ export default function FeaturesSection() {
               style={{ transform: `translate3d(${cta.t.x}px, ${cta.t.y}px, 0)` }}
             >
               Teklif Al
-              <svg viewBox="0 0 24 24" className="size-4 transition group-hover:translate-x-0.5" fill="currentColor">
+              <svg viewBox="0 0 24 24" className="size-4 transition group-hover:translate-x-0.5" fill="currentColor" aria-hidden="true">
                 <path d="M13 5l7 7-7 7v-4H4v-6h9V5z" />
               </svg>
               <span className="pointer-events-none absolute inset-0 rounded-full ring-0 ring-emerald-400/0 transition group-hover:ring-[3px] group-hover:ring-emerald-400/40" />
@@ -276,7 +278,7 @@ export default function FeaturesSection() {
               <div className="flex items-center justify-between">
                 <div className="inline-flex items-center gap-2 text-sm font-semibold text-slate-800">
                   <span className="grid size-8 place-items-center rounded-xl bg-indigo-100 text-indigo-600">
-                    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor">
+                    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
                       <path d="M3 5h18v3H3zM6 10h12v4H6zM9 16h6v3H9z" />
                     </svg>
                   </span>
@@ -294,13 +296,15 @@ export default function FeaturesSection() {
                       onClick={() => setOpenPhase(active ? null : t)}
                       type="button"
                       aria-expanded={active}
-                      className={`relative w-full min-w-0 rounded-xl border px-4 py-2.5 text-center text-xs font-medium outline-none transition
-                      ${active ? "border-indigo-300 bg-indigo-50" : "border-slate-200 bg-white hover:bg-slate-50"}
-                      focus-visible:ring-2 focus-visible:ring-indigo-400`}
+                      className={`group relative w-full min-w-0 rounded-xl border px-4 py-2.5 text-center text-xs font-medium outline-none transition ${
+                        active ? "border-indigo-300 bg-indigo-50" : "border-slate-200 bg-white hover:bg-slate-50"
+                      } focus-visible:ring-2 focus-visible:ring-indigo-400`}
                     >
                       <span className="relative z-10">{t}</span>
                       <span
-                        className={`absolute left-1/2 bottom-1 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-all duration-300 ${active ? "w-3/4" : "group-hover:w-1/2"}`}
+                        className={`absolute left-1/2 bottom-1 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-all duration-300 ${
+                          active ? "w-3/4" : "group-hover:w-1/2"
+                        }`}
                       />
                     </button>
                   );
@@ -308,7 +312,9 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openPhase ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openPhase ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
               >
                 <div className="overflow-hidden">
                   {openPhase && (
@@ -324,7 +330,9 @@ export default function FeaturesSection() {
                 </div>
               </div>
 
-              <p className="mt-5 text-sm text-slate-600">Kritik yol ve etaplar; hover/klik ile hızlı geri bildirim.</p>
+              <p className="mt-5 text-sm text-slate-600">
+                Her etap şeffaf; keşiften kabule süreçler Ortadoğu Elektrik standartlarıyla izlenir ve raporlanır.
+              </p>
             </div>
           </TiltCard>
 
@@ -334,7 +342,7 @@ export default function FeaturesSection() {
               <div className="flex items-center justify-between">
                 <div className="inline-flex items-center gap-2 text-sm font-semibold text-slate-800">
                   <span className="grid size-8 place-items-center rounded-xl bg-violet-100 text-violet-600">
-                    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor">
+                    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
                       <path d="M12 3a6 6 0 0 1 6 6v2h3v10H3V11h3V9a6 6 0 0 1 6-6z" />
                     </svg>
                   </span>
@@ -353,8 +361,11 @@ export default function FeaturesSection() {
                       onClick={() => setOpenMetric(active ? null : k)}
                       type="button"
                       aria-expanded={active}
-                      className={`group/metric w-full min-w-0 rounded-2xl border p-3 text-left outline-none transition
-                      ${active ? "border-violet-300 bg-violet-50 shadow-[0_8px_26px_rgba(124,58,237,0.15)]" : "border-slate-200 bg-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(2,6,23,0.07)]"}`}
+                      className={`group/metric w-full min-w-0 rounded-2xl border p-3 text-left outline-none transition ${
+                        active
+                          ? "border-violet-300 bg-violet-50 shadow-[0_8px_26px_rgba(124,58,237,0.15)]"
+                          : "border-slate-200 bg-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(2,6,23,0.07)]"
+                      }`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="truncate text-[12px] text-slate-600">{m.title}</div>
@@ -373,7 +384,9 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openMetric ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openMetric ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
               >
                 <div className="overflow-hidden">
                   {openMetric && (
@@ -391,7 +404,9 @@ export default function FeaturesSection() {
                 </div>
               </div>
 
-              <p className="mt-5 text-sm text-slate-600">Barlarda akıcı doldurma, kartta tilt ve spotlight parıltısı.</p>
+              <p className="mt-5 text-sm text-slate-600">
+                Tüm kontroller TSE ve uluslararası standartlara uygun yürütülür; kayıtlar denetime hazır tutulur.
+              </p>
             </div>
           </TiltCard>
 
@@ -401,7 +416,7 @@ export default function FeaturesSection() {
               <div className="flex items-center justify-between">
                 <div className="inline-flex items-center gap-2 text-sm font-semibold text-slate-800">
                   <span className="grid size-8 place-items-center rounded-xl bg-emerald-100 text-emerald-600">
-                    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor">
+                    <svg viewBox="0 0 24 24" className="size-4" fill="currentColor" aria-hidden="true">
                       <path d="M21 7H3l7 7v4l4-2v-2l7-7z" />
                     </svg>
                   </span>
@@ -416,6 +431,7 @@ export default function FeaturesSection() {
                   <span>Haftalık İlerleme</span>
                   <span>Son 8 Hafta</span>
                 </div>
+
                 <div className="mt-3 grid grid-cols-8 items-end gap-2">
                   {weekly.map((val, i) => {
                     const prev = i === 0 ? val : weekly[i - 1];
@@ -431,7 +447,9 @@ export default function FeaturesSection() {
                         aria-expanded={active}
                       >
                         <div
-                          className={`h-24 w-5 overflow-hidden rounded-md bg-slate-100 ring-offset-2 transition ${active ? "ring-2 ring-emerald-400" : "ring-0"}`}
+                          className={`h-24 w-5 overflow-hidden rounded-md bg-slate-100 ring-offset-2 transition ${
+                            active ? "ring-2 ring-emerald-400" : "ring-0"
+                          }`}
                         >
                           <div
                             className={`h-full w-full origin-bottom rounded-md ${
@@ -447,11 +465,12 @@ export default function FeaturesSection() {
                             up ? "text-emerald-600" : "text-fuchsia-600"
                           }`}
                         >
-                          <svg viewBox="0 0 24 24" className="size-3" fill="currentColor">
+                          <svg viewBox="0 0 24 24" className="size-3" fill="currentColor" aria-hidden="true">
                             {up ? <path d="M12 5l7 7H5l7-7z" /> : <path d="M12 19l7-7H5l7 7z" />}
                           </svg>
                           {val}%
                         </div>
+
                         <span className="pointer-events-none absolute -top-9 translate-y-1 rounded-md border border-slate-200 bg-white px-2 py-1 text-[10px] text-slate-700 opacity-0 shadow-sm transition-all duration-200 group-hover/bar:-translate-y-0 group-hover/bar:opacity-100">
                           Hafta {i + 1}
                         </span>
@@ -462,7 +481,9 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openWeek !== null ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openWeek !== null ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
               >
                 <div className="overflow-hidden">
                   {openWeek !== null && (
@@ -474,9 +495,7 @@ export default function FeaturesSection() {
                         <li>İlerleme oranı: {weekly[openWeek]}%</li>
                         <li>
                           Önceki haftaya göre{" "}
-                          {weekly[openWeek] >= (openWeek ? weekly[openWeek - 1] : weekly[openWeek])
-                            ? "artış"
-                            : "azalış"}{" "}
+                          {weekly[openWeek] >= (openWeek ? weekly[openWeek - 1] : weekly[openWeek]) ? "artış" : "azalış"}{" "}
                           var.
                         </li>
                         <li>Etap kabulleri ve teslim tarihleri programla uyumlu.</li>
@@ -486,7 +505,9 @@ export default function FeaturesSection() {
                 </div>
               </div>
 
-              <p className="mt-5 text-sm text-slate-600">Hover’da tooltip, tıkta detay; görsel geri bildirim net.</p>
+              <p className="mt-5 text-sm text-slate-600">
+                Plan–gerçekleşen farkları haftalık izlenir; teslim tarihleri ve saha ihtiyaçları zamanında koordine edilir.
+              </p>
             </div>
           </TiltCard>
         </div>
@@ -517,7 +538,7 @@ export default function FeaturesSection() {
             >
               <div className="flex items-center gap-3">
                 <span className={`grid size-9 place-items-center rounded-xl ${f.iconBg}`}>
-                  <svg viewBox="0 0 24 24" className="size-5" fill="currentColor">
+                  <svg viewBox="0 0 24 24" className="size-5" fill="currentColor" aria-hidden="true">
                     <path d="M12 3l9 4-9 4-9-4 9-4zm9 7l-9 4-9-4v7l9 4 9-4v-7z" />
                   </svg>
                 </span>
@@ -530,6 +551,7 @@ export default function FeaturesSection() {
         </div>
       </div>
 
+      {/* Animasyon tanımı */}
       <style jsx global>{`
         @keyframes grow {
           from {

@@ -6,9 +6,21 @@ import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 type Pt = { x: number; y: number };
 
 const CARDS = [
-  { title: "Altyapı Projelendirme", text: "Toplu konut ve site projelerinde keşiften kablolamaya, pano ve kabul testlerine kadar uçtan uca yönetim." },
-  { title: "Güvenli Enerji", text: "Topraklama, kaçak akım ve kompanzasyon ölçümleriyle yönetmeliklere tam uyum ve izlenebilir raporlama." },
-  { title: "Zamanında Teslim", text: "Planlı ilerleme, etap yönetimi ve şeffaf süreçlerle söz verilen tarihte devreye alma." },
+  {
+    title: "Altyapı Projelendirme",
+    text:
+      "Toplu konut ve site projelerinde keşiften kablolamaya, pano ve kabul testlerine kadar uçtan uca yönetim.",
+  },
+  {
+    title: "Güvenli Enerji",
+    text:
+      "Topraklama, kaçak akım ve kompanzasyon ölçümleriyle yönetmeliklere tam uyum ve izlenebilir raporlama.",
+  },
+  {
+    title: "Zamanında Teslim",
+    text:
+      "Planlı ilerleme, etap yönetimi ve şeffaf süreçlerle söz verilen tarihte devreye alma.",
+  },
 ];
 
 export default function ElectricImpactSection() {
@@ -35,7 +47,6 @@ export default function ElectricImpactSection() {
     return `M ${a.x},${a.y} C ${midX},${a.y - c} ${midX},${b.y - c * 0.9} ${b.x},${b.y}`;
   };
 
-  // Mobil segmentler: 0 sağ kavis, 1 sol kavis, 2 aşağı S
   const pathMobileSegment = (a: Pt, b: Pt, i: number) => {
     const midY = (a.y + b.y) / 2;
     if (i === 0) {
@@ -70,7 +81,9 @@ export default function ElectricImpactSection() {
 
     setPaths(
       isMobile
-        ? [0, 1, 2].map((i) => pathMobileSegment(i === 0 ? start : targets[i - 1], targets[i], i))
+        ? [0, 1, 2].map((i) =>
+            pathMobileSegment(i === 0 ? start : targets[i - 1], targets[i], i)
+          )
         : targets.map((t) => pathDesktop(start, t))
     );
   };
@@ -82,10 +95,10 @@ export default function ElectricImpactSection() {
     return () => window.removeEventListener("resize", r);
   }, []);
 
-  // Sıralı akış
   useEffect(() => {
     let timers: number[] = [];
-    const sleep = (ms: number) => new Promise<void>((res) => timers.push(window.setTimeout(res, ms)));
+    const sleep = (ms: number) =>
+      new Promise<void>((res) => timers.push(window.setTimeout(res, ms)));
 
     const run = async () => {
       setActiveIdx(null);
@@ -149,7 +162,12 @@ export default function ElectricImpactSection() {
         </header>
 
         {showLinks && (
-          <svg className="links" width={size.w} height={size.h} viewBox={`0 0 ${size.w} ${size.h}`}>
+          <svg
+            className="links"
+            width={size.w}
+            height={size.h}
+            viewBox={`0 0 ${size.w} ${size.h}`}
+          >
             <defs>
               <filter id="glow">
                 <feGaussianBlur stdDeviation="2.1" result="b" />
@@ -171,8 +189,23 @@ export default function ElectricImpactSection() {
 
               return (
                 <g key={i} className={`conn ${isActive ? "active" : ""} ${isDone ? "done" : ""}`}>
-                  <path d={d} stroke="url(#elecBlue)" strokeWidth={isActive ? 3.2 : 2.2} strokeLinecap="round" fill="none" className="bolt" filter="url(#glow)" />
-                  <path d={d} stroke="url(#elecBlue)" strokeWidth="1.5" strokeLinecap="round" fill="none" className="bolt glow" />
+                  <path
+                    d={d}
+                    stroke="url(#elecBlue)"
+                    strokeWidth={isActive ? 3.2 : 2.2}
+                    strokeLinecap="round"
+                    fill="none"
+                    className="bolt"
+                    filter="url(#glow)"
+                  />
+                  <path
+                    d={d}
+                    stroke="url(#elecBlue)"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    fill="none"
+                    className="bolt glow"
+                  />
                   {isActive && (
                     <>
                       <circle r="4.2" className="spark">
@@ -219,18 +252,26 @@ export default function ElectricImpactSection() {
         </div>
       </div>
 
+      {/* Global font import for full Turkish support (ğ/Ğ) */}
+      <style jsx global>{`
+        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap");
+      `}</style>
+
       <style jsx>{`
         .eg {
-          --bg1: #08162d;
-          --bg2: #0a1733;
-          --ink: #eef4ff;
-
-          /* MOBİL boşluk değişkenleri */
-          --space-title-btn: 16px;            /* başlık–buton arası */
-          --space-btn-cards: calc(var(--space-title-btn) * 2); /* buton–kartlar arası */
-
-          background: radial-gradient(120% 80% at 50% -10%, #1b377d3a 0%, transparent 60%), linear-gradient(180deg, var(--bg1), var(--bg2));
-          color: var(--ink);
+          font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+            Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+            "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+          /* background kept from previous step */
+          background:
+            radial-gradient(900px 420px at 50% 0%,
+              rgba(118, 92, 255, 0.28) 0%,
+              rgba(118, 92, 255, 0.0) 62%),
+            radial-gradient(1400px 800px at 50% -15%,
+              rgba(40, 120, 255, 0.14) 0%,
+              rgba(40, 120, 255, 0) 70%),
+            linear-gradient(180deg, #0b1222 0%, #0a152b 45%, #081626 100%);
+          color: #eef4ff;
         }
 
         .wrap {
@@ -243,13 +284,15 @@ export default function ElectricImpactSection() {
 
         .hero { text-align: center; }
 
-        /* 🔥 Başlık: animasyonlu degrade + soft glow + alt ışık izi */
+        /* Title — a bit bigger and with safer line-height so 'ğ' never clips */
         .title {
-          margin: 2px 0 6px;
-          font-weight: 900;
-          font-size: clamp(28px, 6.2vw, 66px);
-          line-height: 1.04;
-          letter-spacing: 0.2px;
+          margin: 4px 0 8px;
+          font-weight: 600;
+          font-size: clamp(32px, 6.8vw, 72px); /* ⬆️ slightly larger */
+          line-height: 1.2;                   /* ⬆️ more room for descenders like 'ğ' */
+          letter-spacing: 0.1px;
+          padding-bottom: 4px;                /* extra breathing room */
+          -webkit-font-smoothing: antialiased;
           background-image: linear-gradient(90deg, #dbeafe 0%, #60a5ff 35%, #a78bfa 70%, #34d399 100%);
           background-size: 220% 100%;
           -webkit-background-clip: text;
@@ -273,32 +316,38 @@ export default function ElectricImpactSection() {
           opacity: .7;
           pointer-events: none;
         }
-        .title.dim {
-          opacity: 0.35;
-          filter: saturate(0.65);
-        }
+        .title.dim { opacity: .35; filter: saturate(.65); }
         .title.live {
           opacity: 1;
           animation: titleShimmer 7s ease-in-out infinite;
         }
         @keyframes titleShimmer {
-          0%   { background-position:   0% 50%; }
-          50%  { background-position: 100% 50%; }
-          100% { background-position:   0% 50%; }
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
-        .subtitle { margin: 0 0 var(--space-title-btn); opacity: .92; font-size: clamp(14px, 2.2vw, 18px); }
+        .subtitle { margin: 0 0 16px; opacity: .92; font-size: clamp(14px, 2.2vw, 18px); }
 
         .cta {
-          border: 0; border-radius: 999px; padding: 10px 18px;
-          background: linear-gradient(90deg,#60a5ff,#1fb6ff); color:#03122a; font-weight:800; letter-spacing:.3px;
-          cursor:pointer; box-shadow:0 12px 28px rgba(32,146,255,.28), inset 0 0 0 2px rgba(255,255,255,.06);
+          border: 0;
+          border-radius: 999px;
+          padding: 10px 18px;
+          background: linear-gradient(90deg,#60a5ff,#1fb6ff);
+          color:#03122a;
+          font-weight: 700; /* ⬇️ one step lighter */
+          letter-spacing:.25px;
+          cursor:pointer;
+          box-shadow:0 12px 28px rgba(32,146,255,.28), inset 0 0 0 2px rgba(255,255,255,.06);
           transition: transform .16s ease, filter .16s ease, box-shadow .16s ease;
           position: relative; z-index: 3;
         }
         .cta:hover { transform: translateY(-1px); filter: brightness(1.05); }
         .cta.off { animation: pulseOff 2.3s ease-in-out infinite; }
-        @keyframes pulseOff { 0%,100%{ box-shadow:0 10px 26px rgba(32,146,255,.22),0 0 0 0 rgba(31,182,255,0) } 50%{ box-shadow:0 16px 38px rgba(32,146,255,.34),0 0 20px 4px rgba(31,182,255,.25) } }
+        @keyframes pulseOff {
+          0%,100%{ box-shadow:0 10px 26px rgba(32,146,255,.22),0 0 0 0 rgba(31,182,255,0) }
+          50%{ box-shadow:0 16px 38px rgba(32,146,255,.34),0 0 20px 4px rgba(31,182,255,.25) }
+        }
 
         .links { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
         .bolt { stroke-dasharray: 12 12; stroke-dashoffset: 120; opacity: 0; }
@@ -310,12 +359,11 @@ export default function ElectricImpactSection() {
         .pulse { fill: rgba(96,165,255,.22); stroke: rgba(31,182,255,.7); stroke-width: 1.6; }
         .glow { opacity:.28; stroke-dasharray: 3 18; filter: url(#glow); }
 
-        /* mobil/desktop gridler aynı */
         .cards {
           display: grid;
           grid-template-columns: 1fr;
           gap: 18px;
-          margin-top: var(--space-btn-cards);
+          margin-top: 28px;
           position: relative;
           z-index: 1;
         }
@@ -365,7 +413,6 @@ export default function ElectricImpactSection() {
         }
         .card.live .bus { opacity:1; box-shadow:0 0 16px rgba(31,182,255,.55); }
 
-        /* Masaüstünde spacingler */
         @media (min-width: 900px) {
           .wrap { padding-top: clamp(28px, 4vw, 64px); padding-bottom: 16px; min-height: 500px; }
           .subtitle { margin-bottom: 12px; }
