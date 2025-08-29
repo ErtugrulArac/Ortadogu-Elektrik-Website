@@ -1,4 +1,4 @@
-// components/GaleriHeading.tsx
+
 "use client";
 
 

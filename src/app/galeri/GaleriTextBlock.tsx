@@ -1,4 +1,3 @@
-// components/GaleriTextBlock.tsx
 "use client";
 
 export default function GaleriTextBlock() {
@@ -17,7 +16,6 @@ export default function GaleriTextBlock() {
         Galerimizde, projelerimizin her adımını ve güvenilir çözümlerimizi keşfedin.
       </p>
 
-      {/* Teklif Al Butonu */}
       <div className="mt-8 flex justify-center">
         <a
           href="#teklif"
