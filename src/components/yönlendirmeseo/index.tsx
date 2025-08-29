@@ -4,10 +4,10 @@ import React from "react";
 export default function WhoWeAreEnelStyleTR() {
   return (
     <section className="bg-white text-neutral-900 py-14 md:py-20">
-      {/* Mobilde sol iç boşluk (~1 cm), daha büyük ekranlarda sıfır */}
-      <div className="mx-auto w-[92%] max-w-5xl text-left pl-9 sm:pl-0">
+      {/* Sol tarafa yaslı ama kenara yapışmasın */}
+      <div className="mx-auto w-[92%] max-w-5xl text-left pl-4 md:pl-6 lg:pl-8">
         {/* Negatif margin sadece md+ ekranlarda aktif */}
-        <div className="ml-0 md:-ml-12 lg:-ml-20 xl:-ml-24">
+        <div className="ml-0 md:-ml-8 lg:-ml-14 xl:-ml-20">
           <p className="text-sm font-bold text-neutral-500">- Ortadoğu Elektrik - </p>
 
           <h2 className="mt-2 text-3xl md:text-5xl font-semibold leading-tight tracking-tight">
