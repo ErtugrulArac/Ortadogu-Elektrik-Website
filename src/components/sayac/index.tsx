@@ -7,7 +7,7 @@ type Stat = {
   label: string;
   value: number;
   suffix?: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 };
 
 const icons = {
