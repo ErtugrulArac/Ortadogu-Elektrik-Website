@@ -3,11 +3,11 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-/* ---------------------- Tipler ---------------------- */
+
 type MetricKey = "topraklama" | "kacak" | "kompanzasyon";
 type PhaseKey = "KESİF" | "TESİSAT" | "PANO" | "KABUL";
 
-/* ---------------------- Veriler ---------------------- */
+
 const weekly = [88, 92, 90, 94, 91, 96, 93, 97];
 
 const metricData: Record<
@@ -66,7 +66,7 @@ const phaseNotes: Record<PhaseKey, string[]> = {
   ],
 };
 
-/* ---------------------- küçük yardımcılar ---------------------- */
+
 function useMouseVars() {
   const ref = useRef<HTMLDivElement>(null);
   const [vars, setVars] = useState({ px: 50, py: 50, mx: 0, my: 0 });
@@ -153,7 +153,7 @@ function TiltCard({
         transform: `perspective(900px) rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
       }}
     >
-      {/* parıltı / interaktif kenar */}
+     
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={
@@ -165,7 +165,7 @@ function TiltCard({
         }
       />
 
-      {/* üst çizgi */}
+     
       <div
         className={`absolute left-5 right-5 top-0 h-[2px] rounded-full opacity-80 ${
           accent === "indigo"
@@ -182,7 +182,7 @@ function TiltCard({
   );
 }
 
-/* ---------------------- ANA BÖLÜM ---------------------- */
+
 export default function FeaturesSection() {
   const [openMetric, setOpenMetric] = useState<MetricKey | null>(null);
   const [openPhase, setOpenPhase] = useState<PhaseKey | null>(null);
@@ -201,13 +201,13 @@ export default function FeaturesSection() {
       className="relative w-full overflow-hidden bg-white py-18 md:py-24"
       style={
         {
-          // spotlight için CSS değişkenleri
+        
           ["--px" as any]: `${vars.px}%`,
           ["--py" as any]: `${vars.py}%`,
         } as React.CSSProperties
       }
     >
-      {/* spotlight (mouse'u takip eder) */}
+     
       <div
         className="pointer-events-none absolute inset-0 -z-20 transition-opacity duration-300"
         style={{
@@ -216,7 +216,7 @@ export default function FeaturesSection() {
         }}
       />
 
-      {/* parallax halo'lar */}
+     
       <div
         className="pointer-events-none absolute -top-40 -left-28 size-[520px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.18),transparent_60%)] blur-3xl -z-30"
         style={parallax(-0.6)}
@@ -231,7 +231,7 @@ export default function FeaturesSection() {
       />
 
       <div className="mx-auto w-[92%] max-w-7xl">
-        {/* Header */}
+       
         <div className="text-center" style={parallax(0.2)}>
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm backdrop-blur">
             Ortadoğu Elektrik
@@ -252,7 +252,6 @@ export default function FeaturesSection() {
             kartlar ve grafikler imlecinize anlık tepki verir.
           </p>
 
-          {/* manyetik CTA */}
           <div className="mt-6 flex items-center justify-center">
             <button
               ref={cta.ref}
@@ -270,9 +269,9 @@ export default function FeaturesSection() {
           </div>
         </div>
 
-        {/* 3 ana kart */}
+        
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          {/* Kart 1: Şantiye Akışı */}
+        
           <TiltCard accent="indigo">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -336,7 +335,7 @@ export default function FeaturesSection() {
             </div>
           </TiltCard>
 
-          {/* Kart 2: Altyapı Kalite Kontrol */}
+         
           <TiltCard accent="fuchsia">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -410,7 +409,7 @@ export default function FeaturesSection() {
             </div>
           </TiltCard>
 
-          {/* Kart 3: Operasyon Şeffaflığı */}
+         
           <TiltCard accent="emerald">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -425,7 +424,7 @@ export default function FeaturesSection() {
                 <span className="rounded-lg bg-slate-100 px-2 py-1 text-[11px] text-slate-600">Canlı Takip</span>
               </div>
 
-              {/* sütun grafiği */}
+             
               <div className="mt-6 rounded-2xl border border-slate-200 p-4">
                 <div className="flex items-center justify-between text-xs text-slate-500">
                   <span>Haftalık İlerleme</span>
@@ -551,7 +550,6 @@ export default function FeaturesSection() {
         </div>
       </div>
 
-      {/* Animasyon tanımı */}
       <style jsx global>{`
         @keyframes grow {
           from {

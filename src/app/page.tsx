@@ -6,6 +6,8 @@ import Elguc from "@/components/elektriğingücü";
 import Yonlendirme from "@/components/yönlendirmeseo";
 import { TextReveal } from "@/components/alticizik/text-reveal";
 import Adım from "@/components/adımadım/index"
+import Sayac from "@/components/sayac/index"
+
 
 
 export default function Page() {
@@ -22,6 +24,7 @@ export default function Page() {
       </div>
 
       <Yonlendirme />
+      <Sayac />
       
     </main>
   );
