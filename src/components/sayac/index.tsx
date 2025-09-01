@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 
+
 type Stat = {
   label: string;
   value: number;
@@ -36,7 +37,7 @@ const icons = {
       <path d="M20 6 9 17l-5-5" />
     </svg>
   ),
-  // 📍 Saha Ziyareti
+
   mapPin: (
     <svg
       viewBox="0 0 24 24"
@@ -49,7 +50,7 @@ const icons = {
       <circle cx="12" cy="10" r="3" />
     </svg>
   ),
-  // 📊 Periyodik Test & Ölçüm
+
   activity: (
     <svg
       viewBox="0 0 24 24"
@@ -184,6 +185,7 @@ export default function StatsSection() {
             );
           })}
         </div>
+
       </div>
     </section>
   );
