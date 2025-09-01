@@ -151,3 +151,8 @@
     }
   }
 }
+@media (max-width: 375px) {
+  .se-hidden {
+    display: none !important;
+  }
+}
