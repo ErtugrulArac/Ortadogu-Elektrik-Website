@@ -9,6 +9,8 @@ import Sayac from "@/components/sayac/index"
 import Yorumlar from "@/components/müşteriyorum/index"
 import YönlendirmeSeo from "@/components/yönlendirmeseo/index"
 import { HeroParallaxDemo } from "@/components/ui/HeroParallaxDemo";
+import Footer from "@/components/footer/FooterCreatic"
+import Blog from "@/components/blog/blog"
 
 
 export default function Page() {
@@ -29,6 +31,8 @@ export default function Page() {
 
       <Adım />
       <Yorumlar />
+      <Blog/>
+      <Footer />
 
 
 
