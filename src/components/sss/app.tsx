@@ -12,7 +12,6 @@ export default function FaqSection() {
     { q: "Kompanzasyon ile reaktif ceza riskini nasıl önlüyorsunuz?", a: "Otomatik kompanzasyon panosu ve akıllı rölelerle hedef cosφ ≥ 0.98 tutulur. Uzaktan izleme opsiyonu ve periyodik bakım ile kondansatör/ kontaktör sağlığı takip edilir; gerekirse aynı gün müdahale edilir." },
     { q: "Kaçak akım koruması ve testleri yapılıyor mu?", a: "Uygun tip ve eşiklerde (30 mA/300 mA) RCD seçimi yapılır, buton testi ve ölçüm cihazı ile periyodik testler uygulanır; termal kamera ile ısınma taraması yapılarak raporlanır." },
     { q: "Garanti ve ödeme koşulları nedir?", a: "Malzemelerde üretici garantisi (genellikle 24 ay), işçilikte 12 ay garanti sağlanır. Ödeme planı standart olarak %40 avans, %40 montaj/imalat, %20 kabul sonrası şeklindedir. Talebe göre bakım sözleşmesi eklenebilir." },
-
   ];
 
   const [openSet, setOpenSet] = useState<Set<number>>(new Set());
@@ -25,8 +24,7 @@ export default function FaqSection() {
     });
 
   return (
-    <section aria-labelledby={`${secId}-title`} className="mx-auto w-[92%] max-w-5xl py-14 md:py-18">
-
+    <section aria-labelledby={`${secId}-title`} className="mx-auto w-[92%] max-w-5xl pt-14 md:pt-18 pb-6 md:pb-8">
       <div className="mb-5 flex items-center justify-center">
         <img
           src="sss.webp"
@@ -95,8 +93,7 @@ function FaqRow({
           </span>
           <span
             aria-hidden
-            className={`grid size-8 place-items-center rounded-full border border-neutral-300 bg-white transition-transform ${isOpen ? "rotate-45" : ""
-              }`}
+            className={`grid size-8 place-items-center rounded-full border border-neutral-300 bg-white transition-transform ${isOpen ? "rotate-45" : ""}`}
           >
             <svg viewBox="0 0 24 24" className="size-4 text-neutral-700" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M12 5v14M5 12h14" />

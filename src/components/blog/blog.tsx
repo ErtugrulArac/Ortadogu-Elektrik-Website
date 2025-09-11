@@ -4,9 +4,9 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 
 type Post = {
   id: string;
-  title: string;    // Genel başlık
-  summary: string;  // SEO: Ortadoğu Elektrik, uzun özet
-  detail: string;   // paragraf kırımı için \n\n
+  title: string;    
+  summary: string;  
+  detail: string;   
   img: string;
   tag: string;
   mins: number;
@@ -183,15 +183,15 @@ export default function OEBlogShowcaseEqual() {
   };
 
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative mt-0 overflow-hidden">
       {/* sade arka plan */}
       <div className="absolute inset-0 -z-10 bg-white" />
       <div className="absolute inset-0 -z-10 opacity-70 [background-image:radial-gradient(#e8eef6_1px,transparent_1px)] [background-size:22px_22px]" />
 
       <div className="mx-auto max-w-7xl px-4 py-16 sm:py-20">
         <div className="text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-            Özen göstermek yeni pazarlamadır
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+            Özen Göstermek Yeni Pazarlamadır
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-600">
             Ortadoğu Elektrik’te verimlilik, koruma, izleme ve bakım bir bütünün parçalarıdır.
@@ -201,7 +201,7 @@ export default function OEBlogShowcaseEqual() {
         </div>
 
         {/* Carousel */}
-        <div className="relative mt-10">
+        <div className="relative mt-12">
           <div
             ref={scrollerRef}
             className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
