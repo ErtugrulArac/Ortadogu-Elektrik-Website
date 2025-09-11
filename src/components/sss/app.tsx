@@ -24,7 +24,7 @@ export default function FaqSection() {
     });
 
   return (
-    <section aria-labelledby={`${secId}-title`} className="mx-auto w-[92%] max-w-5xl pt-14 md:pt-18 pb-6 md:pb-8">
+    <section aria-labelledby={`${secId}-title`} className="mx-auto w-[92%] max-w-5xl pt-5 md:pt-8 pb-12 md:pb-8">
       <div className="mb-5 flex items-center justify-center">
         <img
           src="sss.webp"

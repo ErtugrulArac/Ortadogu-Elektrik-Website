@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar"
+import ContactDock from "@/components/wptel/ContactDock";
 
 
 const geistSans = Geist({
@@ -31,6 +32,12 @@ export default function RootLayout({
       >
         <Navbar />
         {children}
+
+        <ContactDock
+          whatsapp={{ number: "905555555555", message: "Merhaba, bilgi almak istiyorum." }}
+          phone={{ number: "+905555555555", label: "Hızlı İletişim" }}
+          position="br" // "bl" | "tr" | "tl"
+        />
       </body>
     </html>
   );

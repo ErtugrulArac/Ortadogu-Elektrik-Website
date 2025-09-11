@@ -10,7 +10,7 @@ import YönlendirmeSeo from "@/components/yönlendirmeseo/index"
 import { HeroParallaxDemo } from "@/components/ui/HeroParallaxDemo";
 import Footer from "@/components/footer/FooterCreatic"
 import Blog from "@/components/blog/blog"
-import Bulanık from "@/components/sss/app"
+import Sss from "@/components/sss/app"
 
 
 export default function Page() {
@@ -31,9 +31,9 @@ export default function Page() {
 
       <Adım />
       <Yorumlar />
-      <Bulanık/>
 
       <Blog/>
+      <Sss/>
       
       
 

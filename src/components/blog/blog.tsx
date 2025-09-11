@@ -20,7 +20,7 @@ const POSTS: Post[] = [
       "Ortadoğu Elektrik; ölç, doğrula, iyileştir prensibiyle üretimden idari alanlara kadar tüm süreçlerde enerji verimliliğini yükseltir. İzleme, raporlama ve sürekli iyileştirme kültürüyle görünmeyen kayıplar ortaya çıkar, işletme davranışları kolayca optimize edilir.",
     detail:
       "Verimlilik bir proje değil, sürdürülen bir disiplindir. Ortadoğu Elektrik, tüketim profillerini görünür kılar ve veriye dayalı hedefler belirler.\n\nSaha ve ofis yüklerinin aynı ekranda izlenmesi, kayıpları hızlıca tespit etmeyi sağlar. Eğitim ve süreç standartlarıyla kazanımlar kalıcı hale getirilir.\n\nRaporlar yalın tutulur; karar verici için eylem adımları netleştirilir.",
-    img: "/blok/verimlilik.jpg",
+    img: "/blok/verimlilik.webp",
     tag: "Verimlilik",
     mins: 5,
   },
@@ -31,7 +31,7 @@ const POSTS: Post[] = [
       "Ortadoğu Elektrik; insan, ekipman ve üretim sürekliliğini birlikte ele alan koruma mimarisi kurar. Seçicilik, ölçüm ve periyodik kontroller tek çatı altında planlanır; gereksiz açmalar azalırken gerçek riskler önceliklendirilir.",
     detail:
       "Bütüncül güvenlik yaklaşımı; doğru ekipman seçimi, düzenli test ve kayıt tutma kültürünü kapsar.\n\nKoruma kademeleri, tesisin gerçek çalışma senaryolarına göre kurgulanır. Bu sayede bakım maliyetleri düşer, üretim ritmi korunur.\n\nRaporlar; mevzuat, fotoğraf ve ölçüm verileriyle desteklenerek denetime hazır hale getirilir.",
-    img: "/blok/koruma.jpg",
+    img: "/blok/koruma.webp",
     tag: "Koruma",
     mins: 4,
   },
@@ -42,7 +42,7 @@ const POSTS: Post[] = [
       "Ortadoğu Elektrik; saha ekipmanı, ekip ve veriyi tek çatı altında toplayarak saha yönetimini standardize eder. Görev planlama, canlı izleme, alarm eşikleri ve raporlama aynı panelde ilerler; kararlar hızlanır, riskler azalır.",
     detail:
       "Saha yönetimi yaklaşımı, ekipman ve süreç bütünlüğünü temel alır. Envanter standardizasyonu, versiyon takibi ve güvenli uzaktan erişim sayesinde müdahale kalitesi artar.\n\nİş emri, bakım ve denetim akışları otomatik bildirimlerle yönetilir; KPI’lar düzenli raporlanır. Böylece ekipler aynı veriye bakar ve iletişim netleşir.\n\nUzaktan müdahale ile gereksiz saha ziyaretleri azalır, zaman ve maliyet kaybı düşer. Ortadoğu Elektrik, sürekli iyileştirme kültürüyle kazanımları kalıcı hale getirir.",
-    img: "/blok/saha.jpg",
+    img: "/blok/saha.webp",
     tag: "Saha Yönetimi",
     mins: 5,
   },
@@ -53,7 +53,7 @@ const POSTS: Post[] = [
       "Ortadoğu Elektrik; harmonikler, gerilim dengesizlikleri ve flicker gibi başlıkları düzenli izleyerek ekipmanı ve süreçleri korur. Analizler yatırım/geri dönüş çerçevesinde yorumlanır; öneriler net, uygulanabilir ve ölçülebilirdir.",
     detail:
       "Kalite problemleri yalnız ekipmana değil süreçlere de yansır. Bu nedenle ölçüm, analiz ve doğrulama döngüsü sürekli yürütülür.\n\nFiltreleme, kablo kesiti ve sürücü ayarları gibi adımlar öncelik sırasına göre uygulanır.\n\nİyileştirme sonrası tekrar ölçülür; kazanım raporu somut verilerle ortaya konur.",
-    img: "/blok/kalite.jpg",
+    img: "/blok/kalite.webp",
     tag: "Enerji Kalitesi",
     mins: 4,
   },
@@ -64,7 +64,7 @@ const POSTS: Post[] = [
       "Ortadoğu Elektrik; arıza bulma yerine arıza olmadan önleme hedefiyle çalışır. Termal tarama, tork standardı ve kondisyon izleme gibi yöntemler planlı bakımın bir parçasıdır; süreklilik artar, sürpriz duruşlar azalır.",
     detail:
       "Proaktif bakım, kayıt ve standardı merkezine alır. Yapılan her işlem ölçülebilir sonuçla ilişkilendirilir.\n\nKritik ekipmanlar için yedek parça politikası belirlenir; tedarik süreleri plana alınır.\n\nDenetimlerde tüm veriler düzenli dosyalanır; şeffaflık güven yaratır.",
-    img: "/blok/bakım.jpg",
+    img: "/blok/bakım.webp",
     tag: "Bakım",
     mins: 3,
   },
@@ -75,7 +75,7 @@ const POSTS: Post[] = [
       "Ortadoğu Elektrik; topraklama ve eşpotansiyel bütününü tesis güvenliğinin temeli olarak görür. Doğru ölçüm, doğru rapor ve düzenli tekrarlar sayesinde koruma seviyesi uzun yıllar sürdürülebilir kalır.",
     detail:
       "Ölçüm metodolojisi sonuçları doğrudan etkiler. Bu nedenle sahada referanslar titizlikle kurulur ve kayıt altına alınır.\n\nEksiklikler teknik gerekçelerle öneriye dönüşür; çözüm adımları net biçimde sıralanır.\n\nPeriyodik kontroller, mevsimsel etkileri ve işletme değişikliklerini görünür kılar.",
-    img: "/blok/güvenlik.jpg",
+    img: "/blok/güvenlik.webp",
     tag: "Güvenlik",
     mins: 3,
   },
@@ -86,26 +86,30 @@ const POSTS: Post[] = [
       "Ortadoğu Elektrik; hedeflerinizi kendi hedefimiz gibi ele alır, planlama–uygulama–izleme döngüsünü tek çatı altında yürüterek görünürlük ve verimlilik sağlar.",
     detail:
       "Değer ortaklığı yaklaşımımız, tek seferlik teslimlerden ziyade uzun vadeli iş hedeflerinize odaklanır. Yönetişim ritmi, net KPI’lar ve ortak bir gösterge paneli ile ekipler aynı veriye bakar; iletişim sadeleşir, aksiyonlar hızlanır.\n\nOrtadoğu Elektrik, saha–ofis ayrımını kaldıran görünürlükle kayıpları erkenden tespit eder. Eğitim, standart dökümantasyon ve yaşam döngüsü desteği ile kazanımlar kalıcı hale getirilir; süreçler kişilere değil sistemlere bağlanır.\n\nŞeffaf raporlama ve düzenli geri bildirim toplantılarıyla öngörülebilir maliyet, ölçülebilir fayda ve sürdürülebilir performans elde edilir. Böylece operasyonel verimlilik, güvenlik ve iş sürekliliği aynı anda güçlenir.",
-    img: "https://images.unsplash.com/photo-1509395062183-67c5ad6faff9?q=80&w=1600&auto=format&fit=crop",
+    img: "/blok/değer.webp",
     tag: "Değer Ortaklığı",
     mins: 4,
   },
   {
     id: "8",
-    title: "SCADA ile Görünürlük ve Hız",
-    summary:
-      "Ortadoğu Elektrik; tesis verisini tek bir SCADA panelinde toplayarak ekipler arası koordinasyonu güçlendirir. Alarm eşikleri, KPI’lar ve görev akışları netleşir; kararlar hızlanır, hatalar azalır.",
-    detail:
-      "SCADA/HMI çözümleri yalnız görselleştirme değil, standart dil oluşturma aracıdır. Herkes aynı verilere bakar ve tartışmalar veriden beslenir.\n\nUzak erişim, gereksiz saha ziyaretlerini azaltır; üretim kesintileri kısalır.\n\nYetkilendirme ve kayıt politikalarıyla bilgi güvenliği garanti altına alınır.",
-    img: "https://images.unsplash.com/photo-1558002038-1055907df827?q=80&w=1600&auto=format&fit=crop",
-    tag: "SCADA",
-    mins: 4,
+  title: "Önce Güvenlik: Sıfır Kaza Taahhüdü",
+  summary:
+    "Her işte güvenliği ilk sıraya koyarız; işe başlamadan risk analizi ve izinleri tamamlar, LOTO ve uygun KKD ile sahayı emniyete alırız.",
+  detail:
+    "Her projede hedefimiz sıfır kaza.\n\n" +
+    "• İş öncesi JSA/risk analizi ve İş İzni (permit-to-work) süreçleri eksiksiz işletilir.\n\n" +
+    "• Enerji kesme–kilitleme–etiketleme (LOTO), uygun KKD ve ölçüm cihazları ile çalışma alanı güvenceye alınır.\n\n" +
+    "• Günlük toolbox toplantıları ve periyodik eğitimlerle ekip güncel tutulur (yüksekte çalışma, elektriksel güvenlik vb.).\n\n" +
+    "• Yakın kaza ve uygunsuzluklar anında raporlanır; DÖF süreciyle düzeltici/önleyici aksiyonlar uygulanır.\n\n" ,
+  img: "/blok/risk.webp",
+  tag: "ŞİRKET PRENSİBİ",
+  mins: 4
   },
 ];
 
 export default function OEBlogShowcaseEqual() {
   const scrollerRef = useRef<HTMLDivElement>(null);
-  const detailSectionRef = useRef<HTMLDivElement>(null); // ↓ açılan karta kaydırmak için
+  const detailSectionRef = useRef<HTMLDivElement>(null); 
   const [activeId, setActiveId] = useState<string | null>(null);
   const [activeIdx, setActiveIdx] = useState<number>(0);
 
@@ -154,15 +158,15 @@ export default function OEBlogShowcaseEqual() {
     [activeId]
   );
 
-  // Devamını Oku tıklandıktan sonra detay açılınca sayfayı aşağıdaki panele kaydır
+  
   useEffect(() => {
     if (!activeId) return;
     const el = detailSectionRef.current;
     if (!el) return;
-    // Detay paneli DOM'a girsin ve animasyon başlasın diye küçük gecikme
+    
     const t = setTimeout(() => {
       const rect = el.getBoundingClientRect();
-      const y = rect.top + window.scrollY - 72; // hafif üst boşluk
+      const y = rect.top + window.scrollY - 72; 
       window.scrollTo({ top: y, behavior: "smooth" });
     }, 220);
     return () => clearTimeout(t);
@@ -184,7 +188,7 @@ export default function OEBlogShowcaseEqual() {
 
   return (
     <section className="relative mt-0 overflow-hidden">
-      {/* sade arka plan */}
+    
       <div className="absolute inset-0 -z-10 bg-white" />
       <div className="absolute inset-0 -z-10 opacity-70 [background-image:radial-gradient(#e8eef6_1px,transparent_1px)] [background-size:22px_22px]" />
 
@@ -200,7 +204,7 @@ export default function OEBlogShowcaseEqual() {
           </p>
         </div>
 
-        {/* Carousel */}
+       
         <div className="relative mt-12">
           <div
             ref={scrollerRef}
@@ -222,7 +226,7 @@ export default function OEBlogShowcaseEqual() {
                     </div>
 
                     <div className="flex flex-1 flex-col p-5">
-                      {/* üst satır */}
+                    
                       <div className="text-[11px] font-semibold uppercase tracking-[0.12em] text-[#1f6fff]">
                         ORTADOĞU ELEKTRİK • {post.tag}
                       </div>
@@ -231,7 +235,7 @@ export default function OEBlogShowcaseEqual() {
                         {post.title}
                       </h3>
 
-                      {/* uzun özet — line-clamp kaldırıldı */}
+                      
                       <p className="mt-2 text-sm leading-6 text-slate-600">
                         {post.summary}
                       </p>
@@ -241,7 +245,7 @@ export default function OEBlogShowcaseEqual() {
                           {post.mins} dk okuma
                         </span>
 
-                        {/* Devamını Oku — önce ortala, sonra aç (ve effect aşağıya kaydırır) */}
+                       
                         <button
                           onClick={() => {
                             goToIndex(idx);
@@ -276,7 +280,7 @@ export default function OEBlogShowcaseEqual() {
             ))}
           </div>
 
-          {/* alt gezinme */}
+         
           <div className="mt-6 flex items-center justify-center gap-4">
             <button
               onClick={() => goToIndex(activeIdx - 1)}
@@ -311,7 +315,7 @@ export default function OEBlogShowcaseEqual() {
           </div>
         </div>
 
-        {/* Genişleyen detay paneli */}
+       
         <div
           ref={detailSectionRef}
           className={`transition-all duration-500 ${
