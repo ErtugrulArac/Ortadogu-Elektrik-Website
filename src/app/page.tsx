@@ -5,12 +5,12 @@ import Grafik from "@/components/grafik";
 import Elguc from "@/components/elektriğingücü";
 import { TextReveal } from "@/components/alticizik/text-reveal";
 import Adım from "@/components/adımadım/index"
-import Sayac from "@/components/sayac/index"
 import Yorumlar from "@/components/müşteriyorum/index"
 import YönlendirmeSeo from "@/components/yönlendirmeseo/index"
 import { HeroParallaxDemo } from "@/components/ui/HeroParallaxDemo";
 import Footer from "@/components/footer/FooterCreatic"
 import Blog from "@/components/blog/blog"
+import Bulanık from "@/components/bulanık/app"
 
 
 export default function Page() {
@@ -31,12 +31,18 @@ export default function Page() {
 
       <Adım />
       <Yorumlar />
+      <Bulanık/>
+
       <Blog/>
+      
+      
+
+   
       <Footer />
 
 
 
-      {/* <Sayac /> */}
+   
 
 
 
