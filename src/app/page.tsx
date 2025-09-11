@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Navbar from "@/components/navbar";
 import Main from "@/components/main/main";
 import Grafik from "@/components/grafik";
 import Elguc from "@/components/elektriğingücü";
@@ -11,6 +9,7 @@ import { HeroParallaxDemo } from "@/components/ui/HeroParallaxDemo";
 import Footer from "@/components/footer/FooterCreatic"
 import Blog from "@/components/blog/blog"
 import Sss from "@/components/sss/app"
+import Mockup from "@/components/mockup/index"
 
 
 export default function Page() {
@@ -30,10 +29,14 @@ export default function Page() {
       </div>
 
       <Adım />
+      <Mockup/>
+
       <Yorumlar />
 
       <Blog/>
       <Sss/>
+    
+      
       
       
 
