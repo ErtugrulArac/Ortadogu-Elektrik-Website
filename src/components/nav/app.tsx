@@ -1,7 +1,7 @@
 import CardNav from './CardNav'
 
-// public/arlan.jpg dosyasını kullan
-const logo = "/arlan.jpg";
+
+const logo = "/arlanap.png";
 
 const App = () => {
   const items = [
@@ -10,8 +10,8 @@ const App = () => {
       bgColor: "#111111",
       textColor: "#ffffff",
       links: [
-        { label: "Biz Kimiz", ariaLabel: "Hakkımda Biz Kimiz", href: "#" },
-        { label: "Misyon, Vizyonumuz", ariaLabel: "Hakkımda Misyon, Vizyonumuz ", href: "#" }
+        { label: "Biz Kimiz", ariaLabel: "Hakkımda Biz Kimiz", href: "/hakkimda" },
+        { label: "Misyon, Vizyonumuz", ariaLabel: "Hakkımda Misyon, Vizyonumuz ", href: "/hakkimizda#bizmisviz" }
       ]
     },
     {

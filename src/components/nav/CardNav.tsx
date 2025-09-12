@@ -206,7 +206,7 @@ const CardNav: React.FC<CardNavProps> = ({
                 <img
                   src={logo}
                   alt={logoAlt}
-                  className="logo h-[80px] max-md:h-[60px] cursor-pointer drop-shadow-[0_0_20px_rgba(255,255,255,0.08)]"
+                  className="logo h-[80px] max-md:h-[50px] cursor-pointer drop-shadow-[0_0_20px_rgba(255,255,255,0.08)]"
                 />
               </a>
             </div>

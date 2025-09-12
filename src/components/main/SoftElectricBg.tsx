@@ -1,3 +1,4 @@
+// src/components/SoftElectricBg.tsx
 "use client";
 
 export default function SoftElectricBg() {
@@ -13,6 +14,7 @@ export default function SoftElectricBg() {
           mixBlendMode: "screen",
         }}
       />
+
       {/* Yumuşak mavi enerji bulutu */}
       <div
         className="absolute right-[-10%] bottom-[-10%] h-[45vh] w-[45vw] blur-3xl opacity-35 animate-drift2"
@@ -26,7 +28,7 @@ export default function SoftElectricBg() {
 
       {/* İnce yıldırım izi */}
       <svg
-        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25"
+        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25 z-[-20] sm:z-0"
         width="520"
         height="260"
         viewBox="0 0 520 260"

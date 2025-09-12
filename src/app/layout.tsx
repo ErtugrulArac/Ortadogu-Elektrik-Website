@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <PageLoader logoSrc="/arlan.jpg" brand="Ortadoğu Elektrik" />
+        <PageLoader logoSrc="/arlanap.png" brand="Ortadoğu Elektrik" />       
         <header className="sticky top-0 z-50 w-full bg-black/60 backdrop-blur supports-[backdrop-filter]:bg-black/40">
           <Nav />
         </header>
