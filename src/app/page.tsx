@@ -10,6 +10,7 @@ import Footer from "@/components/footer/FooterCreatic"
 import Blog from "@/components/blog/blog"
 import Sss from "@/components/sss/app"
 import Mockup from "@/components/mockup/index"
+import Arka from "@/components/arkaplanelektrik/app"
 
 
 export default function Page() {
@@ -17,6 +18,7 @@ export default function Page() {
     <main>
 
       <Main />
+      {/* <Arka /> */}
       <Grafik />
       <YönlendirmeSeo />
 
