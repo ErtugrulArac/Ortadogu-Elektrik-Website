@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar"
+// import Navbar from "@/components/navbar"
 import ContactDock from "@/components/wptel/ContactDock";
+import PageLoader from "@/components/loading/index";
+import Nav from "@/components/nav/app"
+
 
 
 const geistSans = Geist({
@@ -30,7 +33,12 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
+        <PageLoader logoSrc="/arlan.jpg" brand="Ortadoğu Elektrik" />
+        <header className="sticky top-0 z-50 w-full bg-black/60 backdrop-blur supports-[backdrop-filter]:bg-black/40">
+          <Nav />
+        </header>
+
+        {/* <Navbar /> */}
         {children}
 
         <ContactDock

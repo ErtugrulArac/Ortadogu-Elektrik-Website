@@ -15,6 +15,7 @@ import Mockup from "@/components/mockup/index"
 export default function Page() {
   return (
     <main>
+
       <Main />
       <Grafik />
       <YönlendirmeSeo />

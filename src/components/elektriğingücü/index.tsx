@@ -252,7 +252,7 @@ export default function ElectricImpactSection() {
         </div>
       </div>
 
-      {/* Global font import for full Turkish support (ğ/Ğ) */}
+      {/* Global font import for full Turkish support */}
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap");
       `}</style>
@@ -262,7 +262,6 @@ export default function ElectricImpactSection() {
           font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
             Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
             "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-          /* background kept from previous step */
           background:
             radial-gradient(900px 420px at 50% 0%,
               rgba(118, 92, 255, 0.28) 0%,
@@ -274,24 +273,25 @@ export default function ElectricImpactSection() {
           color: #eef4ff;
         }
 
+        /* 📱 Mobile: üst–alt boşluk kısaltıldı */
         .wrap {
           max-width: 1180px;
           margin: 0 auto;
-          padding: clamp(56px, 9vw, 120px) 12px 70px;
+          padding: 48px 12px 60px; /* TOP (↓), X, BOTTOM (↓) */
           position: relative;
           min-height: 520px;
         }
 
         .hero { text-align: center; }
 
-        /* Title — a bit bigger and with safer line-height so 'ğ' never clips */
+        /* 🅰 Başlık bir XL daha büyük */
         .title {
           margin: 4px 0 8px;
           font-weight: 600;
-          font-size: clamp(32px, 6.8vw, 72px); /* ⬆️ slightly larger */
-          line-height: 1.2;                   /* ⬆️ more room for descenders like 'ğ' */
+          font-size: clamp(34px, 7.4vw, 80px); /* 32/6.8vw/72 → 34/7.4vw/80 */
+          line-height: 1.2;
           letter-spacing: 0.1px;
-          padding-bottom: 4px;                /* extra breathing room */
+          padding-bottom: 4px;
           -webkit-font-smoothing: antialiased;
           background-image: linear-gradient(90deg, #dbeafe 0%, #60a5ff 35%, #a78bfa 70%, #34d399 100%);
           background-size: 220% 100%;
@@ -335,7 +335,7 @@ export default function ElectricImpactSection() {
           padding: 10px 18px;
           background: linear-gradient(90deg,#60a5ff,#1fb6ff);
           color:#03122a;
-          font-weight: 700; /* ⬇️ one step lighter */
+          font-weight: 700;
           letter-spacing:.25px;
           cursor:pointer;
           box-shadow:0 12px 28px rgba(32,146,255,.28), inset 0 0 0 2px rgba(255,255,255,.06);
@@ -359,16 +359,17 @@ export default function ElectricImpactSection() {
         .pulse { fill: rgba(96,165,255,.22); stroke: rgba(31,182,255,.7); stroke-width: 1.6; }
         .glow { opacity:.28; stroke-dasharray: 3 18; filter: url(#glow); }
 
+        /* Kartlar ve aralıklar */
         .cards {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 18px;
-          margin-top: 28px;
+          gap: 24px;
+          margin-top: 32px;
           position: relative;
           z-index: 1;
         }
         @media (min-width: 900px) {
-          .cards { grid-template-columns: repeat(3, 1fr); gap: 22px; }
+          .cards { grid-template-columns: repeat(3, 1fr); gap: 36px; } /* ⬆ desktop gap büyütüldü */
         }
 
         .card {
@@ -413,16 +414,17 @@ export default function ElectricImpactSection() {
         }
         .card.live .bus { opacity:1; box-shadow:0 0 16px rgba(31,182,255,.55); }
 
+        /* 🖥️ Desktop: üst–alt boşluk biraz artırıldı */
         @media (min-width: 900px) {
-          .wrap { padding-top: clamp(28px, 4vw, 64px); padding-bottom: 16px; min-height: 500px; }
+          .wrap { padding-top: clamp(64px, 7vw, 140px); padding-bottom: 80px; }
           .subtitle { margin-bottom: 12px; }
-          .cards { margin-top: 16px; }
-          .mottoWrap { margin-top: 8px; }
-          .rule { margin: 0 auto 6px; }
+          .cards { margin-top: 44px; }
+          .mottoWrap { margin-top: 16px; }
+          .rule { margin: 0 auto 8px; }
           .motto { margin-bottom: 0; }
         }
 
-        .mottoWrap { margin-top: 22px; text-align: center; }
+        .mottoWrap { margin-top: 32px; text-align: center; }
         .rule { height:2px; width:220px; margin:0 auto 12px; background:linear-gradient(90deg,transparent,rgba(96,165,255,.6),transparent); }
         .motto { margin:0 auto; max-width:720px; font-size:clamp(15px,2.2vw,18px); color:#e7eeff; opacity:.92; }
         .motto em { font-style: italic; }

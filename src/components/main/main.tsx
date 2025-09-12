@@ -230,7 +230,7 @@ export default function Hero() {
     <section aria-label="Ortadoğu Elektrik ana tanıtım" className="relative isolate">
       <ElectricBackdrop />
 
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-12 sm:pt-16 lg:pt-24 pb-14">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 pt-24 sm:pt-16 lg:pt-40 pb-14">
         
         <div className="grid place-items-center text-center gap-3 sm:gap-4 min-h-[28vh] sm:min-h-[32vh]">
           <p className="rounded-full bg-foreground/5 px-3 py-1 text-[11px] sm:text-xs font-medium text-foreground/70">

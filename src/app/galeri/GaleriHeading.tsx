@@ -4,7 +4,7 @@
 
 export default function GaleriHeading() {
   return (
-    <section className="relative pt-4 md:pt-6 pb-10">
+    <section className="relative pt-28 md:pt-20 pb-10">
       <div className="mx-auto max-w-4xl px-4 text-center overflow-visible">
         <h2
           className="pb-1 md:pt-16 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.15]
