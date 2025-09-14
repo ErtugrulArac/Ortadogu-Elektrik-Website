@@ -2,7 +2,7 @@
 
 export default function GaleriTextBlock() {
   return (
-    <div className="w-full bg-black py-12 px-6 pb-20 text-center">
+    <div className="w-full  py-12 px-6 pb-20 text-center">
       <h3
         className="text-2xl md:text-3xl font-semibold tracking-tight
                    bg-gradient-to-r from-[#1e40af] via-[#ce0bff] to-[#00d8d8]

@@ -165,3 +165,7 @@
       rgba(78,70,180,0.22), rgba(78,70,180,0) 70%),
     linear-gradient(180deg, #0a1424 0%, #0a1628 45%, #0a1322 100%);
 }
+
+html {
+  scroll-behavior: smooth;
+}

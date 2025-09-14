@@ -19,7 +19,7 @@ const App = () => {
       bgColor: "#1a1a1a",
       textColor: "#ffffff",
       links: [
-        { label: "Sanat Galerimiz", ariaLabel: "Galeri Sanat Galerimiz", href: "#" },
+        { label: "Sanat Galerimiz", ariaLabel: "Galeri Sanat Galerimiz", href: "/galeri" },
         { label: "Enerji Estetiği", ariaLabel: "Galeri Enerji Estetiği", href: "#" },
       ]
     },

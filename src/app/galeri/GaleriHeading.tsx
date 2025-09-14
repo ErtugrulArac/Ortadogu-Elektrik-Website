@@ -14,10 +14,10 @@ export default function GaleriHeading() {
           Tıkla ve Keşfet Ortadoğu Elektrik Farkıyla
         </h2>
 
-        {/* ince gradient çizgi */}
+       
         <div className="mx-auto mt-7 h-[3px] w-28 rounded-full bg-gradient-to-r from-[#2f80ed] via-[#22c1ee] to-[#10bdbf]" />
 
-        {/* alt açıklama */}
+      
         <p className="mt-6 text-base leading-relaxed text-neutral-300 dark:text-neutral-300">
           Profesyonel elektrik taahhüt, bakım ve modern otomasyon çözümleri ile
           konut ve endüstride güvenilir uygulamalar.
