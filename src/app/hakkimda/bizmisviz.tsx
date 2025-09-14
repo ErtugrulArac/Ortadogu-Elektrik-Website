@@ -57,16 +57,9 @@ function Reveal({
   );
 }
 
-/**
- * Kurumsal, yalın tasarım:
- * - Üstte “Biz Kimiz” bandı (subtle gradient + ring)
- * - Altta iki cam görünümlü kart (Misyon / Vizyon)
- * - Tam responsive; mobilde dikey, masaüstünde 2 sütun
- * - Manuel, SEO-dostu reveal animasyonları
- */
 export default function BizKimiz() {
   return (
-    <section className="relative py-16 sm:py-20 md:py-24">
+    <section id="bizmisviz" className="relative  py-16 sm:py-20 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* ====== BİZ KİMİZ (Kurumsal band) ====== */}
         <Reveal delay={50} className="relative overflow-hidden rounded-3xl ring-1 ring-white/10 bg-white/[0.035]">
