@@ -28,7 +28,7 @@ const App = () => {
       bgColor: "#222222",
       textColor: "#ffffff",
       links: [
-        { label: "İletişim", ariaLabel: "Email us", href: "#" },
+        { label: "İletişim", ariaLabel: "Email us", href: "/iletisim" },
         { label: "Sosyal Medya", ariaLabel: "Twitter", href: "#" },
         { label: "Lokasyon", ariaLabel: "LinkedIn", href: "#" }
       ]
