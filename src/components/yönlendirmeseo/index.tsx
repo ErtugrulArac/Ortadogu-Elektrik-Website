@@ -54,7 +54,7 @@ export default function WhoWeAreEnelStyleTR() {
                 İlk olarak Türkiye’de, ardından bölgede; enerjimiz insan gelişimine güç kattı.
               </p>
               <a
-                href="#"
+                href="/hakkimda"
                 className="group mt-2 inline-flex items-center gap-1 text-sm font-semibold
                            bg-gradient-to-r from-indigo-600 via-emerald-600 to-cyan-600
                            bg-clip-text text-transparent underline-offset-4
@@ -90,7 +90,7 @@ export default function WhoWeAreEnelStyleTR() {
                 İhtiyaçları karşılayan elektrifikasyonu hızlandırmak ve daha iyi bir dünya inşa etmek.
               </p>
               <a
-                href="#"
+                href="/hakkimda"
                 className="group mt-2 inline-flex items-center gap-1 text-sm font-semibold
                            bg-gradient-to-r from-indigo-600 via-emerald-600 to-cyan-600
                            bg-clip-text text-transparent underline-offset-4
@@ -126,7 +126,7 @@ export default function WhoWeAreEnelStyleTR() {
                 Avrupa’dan Orta Doğu’ya uzanan bölgesel erişim; Türkiye’de Ankara, İstanbul ve Kocaeli merkezli operasyon.
               </p>
               <a
-                href="#"
+                href="/hakkimda"
                 className="group mt-2 inline-flex items-center gap-1 text-sm font-semibold
                            bg-gradient-to-r from-indigo-600 via-emerald-600 to-cyan-600
                            bg-clip-text text-transparent underline-offset-4
@@ -162,7 +162,7 @@ export default function WhoWeAreEnelStyleTR() {
                 Organizasyon, Yönetim Kurulu ve fonksiyonel birimlerimiz; küresel birikim ve yerel çeviklikle çalışır.
               </p>
               <a
-                href="#"
+                href="/hakkimda"
                 className="group mt-2 inline-flex items-center gap-1 text-sm font-semibold
                            bg-gradient-to-r from-indigo-600 via-emerald-600 to-cyan-600
                            bg-clip-text text-transparent underline-offset-4

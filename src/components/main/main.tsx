@@ -249,16 +249,16 @@ export default function Hero() {
 
           <div className="mt-2 flex items-center justify-center gap-2 sm:gap-3">
             <a
-              href="#teklif"
+              href="/iletisim"
               className="rounded-2xl bg-foreground px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-background hover:opacity-90"
             >
               Ücretsiz Keşif/Teklif Al
             </a>
             <a
-              href="tel:+905555555555"
+              href="/hakkimda"
               className="rounded-2xl border border-foreground/20 px-4 sm:px-5 py-2.5 sm:py-3 text-xs sm:text-sm font-semibold text-foreground hover:bg-foreground/5"
             >
-              7/24 Acil Destek
+              Biz Kimiz/Hakkımızda
             </a>
           </div>
         </div>

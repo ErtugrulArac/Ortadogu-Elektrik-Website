@@ -53,7 +53,7 @@ export default function FeatureMockup() {
               </svg>
             </a>
             <a
-              href="/servis"
+              href="/hakkimda"
               className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white/70 px-4 py-2.5 text-sm font-medium text-neutral-700 backdrop-blur-md transition hover:bg-white/90 dark:border-white/15 dark:bg-neutral-900/60 dark:text-neutral-200"
             >
               Detaylı Bilgi

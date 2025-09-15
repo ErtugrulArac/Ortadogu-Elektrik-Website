@@ -153,7 +153,7 @@ function TiltCard({
         transform: `perspective(900px) rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
       }}
     >
-     
+
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={
@@ -165,17 +165,16 @@ function TiltCard({
         }
       />
 
-     
+
       <div
-        className={`absolute left-5 right-5 top-0 h-[2px] rounded-full opacity-80 ${
-          accent === "indigo"
+        className={`absolute left-5 right-5 top-0 h-[2px] rounded-full opacity-80 ${accent === "indigo"
             ? "bg-gradient-to-r from-indigo-500 to-indigo-300"
             : accent === "emerald"
-            ? "bg-gradient-to-r from-emerald-500 to-emerald-300"
-            : accent === "fuchsia"
-            ? "bg-gradient-to-r from-fuchsia-500 to-fuchsia-300"
-            : "bg-gradient-to-r from-cyan-500 to-cyan-300"
-        }`}
+              ? "bg-gradient-to-r from-emerald-500 to-emerald-300"
+              : accent === "fuchsia"
+                ? "bg-gradient-to-r from-fuchsia-500 to-fuchsia-300"
+                : "bg-gradient-to-r from-cyan-500 to-cyan-300"
+          }`}
       />
       {children}
     </div>
@@ -201,13 +200,13 @@ export default function FeaturesSection() {
       className="relative w-full overflow-hidden bg-white py-18 md:py-24"
       style={
         {
-        
+
           ["--px" as any]: `${vars.px}%`,
           ["--py" as any]: `${vars.py}%`,
         } as React.CSSProperties
       }
     >
-     
+
       <div
         className="pointer-events-none absolute inset-0 -z-20 transition-opacity duration-300"
         style={{
@@ -216,7 +215,7 @@ export default function FeaturesSection() {
         }}
       />
 
-     
+
       <div
         className="pointer-events-none absolute -top-40 -left-28 size-[520px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.18),transparent_60%)] blur-3xl -z-30"
         style={parallax(-0.6)}
@@ -231,7 +230,7 @@ export default function FeaturesSection() {
       />
 
       <div className="mx-auto w-[92%] max-w-7xl">
-       
+
         <div className="text-center" style={parallax(0.2)}>
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm backdrop-blur">
             Ortadoğu Elektrik
@@ -253,25 +252,30 @@ export default function FeaturesSection() {
           </p>
 
           <div className="mt-6 flex items-center justify-center">
-            <button
-              ref={cta.ref}
-              onMouseMove={cta.onFrame}
-              onMouseLeave={cta.reset}
+            <a
+              href="/iletisim#temsilci" 
               className="group relative inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_10px_28px_rgba(2,6,23,0.28)]"
               style={{ transform: `translate3d(${cta.t.x}px, ${cta.t.y}px, 0)` }}
+              onMouseMove={cta.onFrame}
+              onMouseLeave={cta.reset}
             >
               Teklif Al
-              <svg viewBox="0 0 24 24" className="size-4 transition group-hover:translate-x-0.5" fill="currentColor" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                className="size-4 transition group-hover:translate-x-0.5"
+                fill="currentColor"
+                aria-hidden="true"
+              >
                 <path d="M13 5l7 7-7 7v-4H4v-6h9V5z" />
               </svg>
               <span className="pointer-events-none absolute inset-0 rounded-full ring-0 ring-emerald-400/0 transition group-hover:ring-[3px] group-hover:ring-emerald-400/40" />
-            </button>
+            </a>
           </div>
         </div>
 
-        
+
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-        
+
           <TiltCard accent="indigo">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -295,15 +299,13 @@ export default function FeaturesSection() {
                       onClick={() => setOpenPhase(active ? null : t)}
                       type="button"
                       aria-expanded={active}
-                      className={`group relative w-full min-w-0 rounded-xl border px-4 py-2.5 text-center text-xs font-medium outline-none transition ${
-                        active ? "border-indigo-300 bg-indigo-50" : "border-slate-200 bg-white hover:bg-slate-50"
-                      } focus-visible:ring-2 focus-visible:ring-indigo-400`}
+                      className={`group relative w-full min-w-0 rounded-xl border px-4 py-2.5 text-center text-xs font-medium outline-none transition ${active ? "border-indigo-300 bg-indigo-50" : "border-slate-200 bg-white hover:bg-slate-50"
+                        } focus-visible:ring-2 focus-visible:ring-indigo-400`}
                     >
                       <span className="relative z-10">{t}</span>
                       <span
-                        className={`absolute left-1/2 bottom-1 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-all duration-300 ${
-                          active ? "w-3/4" : "group-hover:w-1/2"
-                        }`}
+                        className={`absolute left-1/2 bottom-1 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-all duration-300 ${active ? "w-3/4" : "group-hover:w-1/2"
+                          }`}
                       />
                     </button>
                   );
@@ -311,9 +313,8 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-                  openPhase ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                }`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openPhase ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
               >
                 <div className="overflow-hidden">
                   {openPhase && (
@@ -335,7 +336,7 @@ export default function FeaturesSection() {
             </div>
           </TiltCard>
 
-         
+
           <TiltCard accent="fuchsia">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -360,11 +361,10 @@ export default function FeaturesSection() {
                       onClick={() => setOpenMetric(active ? null : k)}
                       type="button"
                       aria-expanded={active}
-                      className={`group/metric w-full min-w-0 rounded-2xl border p-3 text-left outline-none transition ${
-                        active
+                      className={`group/metric w-full min-w-0 rounded-2xl border p-3 text-left outline-none transition ${active
                           ? "border-violet-300 bg-violet-50 shadow-[0_8px_26px_rgba(124,58,237,0.15)]"
                           : "border-slate-200 bg-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(2,6,23,0.07)]"
-                      }`}
+                        }`}
                     >
                       <div className="flex items-center justify-between">
                         <div className="truncate text-[12px] text-slate-600">{m.title}</div>
@@ -383,9 +383,8 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-                  openMetric ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                }`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openMetric ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
               >
                 <div className="overflow-hidden">
                   {openMetric && (
@@ -409,7 +408,7 @@ export default function FeaturesSection() {
             </div>
           </TiltCard>
 
-         
+
           <TiltCard accent="emerald">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -424,7 +423,7 @@ export default function FeaturesSection() {
                 <span className="rounded-lg bg-slate-100 px-2 py-1 text-[11px] text-slate-600">Canlı Takip</span>
               </div>
 
-             
+
               <div className="mt-6 rounded-2xl border border-slate-200 p-4">
                 <div className="flex items-center justify-between text-xs text-slate-500">
                   <span>Haftalık İlerleme</span>
@@ -446,23 +445,20 @@ export default function FeaturesSection() {
                         aria-expanded={active}
                       >
                         <div
-                          className={`h-24 w-5 overflow-hidden rounded-md bg-slate-100 ring-offset-2 transition ${
-                            active ? "ring-2 ring-emerald-400" : "ring-0"
-                          }`}
+                          className={`h-24 w-5 overflow-hidden rounded-md bg-slate-100 ring-offset-2 transition ${active ? "ring-2 ring-emerald-400" : "ring-0"
+                            }`}
                         >
                           <div
-                            className={`h-full w-full origin-bottom rounded-md ${
-                              up
+                            className={`h-full w-full origin-bottom rounded-md ${up
                                 ? "bg-gradient-to-t from-emerald-500 to-cyan-500"
                                 : "bg-gradient-to-t from-fuchsia-500 to-indigo-500"
-                            } animate-[grow_900ms_ease-out]`}
+                              } animate-[grow_900ms_ease-out]`}
                             style={{ transform: `scaleY(${val / 100})` }}
                           />
                         </div>
                         <div
-                          className={`flex items-center gap-0.5 text-[10px] ${
-                            up ? "text-emerald-600" : "text-fuchsia-600"
-                          }`}
+                          className={`flex items-center gap-0.5 text-[10px] ${up ? "text-emerald-600" : "text-fuchsia-600"
+                            }`}
                         >
                           <svg viewBox="0 0 24 24" className="size-3" fill="currentColor" aria-hidden="true">
                             {up ? <path d="M12 5l7 7H5l7-7z" /> : <path d="M12 19l7-7H5l7 7z" />}
@@ -480,9 +476,8 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-                  openWeek !== null ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                }`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openWeek !== null ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                  }`}
               >
                 <div className="overflow-hidden">
                   {openWeek !== null && (

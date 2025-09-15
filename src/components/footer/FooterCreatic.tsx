@@ -1,4 +1,4 @@
-// src/components/FooterCreatic.tsx
+
 "use client";
 
 import React from "react";
@@ -18,17 +18,22 @@ export default function FooterCreatic() {
         </div>
 
         <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-7 gap-y-2 text-[13px]">
-          {["Anasayfa", "Hakkımda", "Servis", "Pörtföy", "Galeri", "İletişim"].map(
-            (item) => (
-              <a
-                key={item}
-                href="#"
-                className="relative text-white/70 transition-colors hover:text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white/40 after:transition-all hover:after:w-full"
-              >
-                {item}
-              </a>
-            )
-          )}
+          {[
+            { label: "Anasayfa", href: "/" },
+            { label: "Hakkımda", href: "/hakkimda" },
+            { label: "Sosyal", href: "/sosyalmedya" },
+            { label: "Lokasyon", href: "/lokasyon" },
+            { label: "Galeri", href: "/galeri" },
+            { label: "İletişim", href: "/iletisim" },
+          ].map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="relative text-white/70 transition-colors hover:text-white after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-white/40 after:transition-all hover:after:w-full"
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <p className="mt-5 max-w-2xl text-center text-xs leading-6 text-white/80">

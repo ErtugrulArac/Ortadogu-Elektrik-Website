@@ -20,7 +20,7 @@ const App = () => {
       textColor: "#ffffff",
       links: [
         { label: "Sanat Galerimiz", ariaLabel: "Galeri Sanat Galerimiz", href: "/galeri" },
-        { label: "Enerji Estetiği", ariaLabel: "Galeri Enerji Estetiği", href: "#" },
+        { label: "Enerji Estetiği", ariaLabel: "Galeri Enerji Estetiği", href: "/galeri" },
       ]
     },
     {
@@ -29,8 +29,8 @@ const App = () => {
       textColor: "#ffffff",
       links: [
         { label: "İletişim", ariaLabel: "Email us", href: "/iletisim" },
-        { label: "Sosyal Medya", ariaLabel: "Twitter", href: "#" },
-        { label: "Lokasyon", ariaLabel: "LinkedIn", href: "#" }
+        { label: "Sosyal Medya", ariaLabel: "Twitter", href: "/sosyalmedya" },
+        { label: "Lokasyon", ariaLabel: "LinkedIn", href: "/lokasyon" }
       ]
     }
   ];
@@ -39,7 +39,7 @@ const App = () => {
     <CardNav
       logo={logo}
       logoAlt="Ortadoğu Elektrik Logo"
-      logoHref="/"                 // ✅ Logo tıklanınca anasayfa
+      logoHref="/"                 
       items={items}
       baseColor="#000000"
       menuColor="#ffffff"

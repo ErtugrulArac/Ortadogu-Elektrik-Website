@@ -1,4 +1,3 @@
-// src/components/FooterOrtadoguMinimal.tsx
 "use client";
 
 import Link from "next/link";
@@ -24,9 +23,9 @@ export default function FooterOrtadoguMinimal() {
 
                 <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
                     <Link href="/" className="text-white/80 hover:text-white">Anasayfa</Link>
-                    <Link href="/hakkimizda" className="text-white/80 hover:text-white">Hakkımda</Link>
-                    <Link href="/hizmetler" className="text-white/80 hover:text-white">Servis</Link>
-                    <Link href="/portfoy" className="text-white/80 hover:text-white">Pörtföy</Link>
+                    <Link href="/hakkimda" className="text-white/80 hover:text-white">Hakkımda</Link>
+                    <Link href="/sosyalmedya" className="text-white/80 hover:text-white">Sosyal</Link>
+                    <Link href="/lokasyon" className="text-white/80 hover:text-white">Lokasyon</Link>
                     <Link href="/galeri" className="text-white/80 hover:text-white">Galeri</Link>
                     <Link href="/iletisim" className="text-white/80 hover:text-white">İletişim</Link>
                 </nav>

@@ -189,14 +189,12 @@ const CardNav: React.FC<CardNavProps> = ({
               tabIndex={0}
             >
               <div
-                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                  isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
-                } group-hover:opacity-80`}
+                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
+                  } group-hover:opacity-80`}
               />
               <div
-                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${
-                  isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
-                } group-hover:opacity-80`}
+                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
+                  } group-hover:opacity-80`}
               />
             </div>
 
@@ -211,20 +209,19 @@ const CardNav: React.FC<CardNavProps> = ({
               </a>
             </div>
 
-            {/* Get Started (beyaz zemin, ortalı metin) */}
-            <button
-              type="button"
+            
+            <a
+              href="/iletisim" 
               className="card-nav-cta-button hidden md:inline-flex items-center justify-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 h-[40px] font-medium cursor-pointer transition-colors duration-300"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
               İletişime Geç
-            </button>
+            </a>
           </div>
 
           <div
-            className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${
-              isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
-            } md:flex-row md:items-end md:gap-[12px]`}
+            className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
+              } md:flex-row md:items-end md:gap-[12px]`}
             aria-hidden={!isExpanded}
           >
             {(items || []).slice(0, 3).map((item, idx) => (

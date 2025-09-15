@@ -128,7 +128,6 @@ export default function ContactDock({
                 </button>
               </div>
 
-              {/* İki buton  */}
               <div className="flex items-center gap-2 px-2 py-2">
               
                 <a
