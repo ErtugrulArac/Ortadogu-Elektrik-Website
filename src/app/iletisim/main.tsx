@@ -5,6 +5,10 @@ import React from "react";
 import { MapPin, Phone, Mail, Clock, Globe } from "lucide-react";
 
 export default function IletisimPage() {
+  // basit bir sayaçla gecikmeleri artırıyoruz
+  let d = 0;
+  const step = 120; // ms
+
   return (
     <main className="relative min-h-dvh w-full overflow-hidden bg-transparent pt-16 text-slate-200">
       {/* arka plan ışıma (global gradient’i bozmaz) */}
@@ -38,15 +42,13 @@ export default function IletisimPage() {
             icon={<MapPin className="h-6 w-6" />}
             title="Adres"
             lines={["Ankara, Etimesgut Sanayi Bölgesi", "No: 123, Türkiye"]}
+            delayMs={(d += step)}
           />
           <InfoCard
             icon={<Clock className="h-6 w-6" />}
             title="Çalışma Saatleri"
-            lines={[
-              "Pazartesi – Cuma: 09:00 – 18:00",
-              "Cumartesi: 09:00 – 13:00",
-              "Pazar: Kapalı",
-            ]}
+            lines={["Pazartesi – Cuma: 09:00 – 18:00", "Cumartesi: 09:00 – 13:00", "Pazar: Kapalı"]}
+            delayMs={(d += step)}
           />
         </div>
 
@@ -56,11 +58,13 @@ export default function IletisimPage() {
             icon={<Phone className="h-6 w-6" />}
             title="Telefon"
             lines={["+90 (312) 123 45 67", "Hafta içi 09:00–18:00"]}
+            delayMs={(d += step)}
           />
           <InfoCard
             icon={<Globe className="h-6 w-6" />}
             title="Web Sitesi"
             lines={["www.ortadoguelektrik.com", "Güncel projeler & haberler"]}
+            delayMs={(d += step)}
           />
         </div>
 
@@ -70,27 +74,50 @@ export default function IletisimPage() {
             icon={<Mail className="h-6 w-6" />}
             title="E-posta"
             lines={["info@ortadoguelektrik.com", "1 iş günü içinde dönüş"]}
+            delayMs={(d += step)}
           />
           <InfoCard
             icon={<MapPin className="h-6 w-6" />}
             title="Merkez Ofis"
             lines={["Ahi Mesut Bulvarı, Elvankent", "Etimesgut / Ankara"]}
+            delayMs={(d += step)}
           />
         </div>
       </div>
+
+      {/* Animasyon util: SEO-safe (DOM sabit), motion-safe ile kısıtlı */}
+      <style jsx global>{`
+        @layer utilities {
+          @keyframes fadeSlideUp {
+            0% {
+              opacity: 0;
+              transform: translateY(14px);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+          .animate-fadeSlideUp {
+            animation: fadeSlideUp 0.7s ease-out both;
+          }
+        }
+      `}</style>
     </main>
   );
 }
 
-/* ---------- Revize Kart Bileşeni (kurumsal gri-mavi zemin) ---------- */
+/* ---------- Revize Kart Bileşeni (kurumsal gri-mavi + SEO-safe animasyon + stagger) ---------- */
 function InfoCard({
   icon,
   title,
   lines,
+  delayMs = 0,
 }: {
   icon: React.ReactNode;
   title: string;
   lines: string[];
+  delayMs?: number; // ⬅️ sırayla giriş için gecikme
 }) {
   return (
     <div
@@ -101,11 +128,13 @@ function InfoCard({
         p-6
         shadow-[0_10px_30px_rgba(0,0,0,0.25)]
         ring-1 ring-black/40
-        transition
-        hover:-translate-y-[2px]
+        transition-all duration-500 ease-out
+        hover:-translate-y-[6px]
         hover:bg-[#1e293b]/80  /* hover'da bir tık açılıyor (slate-800 tonu) */
         hover:shadow-[0_18px_46px_rgba(0,0,0,0.28)]
+        motion-safe:animate-fadeSlideUp
       "
+      style={{ animationDelay: `${Math.max(0, delayMs)}ms` }}
     >
       {/* üst ince çizgi parıltı (cyan→indigo kurumsal vurgu) */}
       <div
@@ -121,15 +150,15 @@ function InfoCard({
             grid h-12 w-12 shrink-0 place-items-center rounded-xl
             bg-gradient-to-br from-sky-500/20 to-indigo-500/20 text-sky-300
             ring-1 ring-white/10
-            transition-transform duration-300
-            group-hover:rotate-6 group-hover:scale-105
+            transition-transform duration-500
+            group-hover:rotate-6 group-hover:scale-110
           "
         >
           {icon}
         </div>
 
         {/* içerik */}
-        <div>
+        <div className="transition-all duration-500 group-hover:translate-x-1">
           <h3 className="text-lg font-semibold text-slate-100">{title}</h3>
           <div className="mt-1 space-y-0.5 text-sm text-slate-300">
             {lines.map((l, i) => (
