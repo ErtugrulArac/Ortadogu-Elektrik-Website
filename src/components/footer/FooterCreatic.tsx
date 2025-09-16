@@ -7,10 +7,10 @@ import { FaWhatsapp } from "react-icons/fa";
 
 export default function FooterOrtadoguMinimal() {
     return (
-        <footer className="relative bg-black text-white">
-            {/* Hafif yeşilimsi parlama efekti */}
-            <div className="pointer-events-none absolute inset-0 [background:radial-gradient(1100px_320px_at_50%_-6%,rgba(16,185,129,.08),transparent_70%)]" />
-            
+        <footer className="relative bg-black text-white overflow-hidden">
+            {/* Arka planda yarım daire mavi gradyan */}
+            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,rgba(56,189,248,0.25)_0%,transparent_70%)]" />
+
             <div className="relative mx-auto max-w-6xl px-6 py-10 sm:py-12 text-center">
                 {/* Logo */}
                 <div className="flex justify-center">
@@ -26,34 +26,47 @@ export default function FooterOrtadoguMinimal() {
 
                 {/* Menü */}
                 <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
-                    <Link href="/" className="text-white/80 hover:text-white">Anasayfa</Link>
-                    <Link href="/hakkimda" className="text-white/80 hover:text-white">Hakkımda</Link>
-                    <Link href="/sosyalmedya" className="text-white/80 hover:text-white">Sosyal</Link>
-                    <Link href="/lokasyon" className="text-white/80 hover:text-white">Lokasyon</Link>
-                    <Link href="/galeri" className="text-white/80 hover:text-white">Galeri</Link>
-                    <Link href="/iletisim" className="text-white/80 hover:text-white">İletişim</Link>
+                    {[
+                        { name: "Anasayfa", href: "/" },
+                        { name: "Hakkımda", href: "/hakkimda" },
+                        { name: "Sosyal", href: "/sosyalmedya" },
+                        { name: "Lokasyon", href: "/lokasyon" },
+                        { name: "Galeri", href: "/galeri" },
+                        { name: "İletişim", href: "/iletisim" },
+                    ].map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className="relative text-white/80 hover:text-white transition-colors duration-300
+                                       after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
                 </nav>
 
                 {/* Açıklama */}
                 <p className="mt-6 text-sm text-white/75">
-                    Ortadoğu Elektrik, enerjiyi yalnızca kablolara değil, hayata değer katan güvene ve kalıcı çözümlere dönüştürür.
+                   Ortadoğu Elektrik, enerjiyi yalnızca kablolara değil, hayata değer katan güvene ve kalıcı çözümlere dönüştürür.
+
+
                 </p>
 
                 {/* Sosyal ikonlar */}
                 <div className="mt-6 flex items-center justify-center gap-4">
-                    <a href="https://wa.me/905000000000" aria-label="WhatsApp" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
+                    <a href="https://wa.me/905000000000" aria-label="WhatsApp" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-sky-400/50 hover:scale-110 transition">
                         <FaWhatsapp className="h-4 w-4" />
                     </a>
-                    <a href="#" aria-label="Facebook" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
+                    <a href="#" aria-label="Facebook" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-sky-400/50 hover:scale-110 transition">
                         <FiFacebook className="h-4 w-4" />
                     </a>
-                    <a href="#" aria-label="Instagram" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
+                    <a href="#" aria-label="Instagram" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-sky-400/50 hover:scale-110 transition">
                         <FiInstagram className="h-4 w-4" />
                     </a>
-                    <a href="#" aria-label="LinkedIn" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
+                    <a href="#" aria-label="LinkedIn" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-sky-400/50 hover:scale-110 transition">
                         <FiLinkedin className="h-4 w-4" />
                     </a>
-                    <a href="#" aria-label="Twitter" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
+                    <a href="#" aria-label="Twitter" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-sky-400/50 hover:scale-110 transition">
                         <FiTwitter className="h-4 w-4" />
                     </a>
                 </div>
