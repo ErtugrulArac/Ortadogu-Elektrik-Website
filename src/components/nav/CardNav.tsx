@@ -19,12 +19,12 @@ export type CardNavItem = {
 export interface CardNavProps {
   logo: string;
   logoAlt?: string;
-  logoHref?: string;          // ✅ eklendi: logo tıklama yönlendirmesi
+  logoHref?: string;
   items: CardNavItem[];
   className?: string;
   ease?: string;
-  baseColor?: string;         // NAV arkaplanı
-  menuColor?: string;         // üst bar text/icon rengi
+  baseColor?: string;
+  menuColor?: string;
   buttonBgColor?: string;
   buttonTextColor?: string;
 }
@@ -32,7 +32,7 @@ export interface CardNavProps {
 const CardNav: React.FC<CardNavProps> = ({
   logo,
   logoAlt = 'Logo',
-  logoHref = '/',             // ✅ varsayılan: ana sayfa
+  logoHref = '/',
   items,
   className = '',
   ease = 'power3.out',
@@ -66,7 +66,7 @@ const CardNav: React.FC<CardNavProps> = ({
         contentEl.style.height = 'auto';
         contentEl.offsetHeight;
 
-        const topBar = 60;
+        const topBar = 60; // mobil sabit
         const padding = 16;
         const contentHeight = contentEl.scrollHeight;
 
@@ -85,7 +85,11 @@ const CardNav: React.FC<CardNavProps> = ({
     const navEl = navRef.current;
     if (!navEl) return null;
 
-    gsap.set(navEl, { height: 60, overflow: 'hidden' });
+    // ✅ md ve üzeri: 84px, mobil: 60px
+    const isDesktop = typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches;
+    const initialHeight = isDesktop ? 84 : 60;
+
+    gsap.set(navEl, { height: initialHeight, overflow: 'hidden' });
     gsap.set(cardsRef.current, { y: 50, opacity: 0 });
 
     const tl = gsap.timeline({ paused: true });
@@ -158,7 +162,6 @@ const CardNav: React.FC<CardNavProps> = ({
 
   return (
     <>
-      {/* ✅ Dışarı tıklayınca kapansın (backdrop) */}
       {isExpanded && (
         <button
           type="button"
@@ -168,19 +171,20 @@ const CardNav: React.FC<CardNavProps> = ({
         />
       )}
 
+      {/* ✅ Masaüstünde biraz daha geniş */}
       <div
-        className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
+        className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] md:w-[98%] md:max-w-[1180px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
       >
         <nav
           ref={navRef}
-          className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] p-0 rounded-xl relative overflow-hidden will-change-[height] border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]`}
+          className={`card-nav ${isExpanded ? 'open' : ''} block h-[60px] md:h-[84px] p-0 rounded-xl relative overflow-hidden will-change-[height] border border-white/10 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]`}
           style={{ backgroundColor: baseColor }}
         >
           <div
-            className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 pl-[1.1rem] z-[2] bg-transparent"
+            className="card-nav-top absolute inset-x-0 top-0 h-[60px] md:h-[84px] flex items-center justify-between p-2 pl-[1.1rem] z-[2] bg-transparent"
             style={{ color: menuColor }}
           >
-            {/* Hamburger (beyaz çizgiler) */}
+            {/* Hamburger */}
             <div
               className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
               onClick={toggleMenu}
@@ -189,39 +193,36 @@ const CardNav: React.FC<CardNavProps> = ({
               tabIndex={0}
             >
               <div
-                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''
-                  } group-hover:opacity-80`}
+                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''} group-hover:opacity-80`}
               />
               <div
-                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''
-                  } group-hover:opacity-80`}
+                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''} group-hover:opacity-80`}
               />
             </div>
 
-            {/* ✅ Logo: tıklanınca yönlendir */}
-          <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-  <a href={logoHref} aria-label={logoAlt} className="inline-flex items-center">
-    <img
-      src={logo}
-      alt={logoAlt}
-      className="logo max-h-[65px] max-md:max-h-[55px] h-auto w-auto object-contain cursor-pointer drop-shadow-[0_0_20px_rgba(255,255,255,0.08)]"
-    />
-  </a>
-</div>
-
+            {/* ✅ Logo: masaüstünde daha büyük */}
+            <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
+              <a href={logoHref} aria-label={logoAlt} className="inline-flex items-center">
+                <img
+                  src={logo}
+                  alt={logoAlt}
+                  className="logo max-h-[65px] md:max-h-[84px] max-md:max-h-[55px] h-auto w-auto object-contain cursor-pointer drop-shadow-[0_0_20px_rgba(255,255,255,0.08)]"
+                />
+              </a>
+            </div>
 
             <a
               href="/iletisim"
-              className="card-nav-cta-button hidden md:inline-flex items-center justify-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 h-[40px] font-medium cursor-pointer transition-colors duration-300"
+              className="card-nav-cta-button hidden md:inline-flex items-center justify-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 h-[44px] font-medium cursor-pointer transition-colors duration-300"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
               İletişime Geç
             </a>
           </div>
 
+          {/* ✅ İçerik başlangıcı masaüstünde 84px */}
           <div
-            className={`card-nav-content absolute left-0 right-0 top-[60px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'
-              } md:flex-row md:items-end md:gap-[12px]`}
+            className={`card-nav-content absolute left-0 right-0 top-[60px] md:top-[84px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'} md:flex-row md:items-end md:gap-[12px]`}
             aria-hidden={!isExpanded}
           >
             {(items || []).slice(0, 3).map((item, idx) => (
