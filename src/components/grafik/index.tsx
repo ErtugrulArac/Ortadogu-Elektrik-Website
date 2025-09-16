@@ -175,7 +175,7 @@ function TiltCard({
   );
 }
 
-/* ——— Metric button: yüzdeyi kaldır, barı tam doldur, fare takibi ekle ——— */
+
 function MetricButton({
   k,
   m,
@@ -211,7 +211,7 @@ function MetricButton({
 
       <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
         <div
-          className="h-full w-full rounded-full bg-gradient-to-r from-fuchsia-500 via-pink-500 to-rose-400 transition-opacity duration-500 group-hover/metric:opacity-95"
+          className="h-full w-full rounded-full bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-500 transition-opacity duration-500 group-hover/metric:opacity-95"
           style={{ width: "100%" }}
         />
       </div>
