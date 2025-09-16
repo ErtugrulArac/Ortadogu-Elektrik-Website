@@ -143,7 +143,7 @@ export default function ElectricImpactSection() {
       <div className="wrap" ref={wrapRef}>
         <header className="hero">
           <h1 className={`title ${on ? "live" : "dim"}`}>Elektriğin Gücü</h1>
-          <p className="subtitle">Ortadoğu Elektrik ile tek dokunuşta aydınlat.</p>
+          <p className="subtitle">Işığın Gücüyle Binalara Hayat Veren Firma</p>
           <button
             ref={btnRef}
             className={`cta ${on ? "on" : "off"}`}

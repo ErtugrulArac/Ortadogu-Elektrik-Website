@@ -17,7 +17,7 @@ export default function PageLoader({
   brand = "ORTADOĞU ELEKTRİK",
   open,
   onComplete,
-  quote = "Sabır, kusursuz işçiliğin sessiz ortağıdır.",
+  quote = "Modern yapılar sağlam elektrikle mümkün...",
 }: Props) {
   const prefersReducedMotion = useReducedMotion();
 

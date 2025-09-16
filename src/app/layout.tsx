@@ -42,8 +42,8 @@ export default function RootLayout({
         {children}
 
         <ContactDock
-          whatsapp={{ number: "905307464899", message: "Merhaba, bilgi almak istiyorum." }}
-          phone={{ number: "+905307464899", label: "Hızlı İletişim" }}
+          whatsapp={{ number: "905314873594", message: "Merhaba, bilgi almak istiyorum." }}
+          phone={{ number: "+905314873594", label: "Hızlı İletişim" }}
           position="br" // "bl" | "tr" | "tl"
         />
       </body>

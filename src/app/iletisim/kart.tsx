@@ -6,18 +6,18 @@ import { PhoneCall, ArrowRight, Phone } from "lucide-react";
 type Props = {
   baslik?: string;
   aciklama?: string;
-  telGorunen?: string;    // "+90 (312) 123 45 67"
-  telArama?: string;      // "tel:+903121234567"
-  whatsapp?: string;      // "905xxxxxxxxx" (+ yok)
-  wpMesaj?: string;       // varsayılan hazır mesaj
-  ctaText?: string;       // "Keşif Talep Et"
+  telGorunen?: string;    
+  telArama?: string;     
+  whatsapp?: string;      
+  wpMesaj?: string;       
+  ctaText?: string;       
 };
 
 export default function KesifCagri({
   baslik = "Projeniz için keşif mi gerekiyor?",
   aciklama = "Enerji altyapısı, otomasyon ve bakım hizmetlerinde uçtan uca çözümler. Saha keşfi ve teknik yönlendirme için ekibimiz hazır.",
-  telGorunen = "+90 (312) 123 45 67",
-  telArama = "tel:+903121234567",
+  telGorunen = "+90 531 487 3594",
+  telArama = "tel:+905314873594",
   whatsapp = "905307464899",
   wpMesaj = "Merhaba, proje için ücretsiz keşif planlamak istiyorum.",
   ctaText = "Keşif Talep Et",

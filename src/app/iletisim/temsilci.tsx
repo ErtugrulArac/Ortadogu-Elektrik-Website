@@ -14,10 +14,10 @@ type Props = {
 };
 
 export default function MusteriTemsilcisi({
-  ad = "Büşra Yıldız",
+  ad = "Ortadoğu Elektrik",
   unvan = "Müşteri Temsilcisi",
-  tel = "+90 555 555 55 55",
-  whatsapp = "905307464899",
+  tel = "+905357049398",
+  whatsapp = "+905357049398",
   saat = "Hafta içi 09:00 – 18:00",
   yanit = "Ortalama yanıt: 15 dk",
   durum = "online",
