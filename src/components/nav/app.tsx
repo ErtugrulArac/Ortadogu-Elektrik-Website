@@ -1,7 +1,7 @@
 import CardNav from './CardNav'
 
 
-const logo = "/arlanap.png";
+const logo = "/ortadoğulogo.webp";
 
 const App = () => {
   const items = [

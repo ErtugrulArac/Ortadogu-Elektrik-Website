@@ -199,19 +199,19 @@ const CardNav: React.FC<CardNavProps> = ({
             </div>
 
             {/* ✅ Logo: tıklanınca yönlendir */}
-            <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
-              <a href={logoHref} aria-label={logoAlt} className="inline-flex items-center">
-                <img
-                  src={logo}
-                  alt={logoAlt}
-                  className="logo h-[80px] max-md:h-[50px] cursor-pointer drop-shadow-[0_0_20px_rgba(255,255,255,0.08)]"
-                />
-              </a>
-            </div>
+          <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
+  <a href={logoHref} aria-label={logoAlt} className="inline-flex items-center">
+    <img
+      src={logo}
+      alt={logoAlt}
+      className="logo max-h-[65px] max-md:max-h-[55px] h-auto w-auto object-contain cursor-pointer drop-shadow-[0_0_20px_rgba(255,255,255,0.08)]"
+    />
+  </a>
+</div>
 
-            
+
             <a
-              href="/iletisim" 
+              href="/iletisim"
               className="card-nav-cta-button hidden md:inline-flex items-center justify-center border-0 rounded-[calc(0.75rem-0.2rem)] px-4 h-[40px] font-medium cursor-pointer transition-colors duration-300"
               style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             >
