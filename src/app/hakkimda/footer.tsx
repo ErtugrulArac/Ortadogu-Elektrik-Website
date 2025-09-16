@@ -31,7 +31,7 @@ export default function FooterOrtadoguMinimal() {
                 </nav>
 
                 <p className="mt-6 text-sm text-white/75">
-                    Ortadoğu Elektrik, enerjiyi yalnızca kablolara değil, hayata değer katan güvene ve kalıcı çözümlere dönüştürür.
+                    Enerjiyi sadece aktarmıyor, güvene, kaliteye ve hayatı aydınlatan çözümlere dönüştürüyoruz.
                 </p>
 
                 <div className="mt-6 flex items-center justify-center gap-4">
