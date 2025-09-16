@@ -12,28 +12,42 @@ export default function FooterOrtadoguMinimal() {
             <div className="relative mx-auto max-w-6xl px-6 py-10 sm:py-12 text-center">
                 <div className="flex justify-center">
                     <Image
-                        src="/arlanap.png"
+                        src="/ortadoğulogo.webp"
                         alt="Ortadoğu Elektrik"
                         width={800}
                         height={160}
-                        className="w-[90px] h-auto max-w-none"   // <- boyutu burada veriyoruz
+                        className="w-[90px] h-auto max-w-none"
                         priority
                     />
                 </div>
 
+                {/* Menü */}
                 <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm">
-                    <Link href="/" className="text-white/80 hover:text-white">Anasayfa</Link>
-                    <Link href="/hakkimda" className="text-white/80 hover:text-white">Hakkımda</Link>
-                    <Link href="/sosyalmedya" className="text-white/80 hover:text-white">Sosyal</Link>
-                    <Link href="/lokasyon" className="text-white/80 hover:text-white">Lokasyon</Link>
-                    <Link href="/galeri" className="text-white/80 hover:text-white">Galeri</Link>
-                    <Link href="/iletisim" className="text-white/80 hover:text-white">İletişim</Link>
+                    {[
+                        { name: "Anasayfa", href: "/" },
+                        { name: "Hakkımda", href: "/hakkimda" },
+                        { name: "Sosyal", href: "/sosyalmedya" },
+                        { name: "Lokasyon", href: "/lokasyon" },
+                        { name: "Galeri", href: "/galeri" },
+                        { name: "İletişim", href: "/iletisim" },
+                    ].map((item) => (
+                        <Link
+                            key={item.name}
+                            href={item.href}
+                            className="relative text-white/80 hover:text-white transition-colors duration-300
+                                       after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-sky-400 after:transition-all after:duration-300 hover:after:w-full"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
                 </nav>
 
+                {/* Açıklama */}
                 <p className="mt-6 text-sm text-white/75">
                     Enerjiyi sadece aktarmıyor, güvene, kaliteye ve hayatı aydınlatan çözümlere dönüştürüyoruz.
                 </p>
 
+                {/* Sosyal ikonlar */}
                 <div className="mt-6 flex items-center justify-center gap-4">
                     <a href="https://wa.me/905000000000" aria-label="WhatsApp" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
                         <FaWhatsapp className="h-4 w-4" />
@@ -52,6 +66,7 @@ export default function FooterOrtadoguMinimal() {
                     </a>
                 </div>
 
+                {/* Telif hakkı */}
                 <p className="mt-8 text-[11px] text-white/60">
                     Copyright © 1996–{new Date().getFullYear()} Ortadoğu Elektrik. Tüm Hakları Saklıdır.
                 </p>
