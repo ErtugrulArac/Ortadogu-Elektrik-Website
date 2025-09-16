@@ -66,7 +66,7 @@ const CardNav: React.FC<CardNavProps> = ({
         contentEl.style.height = 'auto';
         contentEl.offsetHeight;
 
-        const topBar = 60; // mobil sabit
+        const topBar = 60;
         const padding = 16;
         const contentHeight = contentEl.scrollHeight;
 
@@ -85,7 +85,6 @@ const CardNav: React.FC<CardNavProps> = ({
     const navEl = navRef.current;
     if (!navEl) return null;
 
-    // ✅ md ve üzeri: 84px, mobil: 60px
     const isDesktop = typeof window !== 'undefined' && window.matchMedia('(min-width: 768px)').matches;
     const initialHeight = isDesktop ? 84 : 60;
 
@@ -171,7 +170,6 @@ const CardNav: React.FC<CardNavProps> = ({
         />
       )}
 
-      {/* ✅ Masaüstünde biraz daha geniş */}
       <div
         className={`card-nav-container absolute left-1/2 -translate-x-1/2 w-[90%] max-w-[800px] md:w-[98%] md:max-w-[1180px] z-[99] top-[1.2em] md:top-[2em] ${className}`}
       >
@@ -184,7 +182,6 @@ const CardNav: React.FC<CardNavProps> = ({
             className="card-nav-top absolute inset-x-0 top-0 h-[60px] md:h-[84px] flex items-center justify-between p-2 pl-[1.1rem] z-[2] bg-transparent"
             style={{ color: menuColor }}
           >
-            {/* Hamburger */}
             <div
               className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}
               onClick={toggleMenu}
@@ -192,15 +189,31 @@ const CardNav: React.FC<CardNavProps> = ({
               aria-label={isExpanded ? 'Close menu' : 'Open menu'}
               tabIndex={0}
             >
+              {/* Mobilde 2 çizgi */}
               <div
-                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''} group-hover:opacity-80`}
+                className={`md:hidden w-[30px] h-[2px] bg-white transition-all duration-300 ease-linear 
+      ${isHamburgerOpen ? 'translate-y-[4px] rotate-45' : ''} ${!isHamburgerOpen ? 'group-hover:opacity-80' : ''}`}
               />
               <div
-                className={`hamburger-line w-[30px] h-[2px] bg-white transition-[transform,opacity,margin] duration-300 ease-linear [transform-origin:50%_50%] ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''} group-hover:opacity-80`}
+                className={`md:hidden w-[30px] h-[2px] bg-white transition-all duration-300 ease-linear 
+      ${isHamburgerOpen ? '-translate-y-[4px] -rotate-45' : ''} ${!isHamburgerOpen ? 'group-hover:opacity-80' : ''}`}
+              />
+
+              {/* Masaüstünde 3 çizgi */}
+              <div
+                className={`hidden md:block w-[30px] h-[2px] bg-white transition-all duration-300 ease-linear 
+      ${isHamburgerOpen ? 'translate-y-[8px] rotate-45' : ''} ${!isHamburgerOpen ? 'group-hover:opacity-80' : ''}`}
+              />
+              <div
+                className={`hidden md:block w-[30px] h-[2px] bg-white transition-all duration-300 ease-linear 
+      ${isHamburgerOpen ? 'opacity-0' : 'opacity-100'} ${!isHamburgerOpen ? 'group-hover:opacity-80' : ''}`}
+              />
+              <div
+                className={`hidden md:block w-[30px] h-[2px] bg-white transition-all duration-300 ease-linear 
+      ${isHamburgerOpen ? '-translate-y-[8px] -rotate-45' : ''} ${!isHamburgerOpen ? 'group-hover:opacity-80' : ''}`}
               />
             </div>
 
-            {/* ✅ Logo: masaüstünde daha büyük */}
             <div className="logo-container flex items-center md:absolute md:left-1/2 md:top-1/2 md:-translate-x-1/2 md:-translate-y-1/2 order-1 md:order-none">
               <a href={logoHref} aria-label={logoAlt} className="inline-flex items-center">
                 <img
@@ -220,7 +233,6 @@ const CardNav: React.FC<CardNavProps> = ({
             </a>
           </div>
 
-          {/* ✅ İçerik başlangıcı masaüstünde 84px */}
           <div
             className={`card-nav-content absolute left-0 right-0 top-[60px] md:top-[84px] bottom-0 p-2 flex flex-col items-stretch gap-2 justify-start z-[1] ${isExpanded ? 'visible pointer-events-auto' : 'invisible pointer-events-none'} md:flex-row md:items-end md:gap-[12px]`}
             aria-hidden={!isExpanded}
