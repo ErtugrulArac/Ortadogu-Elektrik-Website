@@ -5,12 +5,14 @@ import { MapPin, Phone, Clock, ExternalLink } from "lucide-react";
 import React from "react";
 
 export default function LokasyonPage() {
-  // Embed: adresi yaz, Google kendisi konumu gösterir
+  const address = "Bağlıca, 1344. Sk No:8/1 B Blok , 06790 Etimesgut/Ankara";
   const mapsEmbed =
-    "https://www.google.com/maps?q=Ahi+Mesut+Bulvar%C4%B1,+Elvankent,+Etimesgut,+Ankara&hl=tr&output=embed";
-  // İstersen doğrudan uygulamada açılacak normal URL (yedek)
+    "https://www.google.com/maps?q=" +
+    encodeURIComponent(address) +
+    "&z=16&hl=tr&output=embed";
   const mapsOpen =
-    "https://www.google.com/maps/search/?api=1&query=Ahi+Mesut+Bulvar%C4%B1+Elvankent+Etimesgut+Ankara";
+    "https://www.google.com/maps/search/?api=1&query=" +
+    encodeURIComponent(address);
 
   return (
     <main className="relative min-h-dvh w-full bg-transparent pt-20 text-slate-200">
@@ -27,17 +29,16 @@ export default function LokasyonPage() {
           ulaşabilir ve yol tarifi alabilirsiniz. Randevu için telefonla bize ulaşın.
         </p>
 
-        {/* Bilgi kartları */}
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           <InfoCard
             icon={<MapPin className="h-5 w-5" />}
             title="Adres"
-            lines={["Ahi Mesut Bulvarı, Elvankent", "Etimesgut / Ankara"]}
+            lines={["Baglica Mahallesi, 1344. Sokak, B BlokNo: 8/1 Etimesgut / ANKARA"]}
           />
           <InfoCard
             icon={<Phone className="h-5 w-5" />}
             title="Telefon"
-            lines={["+90 (312) 123 45 67", "Hafta içi 09:00 – 18:00"]}
+            lines={["+90 0531 487 35 94", "Hafta içi 09:00 – 18:00"]}
           />
           <InfoCard
             icon={<Clock className="h-5 w-5" />}
@@ -46,7 +47,6 @@ export default function LokasyonPage() {
           />
         </div>
 
-        {/* Harita */}
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-lg">
           <div className="relative h-[60vh] w-full">
             <iframe
@@ -56,10 +56,10 @@ export default function LokasyonPage() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               allowFullScreen
+              title="Ortadoğu Elektrik Ankara Konumu"
             />
           </div>
 
-          {/* Yedek: yeni sekmede aç */}
           <div className="flex items-center justify-between gap-3 border-t border-white/10 bg-[#0b1320]/60 px-4 py-3">
             <span className="text-xs text-slate-400">
               Harita yüklenmezse Google Haritalar’da açın.
