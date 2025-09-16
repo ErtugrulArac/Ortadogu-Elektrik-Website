@@ -3,10 +3,8 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-
 type MetricKey = "topraklama" | "kacak" | "kompanzasyon";
 type PhaseKey = "KESİF" | "TESİSAT" | "PANO" | "KABUL";
-
 
 const weekly = [88, 92, 90, 94, 91, 96, 93, 97];
 
@@ -66,7 +64,6 @@ const phaseNotes: Record<PhaseKey, string[]> = {
   ],
 };
 
-
 function useMouseVars() {
   const ref = useRef<HTMLDivElement>(null);
   const [vars, setVars] = useState({ px: 50, py: 50, mx: 0, my: 0 });
@@ -79,7 +76,6 @@ function useMouseVars() {
       const r = el.getBoundingClientRect();
       const x = ((e.clientX - r.left) / r.width) * 100;
       const y = ((e.clientY - r.top) / r.height) * 100;
-      // normalize: [-1, 1]
       const mx = x / 50 - 1;
       const my = y / 50 - 1;
       setVars({ px: x, py: y, mx, my });
@@ -153,7 +149,6 @@ function TiltCard({
         transform: `perspective(900px) rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
       }}
     >
-
       <div
         className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
         style={
@@ -164,23 +159,67 @@ function TiltCard({
           } as React.CSSProperties
         }
       />
-
-
       <div
-        className={`absolute left-5 right-5 top-0 h-[2px] rounded-full opacity-80 ${accent === "indigo"
+        className={`absolute left-5 right-5 top-0 h-[2px] rounded-full opacity-80 ${
+          accent === "indigo"
             ? "bg-gradient-to-r from-indigo-500 to-indigo-300"
             : accent === "emerald"
-              ? "bg-gradient-to-r from-emerald-500 to-emerald-300"
-              : accent === "fuchsia"
-                ? "bg-gradient-to-r from-fuchsia-500 to-fuchsia-300"
-                : "bg-gradient-to-r from-cyan-500 to-cyan-300"
-          }`}
+            ? "bg-gradient-to-r from-emerald-500 to-emerald-300"
+            : accent === "fuchsia"
+            ? "bg-gradient-to-r from-fuchsia-500 to-fuchsia-300"
+            : "bg-gradient-to-r from-cyan-500 to-cyan-300"
+        }`}
       />
       {children}
     </div>
   );
 }
 
+/* ——— Metric button: yüzdeyi kaldır, barı tam doldur, fare takibi ekle ——— */
+function MetricButton({
+  k,
+  m,
+  active,
+  onClick,
+}: {
+  k: MetricKey;
+  m: { title: string; value: number; notes: string[] };
+  active: boolean;
+  onClick: () => void;
+}) {
+  const mag = useMagnetic();
+
+  return (
+    <button
+      ref={mag.ref}
+      key={k}
+      onClick={onClick}
+      type="button"
+      aria-expanded={active}
+      onMouseMove={mag.onFrame}
+      onMouseLeave={mag.reset}
+      className={`group/metric w-full min-w-0 rounded-2xl border p-3 text-left outline-none transition ${
+        active
+          ? "border-violet-300 bg-violet-50 shadow-[0_8px_26px_rgba(124,58,237,0.15)]"
+          : "border-slate-200 bg-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(2,6,23,0.07)]"
+      }`}
+      style={{ transform: `translate3d(${mag.t.x}px, ${mag.t.y}px, 0)` }}
+    >
+      <div className="flex items-center justify-between">
+        <div className="truncate text-[12px] text-slate-600">{m.title}</div>
+      </div>
+
+      <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
+        <div
+          className="h-full w-full rounded-full bg-gradient-to-r from-fuchsia-500 via-pink-500 to-rose-400 transition-opacity duration-500 group-hover/metric:opacity-95"
+          style={{ width: "100%" }}
+        />
+      </div>
+
+      <div className="mt-2 text-[11px] text-slate-500">Detay için tıkla</div>
+    </button>
+  );
+}
 
 export default function FeaturesSection() {
   const [openMetric, setOpenMetric] = useState<MetricKey | null>(null);
@@ -200,13 +239,11 @@ export default function FeaturesSection() {
       className="relative w-full overflow-hidden bg-white py-18 md:py-24"
       style={
         {
-
           ["--px" as any]: `${vars.px}%`,
           ["--py" as any]: `${vars.py}%`,
         } as React.CSSProperties
       }
     >
-
       <div
         className="pointer-events-none absolute inset-0 -z-20 transition-opacity duration-300"
         style={{
@@ -214,7 +251,6 @@ export default function FeaturesSection() {
             "radial-gradient(620px 460px at var(--px) var(--py), rgba(99,102,241,0.09), rgba(236,72,153,0.06) 38%, rgba(16,185,129,0.05) 58%, transparent 70%)",
         }}
       />
-
 
       <div
         className="pointer-events-none absolute -top-40 -left-28 size-[520px] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.18),transparent_60%)] blur-3xl -z-30"
@@ -230,7 +266,6 @@ export default function FeaturesSection() {
       />
 
       <div className="mx-auto w-[92%] max-w-7xl">
-
         <div className="text-center" style={parallax(0.2)}>
           <span className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3 py-1 text-[11px] font-medium text-slate-600 shadow-sm backdrop-blur">
             Ortadoğu Elektrik
@@ -253,7 +288,7 @@ export default function FeaturesSection() {
 
           <div className="mt-6 flex items-center justify-center">
             <a
-              href="/iletisim#temsilci" 
+              href="/iletisim#temsilci"
               className="group relative inline-flex items-center gap-2 rounded-full bg-slate-900 px-5 py-2.5 text-[13px] font-semibold text-white shadow-[0_10px_28px_rgba(2,6,23,0.28)]"
               style={{ transform: `translate3d(${cta.t.x}px, ${cta.t.y}px, 0)` }}
               onMouseMove={cta.onFrame}
@@ -273,9 +308,7 @@ export default function FeaturesSection() {
           </div>
         </div>
 
-
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-
           <TiltCard accent="indigo">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -299,13 +332,15 @@ export default function FeaturesSection() {
                       onClick={() => setOpenPhase(active ? null : t)}
                       type="button"
                       aria-expanded={active}
-                      className={`group relative w-full min-w-0 rounded-xl border px-4 py-2.5 text-center text-xs font-medium outline-none transition ${active ? "border-indigo-300 bg-indigo-50" : "border-slate-200 bg-white hover:bg-slate-50"
-                        } focus-visible:ring-2 focus-visible:ring-indigo-400`}
+                      className={`group relative w-full min-w-0 rounded-xl border px-4 py-2.5 text-center text-xs font-medium outline-none transition ${
+                        active ? "border-indigo-300 bg-indigo-50" : "border-slate-200 bg-white hover:bg-slate-50"
+                      } focus-visible:ring-2 focus-visible:ring-indigo-400`}
                     >
                       <span className="relative z-10">{t}</span>
                       <span
-                        className={`absolute left-1/2 bottom-1 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-all duration-300 ${active ? "w-3/4" : "group-hover:w-1/2"
-                          }`}
+                        className={`absolute left-1/2 bottom-1 h-0.5 w-0 -translate-x-1/2 rounded-full bg-gradient-to-r from-indigo-500 to-fuchsia-500 transition-all duration-300 ${
+                          active ? "w-3/4" : "group-hover:w-1/2"
+                        }`}
                       />
                     </button>
                   );
@@ -313,8 +348,9 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openPhase ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openPhase ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
               >
                 <div className="overflow-hidden">
                   {openPhase && (
@@ -336,7 +372,6 @@ export default function FeaturesSection() {
             </div>
           </TiltCard>
 
-
           <TiltCard accent="fuchsia">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -356,35 +391,21 @@ export default function FeaturesSection() {
                   const m = metricData[k];
                   const active = openMetric === k;
                   return (
-                    <button
+                    <MetricButton
                       key={k}
+                      k={k}
+                      m={m}
+                      active={active}
                       onClick={() => setOpenMetric(active ? null : k)}
-                      type="button"
-                      aria-expanded={active}
-                      className={`group/metric w-full min-w-0 rounded-2xl border p-3 text-left outline-none transition ${active
-                          ? "border-violet-300 bg-violet-50 shadow-[0_8px_26px_rgba(124,58,237,0.15)]"
-                          : "border-slate-200 bg-white hover:-translate-y-0.5 hover:shadow-[0_10px_30px_rgba(2,6,23,0.07)]"
-                        }`}
-                    >
-                      <div className="flex items-center justify-between">
-                        <div className="truncate text-[12px] text-slate-600">{m.title}</div>
-                        <div className="text-xs font-semibold text-slate-800">{m.value}%</div>
-                      </div>
-                      <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-slate-100">
-                        <div
-                          className="h-full rounded-full bg-gradient-to-r from-violet-500 to-indigo-500 transition-[width] duration-500 group-hover/metric:opacity-95"
-                          style={{ width: `${m.value}%` }}
-                        />
-                      </div>
-                      <div className="mt-2 text-[11px] text-slate-500">Detay için tıkla</div>
-                    </button>
+                    />
                   );
                 })}
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openMetric ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openMetric ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
               >
                 <div className="overflow-hidden">
                   {openMetric && (
@@ -408,7 +429,6 @@ export default function FeaturesSection() {
             </div>
           </TiltCard>
 
-
           <TiltCard accent="emerald">
             <div className="relative z-10">
               <div className="flex items-center justify-between">
@@ -422,7 +442,6 @@ export default function FeaturesSection() {
                 </div>
                 <span className="rounded-lg bg-slate-100 px-2 py-1 text-[11px] text-slate-600">Canlı Takip</span>
               </div>
-
 
               <div className="mt-6 rounded-2xl border border-slate-200 p-4">
                 <div className="flex items-center justify-between text-xs text-slate-500">
@@ -445,20 +464,23 @@ export default function FeaturesSection() {
                         aria-expanded={active}
                       >
                         <div
-                          className={`h-24 w-5 overflow-hidden rounded-md bg-slate-100 ring-offset-2 transition ${active ? "ring-2 ring-emerald-400" : "ring-0"
-                            }`}
+                          className={`h-24 w-5 overflow-hidden rounded-md bg-slate-100 ring-offset-2 transition ${
+                            active ? "ring-2 ring-emerald-400" : "ring-0"
+                          }`}
                         >
                           <div
-                            className={`h-full w-full origin-bottom rounded-md ${up
+                            className={`h-full w-full origin-bottom rounded-md ${
+                              up
                                 ? "bg-gradient-to-t from-emerald-500 to-cyan-500"
                                 : "bg-gradient-to-t from-fuchsia-500 to-indigo-500"
-                              } animate-[grow_900ms_ease-out]`}
+                            } animate-[grow_900ms_ease-out]`}
                             style={{ transform: `scaleY(${val / 100})` }}
                           />
                         </div>
                         <div
-                          className={`flex items-center gap-0.5 text-[10px] ${up ? "text-emerald-600" : "text-fuchsia-600"
-                            }`}
+                          className={`flex items-center gap-0.5 text-[10px] ${
+                            up ? "text-emerald-600" : "text-fuchsia-600"
+                          }`}
                         >
                           <svg viewBox="0 0 24 24" className="size-3" fill="currentColor" aria-hidden="true">
                             {up ? <path d="M12 5l7 7H5l7-7z" /> : <path d="M12 19l7-7H5l7 7z" />}
@@ -476,8 +498,9 @@ export default function FeaturesSection() {
               </div>
 
               <div
-                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${openWeek !== null ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
-                  }`}
+                className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+                  openWeek !== null ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
               >
                 <div className="overflow-hidden">
                   {openWeek !== null && (
@@ -506,7 +529,6 @@ export default function FeaturesSection() {
           </TiltCard>
         </div>
 
-        {/* alt özellikler */}
         <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
           {[
             {
