@@ -38,7 +38,7 @@ export default function GaleriTextBlock() {
         {/* CTA */}
         <div className="mt-8 flex justify-center">
           <a
-            href="#teklif"
+            href="/iletisim"
             className="relative inline-flex items-center gap-2 px-6 py-2 rounded-full
                        border border-neutral-700 text-white font-medium
                        bg-black shadow-[inset_0_-1px_0_rgba(255,255,255,0.3)]

@@ -16,7 +16,7 @@ type Project = {
   tagline?: string;
 };
 
-/* ---------- Data (17 Kart, 2 Paragraflık Summary) ---------- */
+/* ---------- Data (İçerik aynen korundu) ---------- */
 const PROJECTS: Project[] = [
   {
     id: "batman-adliye",
@@ -24,10 +24,7 @@ const PROJECTS: Project[] = [
     location: "Batman",
     meta: "Kamu Projesi",
     cover: "/proje/batmanadliye1.webp",
-    images: [
-      "/proje/batmanadliye2.webp",
-      "/proje/batmanadliye3.webp",
-    ],
+    images: ["/proje/batmanadliye2.webp", "/proje/batmanadliye3.webp"],
     summary:
       "Adliye kompleksinin OG/AG enerji dağıtımı, aydınlatma hatları, yangın algılama ve zayıf akım sistemleri uçtan uca projelendirilip uygulanmıştır. Yoğun kullanıcı trafiği ve güvenlik gereklilikleri dikkate alınarak kritik devrelere yedekli hatlar, enerji izleme ve raporlama altyapısı kurulmuştur. Tüm devreye alma testleri kurum şartnamelerine uygun şekilde tamamlanmış, as-built çizimler ve tek hat şemaları teslim edilmiştir.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
@@ -44,23 +41,12 @@ const PROJECTS: Project[] = [
     title: "Zenith Ankara Projesi",
     location: "Ankara",
     meta: "Kurumsal Kampüs",
-    cover:
-      "/proje/zenith1.webp",
-    images: [
-      "/proje/zenith2.webp",
-      "/proje/zenith3.webp",
-      "/proje/zenith4.webp",
-      "/proje/zenith5.webp",
-    ],
+    cover: "/proje/zenith1.webp",
+    images: ["/proje/zenith2.webp", "/proje/zenith3.webp", "/proje/zenith4.webp", "/proje/zenith5.webp"],
     summary:
       "Ofis blokları ve sosyal alanların elektrik altyapısı; güç dağıtımı, jeneratör–UPS entegrasyonu ve bina otomasyonu arayüzleriyle birlikte devreye alınmıştır. Esnek büyümeyi desteklemek için hat kapasite planlamaları ölçeklenebilir yapıda kurgulanmış, enerji verimliliği için kompanzasyon ve alt sayaçlı izleme sistemi kurulmuştur. Ortak alanlarda senaryo bazlı aydınlatma ile konfor ve tasarruf birlikte sağlanmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Ana dağıtım & kompanzasyon",
-      "UPS ve jeneratör senkronizasyonu",
-      "Aydınlatma otomasyonu",
-      "Fiber & bakır data omurgası",
-    ],
+    scope: ["Ana dağıtım & kompanzasyon", "UPS ve jeneratör senkronizasyonu", "Aydınlatma otomasyonu", "Fiber & bakır data omurgası"],
     tagline: "Verimlilik için akıllı altyapı.",
   },
   {
@@ -68,24 +54,12 @@ const PROJECTS: Project[] = [
     title: "İzmir Avrupa Birliği 6 Adet 32 Derslik Okul Projesi",
     location: "İzmir",
     meta: "Eğitim Kampüsü",
-    cover:
-      "/proje/izmirokul5.webp",
-    images: [
-      "/proje/izmirokul2.webp",
-      "/proje/izmirokul3.webp",
-      "/proje/izmirokul4.webp",
-      "/proje/izmirokul1.webp",
-      "/proje/izmirokul6.webp",
-    ],
+    cover: "/proje/izmirokul5.webp",
+    images: ["/proje/izmirokul2.webp", "/proje/izmirokul3.webp", "/proje/izmirokul4.webp", "/proje/izmirokul1.webp", "/proje/izmirokul6.webp"],
     summary:
       "Altı farklı okul binasının elektrik altyapıları; laboratuvar, kütüphane ve spor salonlarının güç–aydınlatma sistemleriyle birlikte tamamlanmıştır. Kampüs genelinde acil yönlendirme ve yangın algılama çözümleri kurulmuş, standartlaştırılmış detaylar sayesinde bakım ve işletme kolaylaştırılmıştır. Proje, öğrenci güvenliği ve enerji verimliliği odaklı yürütülmüştür.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Ana dağıtım–kompanzasyon",
-      "Laboratuvar güç & aydınlatma",
-      "Spor salonu projektörleri",
-      "Yangın & acil yönlendirme",
-    ],
+    scope: ["Ana dağıtım–kompanzasyon", "Laboratuvar güç & aydınlatma", "Spor salonu projektörleri", "Yangın & acil yönlendirme"],
     tagline: "Kampüs genelinde standart, her binada kalite.",
   },
   {
@@ -93,21 +67,12 @@ const PROJECTS: Project[] = [
     title: "Bartın Mehmet Rıfat Efendi Erkek Öğrenci Yurdu",
     location: "Bartın",
     meta: "Yurt Yerleşkesi",
-    cover:
-      "/proje/memetrıfatyurt1.webp",
-    images: [
-      "/proje/memetrıfatyurt2.webp",
-      "/proje/memetrıfatyurt3.webp",
-    ],
+    cover: "/proje/memetrıfatyurt1.webp",
+    images: ["/proje/memetrıfatyurt2.webp", "/proje/memetrıfatyurt3.webp"],
     summary:
       "Yurt binalarının ana ve kat dağıtımları, oda ve ortak alan aydınlatmaları ile yangın algılama ve zayıf akım sistemleri bütünleşik olarak uygulanmıştır. Enerji tasarrufu ve konfor için hareket sensörlü kontrol, sayaç bazlı tüketim takibi ve acil durum yönlendirme çözümleri devreye alınmıştır. Tüm imalatlar öğrenci yoğunluğunu dikkate alan güvenli çalışma prensibiyle gerçekleştirilmiştir.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Dağıtım panoları ve sayaçlama",
-      "Ortak alan & oda aydınlatma",
-      "Yangın algılama ve anons",
-      "TV–data altyapısı",
-    ],
+    scope: ["Dağıtım panoları ve sayaçlama", "Ortak alan & oda aydınlatma", "Yangın algılama ve anons", "TV–data altyapısı"],
     tagline: "Güvenli konaklama için sağlam elektrik.",
   },
   {
@@ -115,21 +80,12 @@ const PROJECTS: Project[] = [
     title: "Bartın Hacı İbrahim Paşa Kız Öğrenci Yurdu",
     location: "Bartın",
     meta: "Yurt Yerleşkesi",
-    cover:
-      "/proje/hacıibrahimkız1.webp",
-    images: [
-      "/proje/hacıibrahimkız2.webp",
-      "/proje/hacıibrahimkız3.webp",
-    ],
+    cover: "/proje/hacıibrahimkız1.webp",
+    images: ["/proje/hacıibrahimkız2.webp", "/proje/hacıibrahimkız3.webp"],
     summary:
       "Kat dağıtım merkezleri, acil aydınlatma ve yönlendirme, yangın algılama, CCTV ve erişim kontrol sistemleri anahtar teslim kurulmuştur. Oda ve ortak alanlarda ışık konforu artırılırken güvenlik kameralarıyla bütünleşik altyapı sayesinde 7/24 izlenebilirlik sağlanmıştır. Topraklama ve eş potansiyel baraları ile kullanıcı güvenliği üst seviyeye çıkarılmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Kat–dağıtım panoları",
-      "Acil aydınlatma & yönlendirme",
-      "CCTV ve kartlı geçiş",
-      "Topraklama & eş potansiyel",
-    ],
+    scope: ["Kat–dağıtım panoları", "Acil aydınlatma & yönlendirme", "CCTV ve kartlı geçiş", "Topraklama & eş potansiyel"],
     tagline: "Konforu artıran güvenli altyapı.",
   },
   {
@@ -137,21 +93,12 @@ const PROJECTS: Project[] = [
     title: "Batman Üniversitesi Rektörlük Binası",
     location: "Batman",
     meta: "Üniversite",
-    cover:
-      "/proje/rektörlük1.webp",
-    images: [
-      "/proje/rektörlük2.webp",
-      "/proje/rektörlük3.webp",
-    ],
+    cover: "/proje/rektörlük1.webp",
+    images: ["/proje/rektörlük2.webp", "/proje/rektörlük3.webp"],
     summary:
       "Yönetim binasının OG/AG altyapısı, aydınlatma otomasyonu ve toplantı–konferans alanları için AV ve zayıf akım sistemleri devreye alınmıştır. Enerji izleme sistemi ile tüketimler canlı olarak takip edilmekte, bakım planlamaları veri odaklı yapılabilmektedir. Tüm sistemler yüksek erişilebilirlik amacıyla yedekli kurgulanmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "OG/AG dağıtım & kompanzasyon",
-      "Aydınlatma otomasyonu",
-      "Konferans salonu AV altyapısı",
-      "Yangın & anons entegrasyonu",
-    ],
+    scope: ["OG/AG dağıtım & kompanzasyon", "Aydınlatma otomasyonu", "Konferans salonu AV altyapısı", "Yangın & anons entegrasyonu"],
     tagline: "Akıllı kampüslerin kalbinde güçlü enerji.",
   },
   {
@@ -159,21 +106,12 @@ const PROJECTS: Project[] = [
     title: "Batman Üniversitesi Teknokent Binası",
     location: "Batman",
     meta: "Ar-Ge / Teknokent",
-    cover:
-      "/proje/teknokent1.webp",
-    images: [
-      "/proje/teknokent2.webp",
-      "/proje/teknokent3.webp",
-    ],
+    cover: "/proje/teknokent1.webp",
+    images: ["/proje/teknokent2.webp", "/proje/teknokent3.webp"],
     summary:
       "Ar-Ge ofisleri için esnek priz hatları, yedekli UPS altyapısı, fiber omurga ve erişim kontrol sistemleri kurulmuştur. Laboratuvar alanlarında hassas cihazlar için ayrı ve filtrelenmiş enerji hatları planlanmış, ölçeklenebilir kabinet altyapısı ile büyüme senaryoları desteklenmiştir. Tüm altyapı siber güvenlik ve erişim yetkileri gözetilerek yapılandırılmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "UPS destekli priz hatları",
-      "Fiber omurga & kabinet",
-      "Kartlı geçiş ve CCTV",
-      "Topraklama & paratoner",
-    ],
+    scope: ["UPS destekli priz hatları", "Fiber omurga & kabinet", "Kartlı geçiş ve CCTV", "Topraklama & paratoner"],
     tagline: "Yenilik için kesintisiz güç.",
   },
   {
@@ -181,22 +119,12 @@ const PROJECTS: Project[] = [
     title: "Batman–Hasankeyf Yeni Şehir Projesi",
     location: "Batman",
     meta: "Kentsel Altyapı",
-    cover:
-      "/proje/hasankeyf1.webp",
-    images: [
-      "/proje/hasankeyf2.webp",
-      "/proje/hasankeyf3.webp",
-      "/proje/hasankeyf4.webp",
-    ],
+    cover: "/proje/hasankeyf1.webp",
+    images: ["/proje/hasankeyf2.webp", "/proje/hasankeyf3.webp", "/proje/hasankeyf4.webp"],
     summary:
       "Yeni yerleşim bölgelerinde enerji dağıtımı; yol, park ve meydan aydınlatmaları ile trafo ve kablo güzergâhları tamamlanmıştır. SCADA'ya hazır pano altyapıları kurularak merkezi izleme ve uzaktan müdahale imkânı sağlanmıştır. Proje yerel yönetmelikler ve sürdürülebilirlik hedefleri gözetilerek yürütülmüştür.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Saha kablolama & trafo bağlantıları",
-      "Yol–park aydınlatma direkleri",
-      "SCADA’ye hazır pano altyapısı",
-      "Topraklama & yıldırımdan korunma",
-    ],
+    scope: ["Saha kablolama & trafo bağlantıları", "Yol–park aydınlatma direkleri", "SCADA’ye hazır pano altyapısı", "Topraklama & yıldırımdan korunma"],
     tagline: "Şehre ışık, mahallelere güven.",
   },
   {
@@ -204,21 +132,12 @@ const PROJECTS: Project[] = [
     title: "Batman Özel Yaşam Hastanesi",
     location: "Batman",
     meta: "Hastane",
-    cover:
-      "/proje/yaşamhastane1.webp",
-    images: [
-      "/proje/yaşamhastane2.webp",
-      "/proje/yaşamhastane3.webp",
-    ],
+    cover: "/proje/yaşamhastane1.webp",
+    images: ["/proje/yaşamhastane2.webp", "/proje/yaşamhastane3.webp"],
     summary:
       "Hastane kritik yükleri için yedekli hatlar, jeneratör–UPS koordinasyonu ve izolasyon trafolu ameliyathane hatları kurulmuştur. BMS entegrasyonu ile alarm durumları ve enerji tüketimleri merkezi olarak izlenmektedir. Hijyen ve süreklilik gereksinimleri gözetilerek bakım kolaylığı sağlayan modüler altyapı tercih edilmiştir.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Jeneratör–UPS senkronizasyonu",
-      "İzolasyon trafolu hatlar",
-      "Acil & yönlendirme aydınlatması",
-      "BMS/yangın ile entegrasyon",
-    ],
+    scope: ["Jeneratör–UPS senkronizasyonu", "İzolasyon trafolu hatlar", "Acil & yönlendirme aydınlatması", "BMS/yangın ile entegrasyon"],
     tagline: "Hayatın sürdüğü yerde kesintisiz enerji.",
   },
   {
@@ -226,21 +145,12 @@ const PROJECTS: Project[] = [
     title: "Batman Askeri Havalimanı Projesi",
     location: "Batman",
     meta: "Havalimanı",
-    cover:
-      "/proje/askerihavalimanı1.webp",
-    images: [
-      "/proje/askerihavalimanı2.webp",
-      "/proje/askerihavalimanı3.webp",
-    ],
+    cover: "/proje/askerihavalimanı1.webp",
+    images: ["/proje/askerihavalimanı2.webp", "/proje/askerihavalimanı3.webp"],
     summary:
       "Apron ve pist çevresi enerji hatları, aydınlatma ve saha kablolamaları askeri standartlara uygun şekilde tamamlanmıştır. IEC ve SHGM gerekliliklerine uyumlu test ve raporlama süreçleri yürütülmüş, kritik devrelerde yedekli yapı tercih edilmiştir. Sistemin sürekliliği için periyodik bakım prosedürleri tanımlanmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Pist & apron aydınlatmaları",
-      "OG ring ve saha kablolaması",
-      "Kontrol panoları & röle sistemleri",
-      "Topraklama/ek-paratoner hatları",
-    ],
+    scope: ["Pist & apron aydınlatmaları", "OG ring ve saha kablolaması", "Kontrol panoları & röle sistemleri", "Topraklama/ek-paratoner hatları"],
     tagline: "Operasyon güvenliği için hassas altyapı.",
   },
   {
@@ -248,21 +158,12 @@ const PROJECTS: Project[] = [
     title: "Malatya Sanat Sokağı & Galerisi",
     location: "Malatya",
     meta: "Kültür–Sanat",
-    cover:
-      "/proje/sanatsokağı1.webp",
-    images: [
-      "/proje/sanatsokağı2.webp",
-      "/proje/sanatsokağı4.webp",
-    ],
+    cover: "/proje/sanatsokağı1.webp",
+    images: ["/proje/sanatsokağı2.webp", "/proje/sanatsokağı4.webp"],
     summary:
       "Sokak ve galeri mekânlarında dekoratif aydınlatmalar, sergi güç hatları ve kontrollü priz devreleri kurulmuştur. Dimleme ve senaryo kontrol altyapısı sayesinde sergi konseptlerine göre hızla ayarlanabilir ışık kurguları oluşturulmaktadır. Dış mekân armatürleri ile güvenli ve homojen bir aydınlık seviyesi sağlanmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Dekoratif & vitrin aydınlatma",
-      "Sergi güç ve data prizleri",
-      "Dış mekân armatür montajları",
-      "Kontrol & dimleme altyapısı",
-    ],
+    scope: ["Dekoratif & vitrin aydınlatma", "Sergi güç ve data prizleri", "Dış mekân armatür montajları", "Kontrol & dimleme altyapısı"],
     tagline: "Sanata değer katan ışık tasarımı.",
   },
   {
@@ -270,20 +171,12 @@ const PROJECTS: Project[] = [
     title: "Batman Mevlana Anadolu Lisesi",
     location: "Batman",
     meta: "Eğitim Kurumu",
-    cover:
-      "/proje/mevlanalise1.webp",
-    images: [
-      "/proje/mevlanalise2.webp",
-    ],
+    cover: "/proje/mevlanalise1.webp",
+    images: ["/proje/mevlanalise2.webp"],
     summary:
       "Okulun toplam enerji dağıtımı, sınıf ve laboratuvar aydınlatmaları, acil yönlendirme ve yangın algılama sistemleri tamamlanmıştır. Spor salonu ve açık alanlar için projektör çözümleri uygulanmış, eğitim saatlerine uygun senaryo bazlı kontrol sağlanmıştır. Tüm imalatlar öğrenci güvenliği öncelenerek gerçekleştirilmiştir.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Ana pano & dağıtım",
-      "Sınıf/laboratuvar aydınlatma",
-      "Acil aydınlatma–yönlendirme",
-      "Yangın & anons altyapısı",
-    ],
+    scope: ["Ana pano & dağıtım", "Sınıf/laboratuvar aydınlatma", "Acil aydınlatma–yönlendirme", "Yangın & anons altyapısı"],
     tagline: "Geleceği aydınlatan altyapı.",
   },
   {
@@ -291,22 +184,12 @@ const PROJECTS: Project[] = [
     title: "Batman Oğuzcan Otomotiv Ford & Toyota Satış ve Servis Binası",
     location: "Batman",
     meta: "Sanayi & Showroom",
-    cover:
-      "/proje/fordtoyota1.webp",
-    images: [
-      "/proje/fordtoyota2.webp",
-      "/proje/fordtoyota3.webp",
-      "/proje/fordtoyota4.webp",
-    ],
+    cover: "/proje/fordtoyota1.webp",
+    images: ["/proje/fordtoyota2.webp", "/proje/fordtoyota3.webp", "/proje/fordtoyota4.webp"],
     summary:
       "Showroom dekoratif aydınlatmaları, servis güç hatları ve kompresör–lif tesisatları kurulmuştur. Mekânın hacmine uygun yüksek CRI’lı armatürler enerji verimliliği sağlayan kompanzasyon sistemiyle desteklenmiştir. Dış çevre aydınlatmaları güvenlik kameralarıyla entegre çalışacak şekilde planlanmış, bakım kolaylığı için modüler yapılar tercih edilmiştir.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Showroom aydınlatma tasarımı",
-      "Servis güç hatları & makine beslemeleri",
-      "Dış alan projektörleri",
-      "Yangın & CCTV altyapısı",
-    ],
+    scope: ["Showroom aydınlatma tasarımı", "Servis güç hatları & makine beslemeleri", "Dış alan projektörleri", "Yangın & CCTV altyapısı"],
     tagline: "Gücü ve estetiği aynı çatı altında.",
   },
   {
@@ -314,21 +197,12 @@ const PROJECTS: Project[] = [
     title: "Şanlıurfa Hacerana Kız Öğrenci Yurdu",
     location: "Şanlıurfa",
     meta: "Yurt Yerleşkesi",
-    cover:
-      "/proje/haceranakız1.webp",
-    images: [
-      "/proje/haceranakız2.webp",
-      "/proje/haceranakız3.webp",
-    ],
+    cover: "/proje/haceranakız1.webp",
+    images: ["/proje/haceranakız2.webp", "/proje/haceranakız3.webp"],
     summary:
       "Yurt genelinde enerji dağıtımı, acil aydınlatma ve yangın algılama sistemleri uygulanmış; CCTV ve data altyapısı ile güvenli ve kesintisiz iletişim sağlanmıştır. Enerji tüketimi alt sayaçlar aracılığıyla izlenmekte, ortak alanlarda hareket algılamalı kontrol ile tasarruf elde edilmektedir.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Dağıtım panoları",
-      "Acil aydınlatma–yönlendirme",
-      "Yangın algılama ve anons",
-      "CCTV & data altyapısı",
-    ],
+    scope: ["Dağıtım panoları", "Acil aydınlatma–yönlendirme", "Yangın algılama ve anons", "CCTV & data altyapısı"],
     tagline: "Güvenli yaşam alanları için akıllı şebeke.",
   },
   {
@@ -336,21 +210,12 @@ const PROJECTS: Project[] = [
     title: "Diyarbakır Kurkan TPAO Petrol Arama Sahası",
     location: "Diyarbakır",
     meta: "Endüstriyel Saha",
-    cover:
-      "/proje/petrolarama1.webp",
-    images: [
-      "/proje/petrolarama2.webp",
-      "/proje/petrolarama3.webp",
-    ],
+    cover: "/proje/petrolarama1.webp",
+    images: ["/proje/petrolarama2.webp", "/proje/petrolarama3.webp"],
     summary:
       "Saha içi enerji dağıtımı, patlayıcı ortam uygunluğu (Ex-proof) ekipman montajları ve aydınlatma sistemleri gerçekleştirilmiştir. Saha panoları SCADA’ya uyumlu izleme noktaları ile donatılmış, topraklama ve katodik koruma çözümleriyle güvenlik en üst düzeye çıkarılmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Ex-proof aydınlatma ve ekipmanlar",
-      "Saha panoları & kablo tavaları",
-      "Topraklama–katodik koruma",
-      "SCADA’ye uygun izleme",
-    ],
+    scope: ["Ex-proof aydınlatma ve ekipmanlar", "Saha panoları & kablo tavaları", "Topraklama–katodik koruma", "SCADA’ye uygun izleme"],
     tagline: "Zorlu şartlarda güvenli enerji.",
   },
   {
@@ -358,21 +223,12 @@ const PROJECTS: Project[] = [
     title: "Batman Türkiye Petrolleri Bölge Binası",
     location: "Batman",
     meta: "Kurumsal",
-    cover:
-      "/proje/türkiyepetrolleri1.webp",
-    images: [
-      "/proje/türkiyepetrolleri2.webp",
-      "/proje/türkiyepetrolleri3.webp",
-    ],
+    cover: "/proje/türkiyepetrolleri1.webp",
+    images: ["/proje/türkiyepetrolleri2.webp", "/proje/türkiyepetrolleri3.webp"],
     summary:
       "İdari binada güç–aydınlatma dağıtımı, toplantı salonlarının AV ve data altyapıları anahtar teslim tamamlanmıştır. Enerji tüketimleri alt sayaçlarla izlenmekte, raporlama sistemi sayesinde operasyonel verimlilik artırılmaktadır. Yangın ve ikaz sistemleri ile entegre çalışan çözümle güvenlik katmanı güçlendirilmiştir.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Güç & aydınlatma panoları",
-      "Toplantı AV & data",
-      "Yangın/ikaz sistemleri",
-      "Enerji izleme altyapısı",
-    ],
+    scope: ["Güç & aydınlatma panoları", "Toplantı AV & data", "Yangın/ikaz sistemleri", "Enerji izleme altyapısı"],
     tagline: "Kurumsal verimlilik için kesintisiz ağ.",
   },
   {
@@ -380,20 +236,12 @@ const PROJECTS: Project[] = [
     title: "Batman Süveybe Ana Kız Öğrenci Yurdu",
     location: "Batman",
     meta: "Yurt Yerleşkesi",
-    cover:
-      "/proje/süveybeanakız1.webp",
-    images: [
-      "/proje/süveybeanakız2.webp",
-    ],
+    cover: "/proje/süveybeanakız1.webp",
+    images: ["/proje/süveybeanakız2.webp"],
     summary:
       "Oda, çamaşırhane ve ortak alanların elektrik işleri; CCTV ve kartlı geçiş sistemleri ile birlikte tamamlanmıştır. Sayaç bazlı tüketim takibi ve ortak alanlarda otomatik kontrol sayesinde işletme maliyetleri düşürülmüştür. Topraklama ve eş potansiyel uygulamaları ile kullanıcı güvenliği artırılmıştır.\n\n" +
       "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
-    scope: [
-      "Kat panoları & sayaç takibi",
-      "CCTV & kartlı geçiş",
-      "Ortak alan aydınlatma",
-      "Topraklama ve eş potansiyel",
-    ],
+    scope: ["Kat panoları & sayaç takibi", "CCTV & kartlı geçiş", "Ortak alan aydınlatma", "Topraklama ve eş potansiyel"],
     tagline: "Konforlu yurt yaşamı için güvenli ağ.",
   },
 ];
@@ -411,7 +259,6 @@ function firstParagraph(text?: string) {
   if (!text) return "";
   return text.split("\n\n")[0] || text;
 }
-
 function paragraphs(text?: string) {
   if (!text) return [];
   return text.split("\n\n").filter(Boolean);
@@ -452,11 +299,7 @@ function Modal({
       aria-modal="true"
       role="dialog"
     >
-      <div
-        className="absolute inset-0 z-0 bg-black/55 backdrop-blur-sm"
-        onClick={onClose}
-        aria-hidden
-      />
+      <div className="absolute inset-0 z-0 bg-black/55 backdrop-blur-sm" onClick={onClose} aria-hidden />
       {/* Küçük ekranda üstten akış, büyükte ortalı */}
       <div className="relative z-10 w-full max-w-6xl mx-auto my-4 md:my-0 px-4 md:px-0">
         <div className="relative w-full rounded-2xl bg-neutral-900 shadow-xl ring-1 ring-white/10 overflow-hidden">
@@ -488,8 +331,7 @@ export default function Referanslar({ projects = PROJECTS }: { projects?: Projec
   useKey((e) => {
     if (!active) return;
     if (e.key === "ArrowLeft") setIndex((i) => Math.max(0, i - 1));
-    if (e.key === "ArrowRight")
-      setIndex((i) => Math.min((active?.images?.length || 1) - 1, i + 1));
+    if (e.key === "ArrowRight") setIndex((i) => Math.min((active?.images?.length || 1) - 1, i + 1));
   });
 
   return (
@@ -497,14 +339,14 @@ export default function Referanslar({ projects = PROJECTS }: { projects?: Projec
       {/* Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {projects.map((p) => (
-          <article key={p.id} className="group relative h-full">
-            {/* gradient çerçeve: mobilde açık, desktop'ta hover */}
-            <div className="pointer-events-none absolute inset-0 -z-10 rounded-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
+          <article key={p.id} className="group relative h-full isolate">
+            {/* gradient çerçeve: mobilde açık, desktop'ta hover (z-index düzeltildi) */}
+            <div className="pointer-events-none absolute inset-0 z-0 rounded-2xl opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-sky-500 via-indigo-500 to-purple-600" />
             </div>
 
             {/* İç kutu: eşit yükseklik */}
-            <div className="relative m-[2px] rounded-2xl bg-neutral-900 shadow-md flex h-full flex-col">
+            <div className="relative z-10 m-[2px] rounded-2xl bg-neutral-900 shadow-md flex h-full flex-col">
               <button
                 className="block aspect-square w-full overflow-hidden rounded-t-2xl"
                 onClick={() => openProject(p)}
@@ -513,6 +355,8 @@ export default function Referanslar({ projects = PROJECTS }: { projects?: Projec
                 <img
                   src={p.cover}
                   alt={p.title}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                 />
               </button>
@@ -605,7 +449,7 @@ function ModalBody({
         </div>
       </div>
 
-      {/* İçerik grid — alt boşluk optimized */}
+      {/* İçerik grid — alt boşluk optimize */}
       <div className="grid gap-5 px-5 pb-4 md:max-h-[78vh] md:overflow-y-auto md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         {/* Sol: görsel ve kontroller */}
         <div className="relative mx-auto w-full max-w-xl">
@@ -617,6 +461,8 @@ function ModalBody({
             <img
               src={active.images[index]}
               alt={`${active.title} görsel ${index + 1}`}
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover object-center"
             />
             <button
@@ -677,11 +523,7 @@ function ModalBody({
 
           {/* İki paragrafı ayrı ayrı göster */}
           {paragraphs(active.summary).map((para, i) => (
-            <p
-              key={i}
-              className={`${i === 0 ? "mt-2" : "mt-3"
-                } text-[13.5px] leading-7 text-neutral-300 md:text-[14.5px]`}
-            >
+            <p key={i} className={`${i === 0 ? "mt-2" : "mt-3"} text-[13.5px] leading-7 text-neutral-300 md:text-[14.5px]`}>
               {para}
             </p>
           ))}
