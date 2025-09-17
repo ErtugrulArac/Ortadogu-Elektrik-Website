@@ -32,7 +32,7 @@ export default function SosyalMedyaPage() {
             icon={<Instagram className="h-6 w-6" />}
             ad="Instagram"
             hesap="@ortadogu.elektrik"
-            url="https://www.instagram.com/"
+            url="https://www.instagram.com/ortadoguelektrik/?igsh=MWl6eW8wZ2YxbWU2OQ%3D%3D&utm_source=qr#"
           />
           <SosyalHesap
             icon={<Youtube className="h-6 w-6" />}
