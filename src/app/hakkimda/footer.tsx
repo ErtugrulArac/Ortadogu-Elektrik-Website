@@ -49,13 +49,13 @@ export default function FooterOrtadoguMinimal() {
 
                 {/* Sosyal ikonlar */}
                 <div className="mt-6 flex items-center justify-center gap-4">
-                    <a href="https://wa.me/905000000000" aria-label="WhatsApp" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
+                    <a href="https://wa.me/905357049398" aria-label="WhatsApp" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
                         <FaWhatsapp className="h-4 w-4" />
                     </a>
                     <a href="#" aria-label="Facebook" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
                         <FiFacebook className="h-4 w-4" />
                     </a>
-                    <a href="#" aria-label="Instagram" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
+                    <a href="https://www.instagram.com/ortadoguelektrik/?igsh=MWl6eW8wZ2YxbWU2OQ%3D%3D&utm_source=qr#" aria-label="Instagram" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">
                         <FiInstagram className="h-4 w-4" />
                     </a>
                     <a href="#" aria-label="LinkedIn" className="rounded-full p-2 ring-1 ring-white/15 hover:ring-emerald-400/50 hover:scale-110 transition">

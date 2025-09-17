@@ -161,15 +161,16 @@ const REFERANS_LOGOLARI: Logo[] = [
   { src: "/refres/logoref2.png", alt: "2" },
   { src: "/refres/logoref3.png", alt: "3" },
   { src: "/refres/logoref4.png", alt: "4" },
+  { src: "/refres/zenıth.png", alt: "5" },
+  { src: "/refres/refalpp.png", alt: "6" },
+  { src: "/refres/refhmd.png", alt: "7" },
   { src: "6.png", alt: "A" },
   { src: "7.png", alt: "b" },
   { src: "8.png", alt: "c" },
-  { src: "11.png", alt: "f" },
-  { src: "14.png", alt: "ı" },
   { src: "15.png", alt: "i" },
   { src: "16.png", alt: "j" },
   { src: "17.png", alt: "k" },
-  { src: "18.png", alt: "l" },
+
 ];
 
 /* ======================= UNIFIED SECTION (SAYAÇ + YORUMLAR + REFERANSLAR) ======================= */
