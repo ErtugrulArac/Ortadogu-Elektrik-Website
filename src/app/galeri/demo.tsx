@@ -38,7 +38,7 @@ const PROJECTS: Project[] = [
   },
   {
     id: "zenith-ankara",
-    title: "Zenith Ankara Projesi",
+    title: "Zenith Ankara Projesi - Devam Ediyor...",
     location: "Ankara",
     meta: "Kurumsal Kampüs",
     cover: "/proje/zenith1.webp",
