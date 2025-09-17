@@ -44,8 +44,7 @@ const PROJECTS: Project[] = [
     cover: "/proje/zenith1.webp",
     images: ["/proje/zenith2.webp", "/proje/zenith3.webp", "/proje/zenith4.webp", "/proje/zenith5.webp"],
     summary:
-      "Ofis blokları ve sosyal alanların elektrik altyapısı; güç dağıtımı, jeneratör–UPS entegrasyonu ve bina otomasyonu arayüzleriyle birlikte devreye alınmıştır. Esnek büyümeyi desteklemek için hat kapasite planlamaları ölçeklenebilir yapıda kurgulanmış, enerji verimliliği için kompanzasyon ve alt sayaçlı izleme sistemi kurulmuştur. Ortak alanlarda senaryo bazlı aydınlatma ile konfor ve tasarruf birlikte sağlanmıştır.\n\n" +
-      "Proje kapsamında, enerji verimliliği ve işletme güvenliği en üst düzeyde tutulmuştur. Bu amaçla, tüm AG panolarında akıllı şalt malzemeleri ve uzaktan izlemeye olanak tanıyan SCADA entegrasyonu kullanılmıştır. Acil durum aydınlatma sistemleri için merkezi batarya üniteleri tesis edilmiş, bu sayede olası bir enerji kesintisinde dahi bina içi yönlendirme ve tahliye yolları kesintisiz aydınlatılmıştır. Yangın algılama sistemi, adreslenebilir dedektörler ve acil anons sistemleri ile entegre edilerek, herhangi bir risk durumunda hızlı ve doğru müdahale için otomatik senaryolar oluşturulmuştur.",
+      "Ankara’nın yükselen değeri Zenith Ankara, modern mimarisi ve ayrıcalıklı yaşam alanlarıyla şehre prestij katıyor. Bu seçkin projede elektrik altyapısını üstlenmekten gurur duyuyoruz. Ortadoğu Elektrik & İnşaat olarak, güçlü mühendislik kadromuz ve sağlam çözümlerimizle Zenith Ankara’ya güvenli, kesintisiz ve uzun ömürlü bir enerji altyapısı kazandırıyoruz.\n\n" ,
     scope: ["Ana dağıtım & kompanzasyon", "UPS ve jeneratör senkronizasyonu", "Aydınlatma otomasyonu", "Fiber & bakır data omurgası"],
     tagline: "Verimlilik için akıllı altyapı.",
   },
