@@ -1,3 +1,42 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Ortadoğu Elektrik | Enerji Çözümleri ve Elektrik Taahhüt Hizmetleri",
+  description:
+    "Ortadoğu Elektrik; Ankara ve çevresinde güvenilir elektrik altyapıları kurar. Projelerinizi keşiften teslimata şeffaf ve hızlı biçimde hayata geçirir, periyodik bakım ve destek hizmetleriyle sürekliliği güvence altına alır.",
+  keywords: [
+    "Ortadoğu Elektrik",
+    "elektrik",
+    "enerji çözümleri",
+    "elektrik taahhüt",
+    "topraklama",
+    "kompanzasyon",
+    "elektrik tesisatı",
+    "Ankara elektrik firması",
+  ],
+  openGraph: {
+    title: "Ortadoğu Elektrik | Enerji Çözümleri ve Elektrik Taahhüt Hizmetleri",
+    description:
+      "Ankara ve çevresinde elektrik altyapıları, pano, topraklama ve enerji çözümleri. Güvenilir, hızlı ve profesyonel hizmet için Ortadoğu Elektrik.",
+    url: "https://ortadoguelektrik.com/", 
+    siteName: "Ortadoğu Elektrik",
+    images: [
+      {
+        url: "/ortadoğulogo.webp", 
+        width: 1200,
+        height: 630,
+        alt: "Ortadoğu Elektrik - Enerji Çözümleri",
+      },
+    ],
+    locale: "tr_TR",
+    type: "website",
+  },
+};
+
+
+
+
+
 import Main from "@/components/main/main";
 import Grafik from "@/components/grafik";
 import Elguc from "@/components/elektriğingücü";
@@ -10,6 +49,7 @@ import Footer from "@/components/footer/FooterCreatic"
 import Blog from "@/components/blog/blog"
 import Sss from "@/components/sss/app"
 import Mockup from "@/components/mockup/index"
+
 
 
 
