@@ -15,12 +15,12 @@ const App = () => {
       ]
     },
     {
-      label: "Galeri",
+      label: "Portföy",
       bgColor: "#1a1a1a",
       textColor: "#ffffff",
       links: [
-        { label: "Sanat Galerimiz", ariaLabel: "Galeri Sanat Galerimiz", href: "/galeri" },
-        { label: "Enerji Estetiği", ariaLabel: "Galeri Enerji Estetiği", href: "/galeri" },
+        { label: "Projelerimiz & Referanslarımız", ariaLabel: "Galeri Sanat Galerimiz", href: "/galeri" },
+        
       ]
     },
     {

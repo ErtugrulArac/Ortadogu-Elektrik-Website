@@ -157,11 +157,13 @@ function InfiniteMovingLogos({
 
 /* ====== LOGOLAR (örnek) ====== */
 const REFERANS_LOGOLARI: Logo[] = [
+  { src: "/refres/logoref1.png", alt: "1" },
+  { src: "/refres/logoref2.png", alt: "2" },
+  { src: "/refres/logoref3.png", alt: "3" },
+  { src: "/refres/logoref4.png", alt: "4" },
   { src: "6.png", alt: "A" },
   { src: "7.png", alt: "b" },
   { src: "8.png", alt: "c" },
-  { src: "9.png", alt: "d" },
-  { src: "10.png", alt: "e" },
   { src: "11.png", alt: "f" },
   { src: "14.png", alt: "ı" },
   { src: "15.png", alt: "i" },

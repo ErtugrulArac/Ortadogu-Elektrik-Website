@@ -1,8 +1,6 @@
-import FocusCardsDemo from "@/components/ui/FocusCardsDemo";
-import { LayoutGridDemo } from "@/components/ui/LayoutGridDemo";
 import Galeriheading from "@/app/galeri/GaleriHeading"
-import Galeritext from "@/app/galeri/GaleriTextBlock"
-import Footer from "@/app/hakkimda/footer"
+import Footer from "@/app/hakkimda/footer" 
+import Demo from  "@/app/galeri/demo" 
 
 
 
@@ -12,21 +10,17 @@ export default function GaleriPage() {
             
             <main className="overflow-visible about-page-bg ">
                 <section className="mb-16">
-                    
-                    
-                    <Galeriheading />
-                    <LayoutGridDemo />
+                      <Galeriheading />
+                    <Demo/>
+                  
+                    {/* <LayoutGridDemo /> */}
                     
 
                   
 
 
                 </section>
-                <Galeritext />
-
-                <section className="min-h-screen">
-                    <FocusCardsDemo />
-                </section>
+               
                     <Footer />
 
             </main>

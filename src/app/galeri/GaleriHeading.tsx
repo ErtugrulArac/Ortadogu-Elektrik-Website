@@ -1,42 +1,60 @@
-
 "use client";
 
-
-export default function GaleriHeading() {
+export default function GaleriTextBlock() {
   return (
-    <section className="relative pt-28 md:pt-20 pb-10">
-      <div className="mx-auto max-w-4xl px-4 text-center overflow-visible">
-        <h2
-          className="pb-1 md:pt-16 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.15]
-                     bg-gradient-to-r from-[#1e40af] via-[#ce0bff] to-[#00d8d8]
-                     bg-clip-text text-transparent [-webkit-text-fill-color:transparent]"
+    <section
+      aria-labelledby="galeri-baslik"
+      className="w-full px-6 pt-24 sm:pt-32 lg:pt-40 pb-20"
+    >
+      <div className="mx-auto max-w-3xl text-center">
+        {/* Eyebrow */}
+        <span className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] font-medium tracking-wide text-white/70 backdrop-blur">
+          Portföy • Referans • Proje
+        </span>
+
+        {/* Başlık */}
+        <h3
+          id="galeri-baslik"
+          className="relative z-10 mx-auto mt-3 max-w-3xl text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight
+                     bg-gradient-to-r from-[#1d4ed8] via-[#b517ff] to-[#00e5ff]
+                     bg-clip-text text-transparent [-webkit-text-fill-color:transparent]
+                     drop-shadow-[0_0_8px_rgba(0,0,0,0.35)]"
         >
-          Tıkla ve Keşfet Ortadoğu Elektrik Farkıyla
-        </h2>
+          Projelerimiz & Referanslarımız
+        </h3>
 
-       
-        <div className="mx-auto mt-7 h-[3px] w-28 rounded-full bg-gradient-to-r from-[#2f80ed] via-[#22c1ee] to-[#10bdbf]" />
+        {/* Divider */}
+        <div className="relative mx-auto mt-6 h-px w-28">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+        </div>
 
-      
-        <p className="mt-6 text-base leading-relaxed text-neutral-300 dark:text-neutral-300">
-          Profesyonel elektrik taahhüt, bakım ve modern otomasyon çözümleri ile
-          konut ve endüstride güvenilir uygulamalar.
+        {/* Açıklama */}
+        <p className="mx-auto mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-neutral-300">
+          Ortadoğu Elektrik; kamu kampüslerinden endüstriyel tesislere uzanan geniş
+          bir yelpazede anahtar teslim çözümler sunar. Bu bölümde, tamamladığımız
+          projelerden seçkileri ve güveninizi pekiştiren referanslarımızı keşfedebilirsiniz.
         </p>
 
-        <p className="mt-2 text-base leading-relaxed text-neutral-300 dark:text-neutral-300">
-          Keşiften devreye almaya kadar tüm süreçlerde şeffaf teklif, hızlı teslim
-          ve uzun ömürlü altyapı. Ortadoğu Elektrik, profesyonel elektrik taahhüt hizmetleri,
-          kapsamlı bakım çalışmaları ve modern otomasyon çözümleri ile konut ve endüstri
-          alanlarında güvenilir uygulamalar sunar. Müşterilerimize yalnızca enerji sağlamakla
-          kalmıyor, aynı zamanda verimliliği artıran, sürdürülebilirliği destekleyen ve uzun
-          vadeli güvenlik sağlayan çözümler geliştiriyoruz. <br /><br /> Keşif aşamasından devreye alma
-          sürecine kadar tüm adımlarda şeffaf tekliflendirme, zamanında ve hızlı teslimat
-          ile uzun ömürlü altyapı taahhüdümüzü koruyoruz. Her projede kalite, güven ve
-          sürdürülebilir değer üretmek temel ilkemizdir.
+        {/* CTA */}
+        <div className="mt-8 flex justify-center">
+          <a
+            href="#teklif"
+            className="relative inline-flex items-center gap-2 px-6 py-2 rounded-full
+                       border border-neutral-700 text-white font-medium
+                       bg-black shadow-[inset_0_-1px_0_rgba(255,255,255,0.3)]
+                       transition-all duration-300 hover:border-neutral-500 hover:shadow-[0_0_12px_rgba(255,255,255,0.25)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/60"
+          >
+            <span className="text-lg" aria-hidden>
+              {">"}
+            </span>
+            Teklif Al
+          </a>
+        </div>
+
+        {/* Alt not */}
+        <p className="mx-auto mt-3 max-w-xl text-xs text-white/55">
+          Keşif, projelendirme ve uygulama süreçleri tek elden yönetilir.
         </p>
-      </div>
-      <div>
-      
       </div>
     </section>
   );

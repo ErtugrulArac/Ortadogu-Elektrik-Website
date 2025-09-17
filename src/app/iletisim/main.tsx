@@ -5,7 +5,7 @@ import React from "react";
 import { MapPin, Phone, Mail, Clock, Globe } from "lucide-react";
 
 export default function IletisimPage() {
-  // basit bir sayaçla gecikmeleri artırıyoruz
+
   let d = 0;
   const step = 120; // ms
 
@@ -36,12 +36,12 @@ export default function IletisimPage() {
           saatlerimizi, merkez ofis adresimizi ve güncel web bağlantımızı hemen inceleyebilirsiniz.
         </p>
 
-        {/* 1. satır: Adres & Çalışma Saatleri */}
+       
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <InfoCard
             icon={<MapPin className="h-6 w-6" />}
             title="Adres"
-            lines={["Ankara, Etimesgut Sanayi Bölgesi", "No: 123, Türkiye"]}
+            lines={["Baglica Mahallesi, 1344. Sokak, B Blok No: 8/1 Etimesgut / ANKARA"]}
             delayMs={(d += step)}
           />
           <InfoCard
@@ -52,12 +52,12 @@ export default function IletisimPage() {
           />
         </div>
 
-        {/* 2. satır: Telefon & Web Sitesi */}
+        
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           <InfoCard
             icon={<Phone className="h-6 w-6" />}
             title="Telefon"
-            lines={["+90 (312) 123 45 67", "Hafta içi 09:00–18:00"]}
+            lines={["+90 0531 487 35 94", "Hafta içi 09:00–18:00"]}
             delayMs={(d += step)}
           />
           <InfoCard
@@ -68,7 +68,7 @@ export default function IletisimPage() {
           />
         </div>
 
-        {/* 3. satır: E-posta & Merkez Ofis */}
+   
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           <InfoCard
             icon={<Mail className="h-6 w-6" />}
@@ -79,13 +79,11 @@ export default function IletisimPage() {
           <InfoCard
             icon={<MapPin className="h-6 w-6" />}
             title="Merkez Ofis"
-            lines={["Ahi Mesut Bulvarı, Elvankent", "Etimesgut / Ankara"]}
+            lines={["Baglica Mahallesi, 1344. Sokak, B Blok No: 8/1 Etimesgut / ANKARA"]}
             delayMs={(d += step)}
           />
         </div>
-      </div>
-
-      {/* Animasyon util: SEO-safe (DOM sabit), motion-safe ile kısıtlı */}
+      </div> 
       <style jsx global>{`
         @layer utilities {
           @keyframes fadeSlideUp {
@@ -107,7 +105,7 @@ export default function IletisimPage() {
   );
 }
 
-/* ---------- Revize Kart Bileşeni (kurumsal gri-mavi + SEO-safe animasyon + stagger) ---------- */
+
 function InfoCard({
   icon,
   title,
@@ -117,7 +115,7 @@ function InfoCard({
   icon: React.ReactNode;
   title: string;
   lines: string[];
-  delayMs?: number; // ⬅️ sırayla giriş için gecikme
+  delayMs?: number; 
 }) {
   return (
     <div
@@ -144,7 +142,6 @@ function InfoCard({
       />
 
       <div className="relative z-10 flex gap-4">
-        {/* ikon kutusu (kurumsal degrade) */}
         <div
           className="
             grid h-12 w-12 shrink-0 place-items-center rounded-xl
@@ -156,8 +153,7 @@ function InfoCard({
         >
           {icon}
         </div>
-
-        {/* içerik */}
+      
         <div className="transition-all duration-500 group-hover:translate-x-1">
           <h3 className="text-lg font-semibold text-slate-100">{title}</h3>
           <div className="mt-1 space-y-0.5 text-sm text-slate-300">
@@ -168,7 +164,7 @@ function InfoCard({
         </div>
       </div>
 
-      {/* alt soft halo (çok hafif, kartın çevresine derinlik) */}
+     
       <div
         aria-hidden
         className="pointer-events-none absolute -inset-6 -z-10 rounded-3xl
