@@ -1,7 +1,7 @@
 import CardNav from './CardNav'
 
 
-const logo = "/ortadoğulogo.webp";
+const logo = "/ortadogu-logo.webp";
 
 const App = () => {
   const items = [
@@ -19,7 +19,7 @@ const App = () => {
       bgColor: "#1a1a1a",
       textColor: "#ffffff",
       links: [
-        { label: "Projelerimiz & Referanslarımız", ariaLabel: "Galeri Sanat Galerimiz", href: "/galeri" },
+        { label: "Projelerimiz & Referanslarımız", ariaLabel: "Galeri Sanat Galerimiz", href: "/projeler" },
         
       ]
     },

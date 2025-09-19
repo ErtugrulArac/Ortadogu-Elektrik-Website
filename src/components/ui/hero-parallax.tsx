@@ -102,7 +102,7 @@ export const ProductCard = ({
   product,
   translate,
 }: {
-  product: { title: string; link: string; img: string }; // thumbnail -> img
+  product: { title: string; link: string; img: string }; 
   translate: MotionValue<number>;
 }) => {
   return (
@@ -114,7 +114,7 @@ export const ProductCard = ({
     >
       <a href={product.link} className="block group-hover/product:shadow-2xl">
         <img
-          src={product.img}          // thumbnail -> img
+          src={product.img}          
           height={600}
           width={600}
           className="object-cover object-left-top absolute h-full w-full inset-0"

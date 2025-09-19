@@ -12,7 +12,7 @@ export default function FooterOrtadoguMinimal() {
             <div className="relative mx-auto max-w-6xl px-6 py-10 sm:py-12 text-center">
                 <div className="flex justify-center">
                     <Image
-                        src="/ortadoğulogo.webp"
+                        src="/ortadogu-logo.webp"
                         alt="Ortadoğu Elektrik"
                         width={800}
                         height={160}
@@ -66,7 +66,7 @@ export default function FooterOrtadoguMinimal() {
                     </a>
                 </div>
 
-                {/* Telif hakkı */}
+                
                 <p className="mt-8 text-[11px] text-white/60">
                     Copyright © 1996–{new Date().getFullYear()} Ortadoğu Elektrik. Tüm Hakları Saklıdır.
                 </p>

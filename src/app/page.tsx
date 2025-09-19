@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
   title: "Ortadoğu Elektrik | Enerji Çözümleri ve Elektrik Taahhüt Hizmetleri",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     siteName: "Ortadoğu Elektrik",
     images: [
       {
-        url: "/ortadoğulogo.webp",
+        url: "/ortadogu-logo.webp", // ✅ ASCII dosya adı kullan
         width: 1200,
         height: 630,
         alt: "Ortadoğu Elektrik - Enerji Çözümleri",
@@ -31,24 +31,20 @@ export const metadata: Metadata = {
     locale: "tr_TR",
     type: "website",
   },
-  // Ekstra meta etiketleri
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-    },
+    googleBot: { index: true, follow: true },
   },
   authors: [{ name: "Ortadoğu Elektrik", url: "https://ortadoguelektrik.com" }],
-  alternates: {
-    canonical: "https://ortadoguelektrik.com",
-  },
-  themeColor: "#0f172a", // lacivert/mavi bir ton seçtim
+  alternates: { canonical: "https://ortadoguelektrik.com" },
+};
+
+// ✅ viewport'u metadata'dan ayır
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#0f172a",
 };
 
 import Main from "@/components/main/main";
@@ -66,13 +62,13 @@ import Mockup from "@/components/mockup/index";
 
 export default function Page() {
   return (
-    <main> 
-      <Main /> 
+    <main>
+      <Main />
       <Grafik />
-      <YönlendirmeSeo /> 
-      <Elguc /> 
-      <HeroParallaxDemo /> 
-      <div className="w-[92%] max-w-5xl mx-auto "> 
+      <YönlendirmeSeo />
+      <Elguc />
+      <HeroParallaxDemo />
+      <div className="w-[92%] max-w-5xl mx-auto ">
         <TextReveal className="text-lg md:text-xl leading-relaxed">
           Ortadoğu Elektrik olarak Ankara ve çevresinde güvenilir elektrik
           altyapıları kuruyor; projelerinizi keşiften teslimata şeffaf ve hızlı

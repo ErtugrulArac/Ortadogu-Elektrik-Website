@@ -157,20 +157,17 @@ function InfiniteMovingLogos({
 
 /* ====== LOGOLAR (örnek) ====== */
 const REFERANS_LOGOLARI: Logo[] = [
-  { src: "/refres/logoref1.png", alt: "1" },
-  { src: "/refres/logoref2.png", alt: "2" },
-  { src: "/refres/logoref3.png", alt: "3" },
-  { src: "/refres/logoref4.png", alt: "4" },
-  { src: "/refres/zenıth.png", alt: "5" },
-  { src: "/refres/refalpp.png", alt: "6" },
-  { src: "/refres/refhmd.png", alt: "7" },
-  { src: "6.png", alt: "A" },
-  { src: "7.png", alt: "b" },
-  { src: "8.png", alt: "c" },
-  { src: "15.png", alt: "i" },
-  { src: "16.png", alt: "j" },
-  { src: "17.png", alt: "k" },
-
+  { src: "/reflogo/alpyol.webp", alt: "Alpyol Logo" },
+  { src: "/reflogo/eczacılarbirliği.webp", alt: "Eczacılarbirliği Logo" },
+  { src: "/reflogo/gençlikvespor.webp", alt: "Gençlik ve Spor Bakanlığı Logo" },
+  { src: "/reflogo/ford.webp", alt: "Ford Logo" },
+  { src: "/reflogo/toyota.webp", alt: "Toyota Logo" },
+  { src: "/reflogo/hmd.webp", alt: "Hmd Logo" },
+  { src: "/reflogo/hmyapı.webp", alt: "Hmyapı Logo" },
+  { src: "/reflogo/kyk.webp", alt: "kyk Logo" },
+  { src: "/reflogo/lacivert.webp", alt: "Lacivert Logo" },
+  { src: "/reflogo/staryel.webp", alt: "Staryel logo" },
+  { src: "/reflogo/zenith.webp", alt: "Zenith Logo" },
 ];
 
 /* ======================= UNIFIED SECTION (SAYAÇ + YORUMLAR + REFERANSLAR) ======================= */

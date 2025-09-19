@@ -15,7 +15,7 @@ export default function FooterOrtadoguMinimal() {
                 {/* Logo */}
                 <div className="flex justify-center">
                     <Image
-                        src="/ortadoğulogo.webp"
+                        src="/ortadogu-logo.webp"
                         alt="Ortadoğu Elektrik"
                         width={800}
                         height={160}

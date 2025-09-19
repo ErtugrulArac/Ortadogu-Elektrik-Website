@@ -1,6 +1,6 @@
-import Galeriheading from "@/app/galeri/GaleriHeading"
+import Galeriheading from "@/app/projeler/GaleriHeading"
 import Footer from "@/app/hakkimda/footer" 
-import Demo from  "@/app/galeri/demo" 
+import Demo from  "@/app/projeler/demo" 
 
 
 
