@@ -22,13 +22,11 @@ export default function LokasyonPage() {
             Lokasyon
             <span className="absolute left-0 top-full mt-2 h-[3px] w-full rounded-full bg-gradient-to-r from-sky-400 to-indigo-500" />
           </span>
-        </h1>
-
+        </h1> 
         <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-slate-400">
           Merkez ofisimiz Ankara Etimesgut’tadır. Aşağıdaki harita üzerinden konuma
           ulaşabilir ve yol tarifi alabilirsiniz. Randevu için telefonla bize ulaşın.
-        </p>
-
+        </p> 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
           <InfoCard
             icon={<MapPin className="h-5 w-5" />}
@@ -45,8 +43,7 @@ export default function LokasyonPage() {
             title="Çalışma Saatleri"
             lines={["Pzt–Cum: 09:00–18:00", "Cmt: 09:00–13:00", "Pazar: Kapalı"]}
           />
-        </div>
-
+        </div> 
         <div className="mt-10 overflow-hidden rounded-2xl border border-white/10 shadow-lg">
           <div className="relative h-[60vh] w-full">
             <iframe
@@ -58,8 +55,7 @@ export default function LokasyonPage() {
               allowFullScreen
               title="Ortadoğu Elektrik Ankara Konumu"
             />
-          </div>
-
+          </div> 
           <div className="flex items-center justify-between gap-3 border-t border-white/10 bg-[#0b1320]/60 px-4 py-3">
             <span className="text-xs text-slate-400">
               Harita yüklenmezse Google Haritalar’da açın.

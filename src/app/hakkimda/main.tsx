@@ -171,7 +171,7 @@ export default function AboutLead() {
 
             <div className="mt-6 flex flex-wrap items-center justify-center md:justify-start gap-3">
               <Link
-                href="/teklif"
+                href="/iletisim#temsilci"
                 className="rounded-xl bg-white px-5 py-3 text-neutral-900 text-sm font-semibold hover:bg-neutral-100 transition shadow-[0_8px_30px_rgba(255,255,255,0.05)]"
               >
                 Ücretsiz Keşif / Teklif Al

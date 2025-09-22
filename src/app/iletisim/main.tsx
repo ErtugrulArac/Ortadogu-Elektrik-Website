@@ -139,10 +139,9 @@ function InfoCard({
         aria-hidden
         className="pointer-events-none absolute left-4 right-4 top-0 h-px
                    bg-[linear-gradient(90deg,rgba(34,211,238,.35),rgba(99,102,241,.35))]"
-      />
-
+      /> 
       <div className="relative z-10 flex gap-4">
-        <div
+        <div 
           className="
             grid h-12 w-12 shrink-0 place-items-center rounded-xl
             bg-gradient-to-br from-sky-500/20 to-indigo-500/20 text-sky-300

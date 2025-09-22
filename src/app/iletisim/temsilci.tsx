@@ -28,6 +28,7 @@ export default function MusteriTemsilcisi({
 
   return (
     <section
+      id="temsilci"
       aria-label="Müşteri Temsilcisi"
       className="mx-auto w-[92%] max-w-5xl bg-transparent motion-safe:animate-fadeSlideUp"
     >
