@@ -1,8 +1,7 @@
-// src/components/PageLoader.tsx
 "use client";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-import React, { useEffect, useMemo, useRef, useState } from "react";
-import { motion, AnimatePresence, useReducedMotion } from "motion/react";
 
 type Props = {
   logoSrc: string;
@@ -17,104 +16,89 @@ export default function PageLoader({
   brand = "ORTADOĞU ELEKTRİK",
   open,
   onComplete,
-  quote = "Modern yapılar sağlam elektrikle mümkün...",
+  quote = "Modern yapılar sağlam elektrikle mümkün...",
 }: Props) {
-  const prefersReducedMotion = useReducedMotion();
-
-  // kontrollü / kontrolsüz görünürlük
-  const isControlled = useMemo(() => typeof open === "boolean", [open]);
-  const [internalOpen, setInternalOpen] = useState(true);
-  const visible = isControlled ? (open as boolean) : internalOpen;
-
-  // ilerleme (takılma yok)
+  // 3D dolum animasyonu için state
   const [progress, setProgress] = useState(0);
-  const intervalRef = useRef<number | null>(null);
-  const timeoutRef = useRef<number | null>(null);
-
+  const [visible, setVisible] = useState(true);
   useEffect(() => {
     if (!visible) return;
-
-    if (prefersReducedMotion) {
-      setProgress(100);
-    } else {
-      intervalRef.current = window.setInterval(() => {
-        setProgress((p) => {
-          if (p >= 99) return p;
-          const remain = 100 - p;
-          const step = Math.max(1, Math.round(remain * 0.07));
-          return Math.min(99, p + step);
-        });
-      }, 60);
-      timeoutRef.current = window.setTimeout(() => setProgress(100), 1400);
-    }
-
-    return () => {
-      if (intervalRef.current) window.clearInterval(intervalRef.current);
-      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
-    };
-  }, [visible, prefersReducedMotion]);
-
-  useEffect(() => {
-    if (!visible || isControlled) return;
+    const interval = setInterval(() => {
+      setProgress((p) => {
+        if (p >= 100) return 100;
+        return p + 2;
+      });
+    }, 30);
     if (progress >= 100) {
-      const t = window.setTimeout(() => {
-        setInternalOpen(false);
-        onComplete?.();
-      }, 320);
-      return () => window.clearTimeout(t);
+      setTimeout(() => setVisible(false), 600);
+      onComplete?.();
     }
-  }, [progress, visible, isControlled, onComplete]);
+    return () => clearInterval(interval);
+  }, [progress, visible, onComplete]);
 
+  // 3D efektli SVG ve animasyon
   return (
     <AnimatePresence>
       {visible && (
         <motion.div
           role="status"
-          className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] text-white flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] flex items-center justify-center"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ ease: "easeOut", duration: 0.28 }}
+          transition={{ ease: "easeOut", duration: 0.38 }}
         >
-          <div className="flex flex-col items-center gap-7 w-full max-w-[340px] mx-auto">
-            {/* Minimal animasyonlu logo */}
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ type: "spring", stiffness: 180, damping: 18 }}
-              className="rounded-full bg-white/10 p-6 shadow-lg mb-2"
-            >
-              <motion.img
-                src={logoSrc}
-                alt={brand}
-                width={72}
-                height={72}
-                className="h-16 w-16 object-contain"
-                initial={{ rotate: 0 }}
-                animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 2.8, ease: "linear" }}
-              />
-            </motion.div>
-            {/* Modern progress bar */}
-            <div className="w-full">
-              <div className="relative h-2 w-full rounded-full bg-white/20 overflow-hidden">
-                <motion.div
-                  className="absolute inset-y-0 left-0 rounded-full bg-gradient-to-r from-sky-400 to-indigo-500 shadow-lg"
-                  style={{ width: `${Math.min(100, progress)}%` }}
-                  initial={{ width: 0 }}
-                  animate={{ width: `${Math.min(100, progress)}%` }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
+          <div className="flex flex-col items-center gap-8 w-full max-w-[360px] mx-auto">
+            {/* 3D Daire Dolum Animasyonu */}
+            <div className="relative flex items-center justify-center mb-2">
+              <svg width="140" height="140" viewBox="0 0 140 140" className="drop-shadow-2xl">
+                <defs>
+                  <radialGradient id="3dglow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.7" />
+                    <stop offset="100%" stopColor="#6366f1" stopOpacity="0.9" />
+                  </radialGradient>
+                  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#60a5fa" floodOpacity="0.25" />
+                  </filter>
+                </defs>
+                {/* Arka plan dairesi */}
+                <circle cx="70" cy="70" r="62" fill="#1e293b" stroke="#334155" strokeWidth="6" />
+                {/* 3D dolum efekti */}
+                <motion.circle
+                  cx="70"
+                  cy="70"
+                  r="62"
+                  fill="none"
+                  stroke="url(#3dglow)"
+                  strokeWidth="10"
+                  strokeDasharray={2 * Math.PI * 62}
+                  strokeDashoffset={2 * Math.PI * 62 * (1 - progress / 100)}
+                  style={{ filter: "url(#shadow)" }}
+                  initial={false}
+                  animate={{ strokeDashoffset: 2 * Math.PI * 62 * (1 - progress / 100) }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
                 />
-              </div>
-              <div className="mt-2 text-right text-white/70 tabular-nums text-xs">
+                {/* Logo */}
+                <image
+                  href={logoSrc}
+                  x="35" y="35" height="70" width="70"
+                  style={{ filter: "drop-shadow(0 0 16px #60a5fa88)" }}
+                />
+              </svg>
+              {/* Yüzde */}
+              <span className="absolute text-2xl font-bold text-white drop-shadow-lg">
                 {Math.min(100, Math.round(progress))}%
-              </div>
+              </span>
             </div>
-            {/* Kısa, sade mesaj */}
+            {/* Başlık ve mesaj */}
             <div className="text-center mt-2">
-              <p className="text-lg font-semibold tracking-tight text-white/90 mb-1 drop-shadow">{brand}</p>
-              <p className="text-sm text-white/60">Yükleniyor, lütfen bekleyin…</p>
+              <p className="text-xl font-semibold tracking-tight text-white/90 mb-1 drop-shadow">{brand}</p>
+              <p className="text-base text-white/60">Yükleniyor, lütfen bekleyin…</p>
             </div>
+            {/* Alt bilgi veya özlü söz */}
+            <p className="mt-4 text-center leading-relaxed text-[clamp(13px,3vw,17px)] px-2 bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-[0_0_14px_rgba(80,140,255,0.25)]">
+              {quote}
+            </p>
           </div>
         </motion.div>
       )}
