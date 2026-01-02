@@ -11,7 +11,8 @@ const App = () => {
       textColor: "#ffffff",
       links: [
         { label: "Biz Kimiz", ariaLabel: "Hakkımda Biz Kimiz", href: "/hakkimda" },
-        { label: "Misyon, Vizyonumuz", ariaLabel: "Hakkımda Misyon, Vizyonumuz ", href: "/hakkimda#bizmisviz" }
+        { label: "Misyon, Vizyonumuz", ariaLabel: "Hakkımda Misyon, Vizyonumuz ", href: "/hakkimda#bizmisviz" },
+        { label: "Kurumsal Kadromuz", ariaLabel: "Hakkımda Kurumsal Kadro", href: "/kurumsalkadro" },
       ]
     },
     {

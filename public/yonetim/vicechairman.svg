@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="bgVice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="suitVice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#334155;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bgVice)"/>
+
+  <!-- Head -->
+  <circle cx="200" cy="110" r="48" fill="#d4a373"/>
+
+  <!-- Hair -->
+  <ellipse cx="200" cy="85" rx="50" ry="45" fill="#5a3a2a"/>
+
+  <!-- Neck -->
+  <rect x="188" y="155" width="24" height="18" fill="#d4a373"/>
+
+  <!-- Shirt/Suit -->
+  <rect x="85" y="173" width="230" height="210" fill="url(#suitVice)"/>
+
+  <!-- Jacket detail -->
+  <polygon points="155,178 200,240 175,240" fill="#0f172a"/>
+  <polygon points="245,178 200,240 225,240" fill="#0f172a"/>
+
+  <!-- Tie (Cyan themed) -->
+  <polygon points="192,173 208,173 204,235 196,235" fill="#06b6d4"/>
+
+  <!-- Shirt -->
+  <rect x="188" y="178" width="24" height="75" fill="#e0e7ff"/>
+
+  <!-- Shoulders -->
+  <line x1="85" y1="173" x2="315" y2="173" stroke="#0f172a" stroke-width="2"/>
+
+  <!-- Arms -->
+  <ellipse cx="75" cy="210" rx="23" ry="58" fill="url(#suitVice)"/>
+  <ellipse cx="325" cy="210" rx="23" ry="58" fill="url(#suitVice)"/>
+
+  <!-- Hands -->
+  <circle cx="62" cy="270" r="16" fill="#d4a373"/>
+  <circle cx="338" cy="270" r="16" fill="#d4a373"/>
+
+  <!-- Badge -->
+  <rect x="50" y="420" width="300" height="60" fill="none" stroke="#06b6d4" stroke-width="2" rx="8"/>
+  <text x="200" y="460" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#06b6d4" text-anchor="middle">
+    Başkan Yardımcısı
+  </text>
+</svg>

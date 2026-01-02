@@ -62,21 +62,21 @@ export const HeroParallax = ({
       <Header />
       <motion.div style={{ rotateX, rotateZ, translateY, opacity }}>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard product={product} translate={translateX} key={product.title} />
+          {firstRow.map((product, index) => (
+            <ProductCard product={product} translate={translateX} key={`${product.title}-${index}`} />
           ))}
         </motion.div>
 
         <motion.div className="flex flex-row mb-20 space-x-20">
-          {secondRow.map((product) => (
-            <ProductCard product={product} translate={translateXReverse} key={product.title} />
+          {secondRow.map((product, index) => (
+            <ProductCard product={product} translate={translateXReverse} key={`${product.title}-${index}`} />
           ))}
         </motion.div>
 
         {/* 3. satır: Yalnızca ≤375px (iPhone SE) ekranlarda gizli */}
         <motion.div className="se-hidden flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard product={product} translate={translateX} key={product.title} />
+          {thirdRow.map((product, index) => (
+            <ProductCard product={product} translate={translateX} key={`${product.title}-${index}`} />
           ))}
         </motion.div>
       </motion.div>

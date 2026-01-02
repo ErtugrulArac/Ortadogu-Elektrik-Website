@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500">
+  <defs>
+    <linearGradient id="bgMarketing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3f1e3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f172a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="suitMarketing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4c1d5f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2d1b3f;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="400" height="500" fill="url(#bgMarketing)"/>
+
+  <!-- Head -->
+  <circle cx="200" cy="120" r="46" fill="#d4a373"/>
+
+  <!-- Hair -->
+  <path d="M 150 110 Q 200 65 250 110 Q 200 85 200 85 Q 200 85 150 110" fill="#3d2817"/>
+  
+  <!-- Neck -->
+  <rect x="189" y="162" width="22" height="17" fill="#d4a373"/>
+
+  <!-- Shirt/Suit -->
+  <rect x="88" y="179" width="224" height="205" fill="url(#suitMarketing)"/>
+
+  <!-- Jacket detail -->
+  <polygon points="158,184 200,242 176,242" fill="#1a0f2e"/>
+  <polygon points="242,184 200,242 224,242" fill="#1a0f2e"/>
+
+  <!-- Tie (Rose themed) -->
+  <polygon points="193,179 207,179 203,235 197,235" fill="#f43f5e"/>
+
+  <!-- Shirt -->
+  <rect x="191" y="184" width="18" height="68" fill="#fce7f3"/>
+
+  <!-- Shoulders -->
+  <line x1="88" y1="179" x2="312" y2="179" stroke="#1a0f2e" stroke-width="2"/>
+
+  <!-- Arms -->
+  <ellipse cx="76" cy="220" rx="23" ry="57" fill="url(#suitMarketing)"/>
+  <ellipse cx="324" cy="220" rx="23" ry="57" fill="url(#suitMarketing)"/>
+
+  <!-- Hands -->
+  <circle cx="62" cy="278" r="16" fill="#d4a373"/>
+  <circle cx="338" cy="278" r="16" fill="#d4a373"/>
+
+  <!-- Briefcase -->
+  <rect x="45" y="280" width="35" height="25" fill="#8b5a3c" stroke="#6b4423" stroke-width="1.5" rx="2"/>
+  <rect x="47" y="278" width="31" height="3" fill="#a0522d"/>
+  <line x1="61.5" y1="278" x2="61.5" y2="305" stroke="#6b4423" stroke-width="1"/>
+
+  <!-- Badge -->
+  <rect x="50" y="420" width="300" height="60" fill="none" stroke="#f43f5e" stroke-width="2" rx="8"/>
+  <text x="200" y="460" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#f43f5e" text-anchor="middle">
+    Pazarlama Direktörü
+  </text>
+</svg>
