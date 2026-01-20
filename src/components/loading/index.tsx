@@ -1,7 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-
+import React, { useEffect, useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 type Props = {
   logoSrc: string;
@@ -18,87 +17,117 @@ export default function PageLoader({
   onComplete,
   quote = "Modern yapılar sağlam elektrikle mümkün...",
 }: Props) {
-  // 3D dolum animasyonu için state
+  const prefersReducedMotion = useReducedMotion();
+
+  const isControlled = useMemo(() => typeof open === "boolean", [open]);
+  const [internalOpen, setInternalOpen] = useState(true);
+  const visible = isControlled ? Boolean(open) : internalOpen;
+
   const [progress, setProgress] = useState(0);
-  const [visible, setVisible] = useState(true);
+  const intervalRef = useRef<number | null>(null);
+  const timeoutRef = useRef<number | null>(null);
+
+  // Sayfa gerçekten yüklendiğinde %100'e çek
   useEffect(() => {
     if (!visible) return;
-    const interval = setInterval(() => {
-      setProgress((p) => {
-        if (p >= 100) return 100;
-        return p + 2;
-      });
-    }, 30);
-    if (progress >= 100) {
-      setTimeout(() => setVisible(false), 600);
-      onComplete?.();
-    }
-    return () => clearInterval(interval);
-  }, [progress, visible, onComplete]);
+    const handleLoad = () => setProgress(100);
+    if (document.readyState === "complete") handleLoad();
+    window.addEventListener("load", handleLoad);
+    return () => window.removeEventListener("load", handleLoad);
+  }, [visible]);
 
-  // 3D efektli SVG ve animasyon
+  useEffect(() => {
+    if (!visible) return;
+    if (intervalRef.current) window.clearInterval(intervalRef.current);
+    intervalRef.current = window.setInterval(() => {
+      setProgress((p) => {
+        if (p >= 99) return p;
+        const remain = 100 - p;
+        const step = Math.max(1, Math.round(remain * 0.08));
+        return Math.min(100, p + step);
+      });
+    }, 80);
+
+    return () => {
+      if (intervalRef.current) window.clearInterval(intervalRef.current);
+    };
+  }, [visible]);
+
+  useEffect(() => {
+    if (progress >= 100 && intervalRef.current) {
+      window.clearInterval(intervalRef.current);
+    }
+  }, [progress]);
+
+  useEffect(() => {
+    if (!visible || isControlled) return;
+    if (progress >= 100) {
+      timeoutRef.current = window.setTimeout(() => {
+        setInternalOpen(false);
+        onComplete?.();
+      }, 320);
+    }
+    return () => {
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+    };
+  }, [progress, visible, isControlled, onComplete]);
+
   return (
     <AnimatePresence>
       {visible && (
         <motion.div
           role="status"
-          className="fixed inset-0 z-[9999] bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#334155] flex items-center justify-center"
+          className="fixed inset-0 z-[9999] text-white overflow-hidden"
           initial={{ opacity: 1 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ ease: "easeOut", duration: 0.38 }}
+          transition={{ ease: "easeOut", duration: 0.32 }}
         >
-          <div className="flex flex-col items-center gap-8 w-full max-w-[360px] mx-auto">
-            {/* 3D Daire Dolum Animasyonu */}
-            <div className="relative flex items-center justify-center mb-2">
-              <svg width="140" height="140" viewBox="0 0 140 140" className="drop-shadow-2xl">
-                <defs>
-                  <radialGradient id="3dglow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.7" />
-                    <stop offset="100%" stopColor="#6366f1" stopOpacity="0.9" />
-                  </radialGradient>
-                  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-                    <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#60a5fa" floodOpacity="0.25" />
-                  </filter>
-                </defs>
-                {/* Arka plan dairesi */}
-                <circle cx="70" cy="70" r="62" fill="#1e293b" stroke="#334155" strokeWidth="6" />
-                {/* 3D dolum efekti */}
-                <motion.circle
-                  cx="70"
-                  cy="70"
-                  r="62"
-                  fill="none"
-                  stroke="url(#3dglow)"
-                  strokeWidth="10"
-                  strokeDasharray={2 * Math.PI * 62}
-                  strokeDashoffset={2 * Math.PI * 62 * (1 - progress / 100)}
-                  style={{ filter: "url(#shadow)" }}
-                  initial={false}
-                  animate={{ strokeDashoffset: 2 * Math.PI * 62 * (1 - progress / 100) }}
-                  transition={{ duration: 0.5, ease: "easeInOut" }}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#061022] via-[#0b172c] to-[#0d1f3a]" aria-hidden />
+          <motion.div
+            className="absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(90,160,255,0.14),transparent_38%),radial-gradient(circle_at_80%_30%,rgba(0,240,180,0.12),transparent_40%),radial-gradient(circle_at_50%_85%,rgba(255,150,110,0.1),transparent_42%)]"
+            animate={prefersReducedMotion ? undefined : { opacity: [0.85, 1, 0.85] }}
+            transition={prefersReducedMotion ? undefined : { repeat: Infinity, duration: 10, ease: "easeInOut" }}
+            aria-hidden
+          />
+
+          <div className="relative h-full w-full flex items-center justify-center px-5 sm:px-6">
+            <div className="w-full max-w-[420px] mx-auto flex flex-col items-center text-center gap-6 sm:gap-7">
+              <div className="relative h-32 w-32 grid place-items-center">
+                <motion.div
+                  className="absolute inset-2 rounded-full border border-white/22"
+                  animate={{ scale: [1, 1.12, 1], opacity: [0.42, 1, 0.42] }}
+                  transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+                  aria-hidden
                 />
-                {/* Logo */}
-                <image
-                  href={logoSrc}
-                  x="35" y="35" height="70" width="70"
-                  style={{ filter: "drop-shadow(0 0 16px #60a5fa88)" }}
+                <motion.div
+                  className="absolute inset-[-6px] rounded-full bg-gradient-to-r from-sky-400/28 via-white/16 to-indigo-400/28 blur-[16px]"
+                  animate={{ scale: [1, 1.08, 1], opacity: [0.2, 0.46, 0.2] }}
+                  transition={{ repeat: Infinity, duration: 2.1, ease: "easeInOut" }}
+                  aria-hidden
                 />
-              </svg>
-              {/* Yüzde */}
-              <span className="absolute text-2xl font-bold text-white drop-shadow-lg">
-                {Math.min(100, Math.round(progress))}%
-              </span>
+
+                <div className="relative h-20 w-20 rounded-full bg-white/8 border border-white/14 shadow-[0_12px_36px_rgba(0,0,0,0.32)] grid place-items-center overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/14 via-transparent to-white/8" aria-hidden />
+                  <img
+                    src={logoSrc}
+                    alt={brand}
+                    width={96}
+                    height={96}
+                    className="relative h-12 w-12 object-contain drop-shadow-[0_0_14px_rgba(255,255,255,0.24)]"
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <p className="text-lg sm:text-xl font-semibold text-white/90">{brand}</p>
+                <p className="text-white/70 text-sm sm:text-base">Yükleniyor, lütfen bekleyin…</p>
+              </div>
+
+              <p className="mt-1 text-center leading-relaxed text-[clamp(13px,3vw,17px)] px-2 bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-[0_0_12px_rgba(80,140,255,0.2)]">
+                {quote}
+              </p>
             </div>
-            {/* Başlık ve mesaj */}
-            <div className="text-center mt-2">
-              <p className="text-xl font-semibold tracking-tight text-white/90 mb-1 drop-shadow">{brand}</p>
-              <p className="text-base text-white/60">Yükleniyor, lütfen bekleyin…</p>
-            </div>
-            {/* Alt bilgi veya özlü söz */}
-            <p className="mt-4 text-center leading-relaxed text-[clamp(13px,3vw,17px)] px-2 bg-gradient-to-r from-sky-300 via-blue-300 to-indigo-300 bg-clip-text text-transparent drop-shadow-[0_0_14px_rgba(80,140,255,0.25)]">
-              {quote}
-            </p>
           </div>
         </motion.div>
       )}
