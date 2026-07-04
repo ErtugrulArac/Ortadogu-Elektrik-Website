@@ -24,7 +24,7 @@ const PROJECTS: Project[] = [
     location: "Alanya",
     meta: "Kamu Projesi",
     cover: "/proje/alanyaerkekyurdukapak.webp",
-    images: ["/proje/alanyaerkekyurdu.webp","/proje/alanyaerkekyurdu1.webp", "/proje/alanyaerkekyurdu2.webp", "/proje/alanyaerkekyurdu3.webp", "/proje/alanyaerkekyurdu4.webp"],
+    images: ["/proje/alanyaerkekyurdu1.webp", "/proje/alanyaerkekyurdu2.webp", "/proje/alanyaerkekyurdu3.webp",],
     summary:
   "Alanya  Öğrenci Yurdu projesi kapsamında, binanın OG/AG enerji dağıtım sistemleri, aydınlatma altyapısı, zayıf akım sistemleri ve yangın algılama tesisatları anahtar teslim olarak projelendirilmiş ve uygulanmıştır. Öğrencilerin güvenli, konforlu ve kesintisiz bir yaşam alanına sahip olması amacıyla tüm elektrik altyapısı güncel standartlara uygun şekilde tasarlanmış, enerji dağıtımı yüksek verimlilik ve işletme sürekliliği esas alınarak tamamlanmıştır.\n\n" +
   "Proje kapsamında enerji dağıtım panoları, ortak yaşam alanları ve odalara ait aydınlatma sistemleri, acil durum aydınlatmaları, data ve internet altyapısı, yangın algılama ve ihbar sistemleri ile topraklama ve yıldırımdan korunma tesisatları eksiksiz olarak hayata geçirilmiştir. Devreye alma testleri tamamlanmış, tüm sistemler ilgili teknik şartnamelere uygun şekilde teslim edilerek uzun ömürlü ve güvenilir bir elektrik altyapısı oluşturulmuştur.",
