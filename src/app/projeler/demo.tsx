@@ -18,6 +18,39 @@ type Project = {
 
 /* ---------- Data (İçerik aynen korundu) ---------- */
 const PROJECTS: Project[] = [
+    {
+    id: "alanya-erkekyurdu",
+    title: "Alanya Erkek Öğrenci Yurdu - Devam Ediyor... ",
+    location: "Alanya",
+    meta: "Kamu Projesi",
+    cover: "/proje/alanyaerkekyurdu.webp",
+    images: ["/proje/alanyaerkekyurdu1.webp", "/proje/alanyaerkekyurdu2.webp", "/proje/alanyaerkekyurdu3.webp", "/proje/alanyaerkekyurdu4.webp"],
+    summary:
+  "Alanya Erkek Öğrenci Yurdu projesi kapsamında, binanın OG/AG enerji dağıtım sistemleri, aydınlatma altyapısı, zayıf akım sistemleri ve yangın algılama tesisatları anahtar teslim olarak projelendirilmiş ve uygulanmıştır. Öğrencilerin güvenli, konforlu ve kesintisiz bir yaşam alanına sahip olması amacıyla tüm elektrik altyapısı güncel standartlara uygun şekilde tasarlanmış, enerji dağıtımı yüksek verimlilik ve işletme sürekliliği esas alınarak tamamlanmıştır.\n\n" +
+  "Proje kapsamında enerji dağıtım panoları, ortak yaşam alanları ve odalara ait aydınlatma sistemleri, acil durum aydınlatmaları, data ve internet altyapısı, yangın algılama ve ihbar sistemleri ile topraklama ve yıldırımdan korunma tesisatları eksiksiz olarak hayata geçirilmiştir. Devreye alma testleri tamamlanmış, tüm sistemler ilgili teknik şartnamelere uygun şekilde teslim edilerek uzun ömürlü ve güvenilir bir elektrik altyapısı oluşturulmuştur.",
+
+scope: [
+  "OG/AG enerji dağıtım sistemleri",
+  "İç ve dış aydınlatma sistemleri",
+  "Yangın algılama ve acil aydınlatma",
+  "Data, internet ve zayıf akım altyapısı",
+  "Topraklama ve yıldırımdan korunma sistemleri",
+],
+
+tagline: "Modern öğrenci yaşamı için güvenli ve kesintisiz enerji altyapısı.",
+  },
+    {
+    id: "zenith-ankara",
+    title: "Zenith Ankara Projesi - Devam Ediyor...",
+    location: "Ankara",
+    meta: "Kurumsal Kampüs",
+    cover: "/proje/zenith1.webp",
+    images: ["/proje/zenith2.webp", "/proje/zenith3.webp", "/proje/zenith4.webp", "/proje/zenith5.webp"],
+    summary:
+      "Ankara’nın yükselen değeri Zenith Ankara, modern mimarisi ve ayrıcalıklı yaşam alanlarıyla şehre prestij katıyor. Bu seçkin projede elektrik altyapısını üstlenmekten gurur duyuyoruz. Ortadoğu Elektrik & İnşaat olarak, güçlü mühendislik kadromuz ve sağlam çözümlerimizle Zenith Ankara’ya güvenli, kesintisiz ve uzun ömürlü bir enerji altyapısı kazandırıyoruz.\n\n" ,
+    scope: ["Ana dağıtım & kompanzasyon", "UPS ve jeneratör senkronizasyonu", "Aydınlatma otomasyonu", "Fiber & bakır data omurgası"],
+    tagline: "Verimlilik için akıllı altyapı.",
+  },
   {
     id: "batman-adliye",
     title: "Batman Adliye Sarayı",
@@ -35,19 +68,64 @@ const PROJECTS: Project[] = [
       "Data–telefon altyapısı ve topraklama",
     ],
     tagline: "Adaletin işlediği her katta güvenli enerji.",
-  },
-  {
-    id: "zenith-ankara",
-    title: "Zenith Ankara Projesi - Devam Ediyor...",
-    location: "Ankara",
-    meta: "Kurumsal Kampüs",
-    cover: "/proje/zenith1.webp",
-    images: ["/proje/zenith2.webp", "/proje/zenith3.webp", "/proje/zenith4.webp", "/proje/zenith5.webp"],
-    summary:
-      "Ankara’nın yükselen değeri Zenith Ankara, modern mimarisi ve ayrıcalıklı yaşam alanlarıyla şehre prestij katıyor. Bu seçkin projede elektrik altyapısını üstlenmekten gurur duyuyoruz. Ortadoğu Elektrik & İnşaat olarak, güçlü mühendislik kadromuz ve sağlam çözümlerimizle Zenith Ankara’ya güvenli, kesintisiz ve uzun ömürlü bir enerji altyapısı kazandırıyoruz.\n\n" ,
-    scope: ["Ana dağıtım & kompanzasyon", "UPS ve jeneratör senkronizasyonu", "Aydınlatma otomasyonu", "Fiber & bakır data omurgası"],
-    tagline: "Verimlilik için akıllı altyapı.",
-  },
+  },  
+
+
+{
+  id: "batman-saray-konutlari",
+  title: "Batman Saray Konutları Daire İşi",
+  location: "Batman",
+  meta: "Konut Projesi",
+  cover: "/proje/saraykonutları.webp",
+  images: [
+    "/proje/saraykonutları1.webp",
+    "/proje/saraykonutları2.webp",
+  ],
+  summary:
+    "Batman Saray Konutları Daire İşi kapsamında, konutların elektrik altyapısı, kuvvetli akım tesisatları, aydınlatma sistemleri ve zayıf akım uygulamaları modern yaşam standartlarına uygun olarak anahtar teslim şekilde gerçekleştirilmiştir. Daire içi elektrik tesisatları, enerji dağıtım panoları, priz ve aydınlatma hatları ile ortak kullanım alanlarına ait elektrik sistemleri yüksek güvenlik ve uzun ömürlü kullanım esas alınarak uygulanmıştır.\n\n" +
+    "Proje kapsamında dekoratif ve genel aydınlatma sistemleri, data ve TV altyapıları, diafon sistemleri, yangın güvenliği için gerekli elektrik altyapıları ile topraklama tesisatları eksiksiz olarak tamamlanmıştır. Tüm sistemler detaylı testlerden geçirilerek ilgili standartlara uygun şekilde devreye alınmış ve konut sahiplerine güvenli, konforlu ve sürdürülebilir bir yaşam alanı sunulmuştur.",
+
+  scope: [
+    "Daire içi elektrik tesisatları",
+    "Aydınlatma ve dekoratif aydınlatma sistemleri",
+    "Data, TV ve diafon altyapıları",
+    "Ortak alan elektrik sistemleri",
+    "Elektrik panoları, topraklama ve test-devreye alma",
+  ],
+
+  tagline: "Modern yaşam alanlarına güvenli ve kaliteli elektrik altyapısı kazandırıyoruz.",
+},
+
+{
+  id: "teb-eczacilik-tarihi-ve-guzel-sanatlar-muzesi",
+  title: "Türk Eczacıları Birliği Eczacılık Tarihi ve Güzel Sanatlar Müzesi",
+  location: "Ankara",
+  meta: "Kamu Projesi",
+  cover: "/proje/tebmüze.webp",
+  images: [
+    "/proje/tebmüze1.webp",
+    "/proje/tebmüze2.webp",
+    "/proje/tebmüze3.webp",
+    "/proje/tebmüze4.webp",
+    "/proje/tebmüze5.webp",
+    "/proje/tebmüze6.webp",
+    "/proje/tebmüze7.webp",
+    "/proje/tebmüze8.webp",
+  ],
+  summary:
+    "Türk Eczacıları Birliği Eczacılık Tarihi ve Güzel Sanatlar Müzesi projesi kapsamında, yapının elektrik altyapısı, OG/AG enerji dağıtım sistemleri, aydınlatma çözümleri ve zayıf akım sistemleri modern müzecilik standartlarına uygun olarak uygulanmıştır. Sergi salonları, eser teşhir alanları, idari birimler ve ortak kullanım alanlarının ihtiyaç duyduğu elektrik altyapısı; enerji verimliliği, ziyaretçi güvenliği ve eserlerin korunması esas alınarak projelendirilmiş ve devreye alınmıştır.\n\n" +
+    "Proje kapsamında sergi aydınlatmaları, acil durum aydınlatma sistemleri, yangın algılama altyapısı, data ve haberleşme sistemleri, CCTV güvenlik altyapısı, kartlı geçiş sistemleri ile topraklama ve yıldırımdan korunma tesisatları eksiksiz olarak tamamlanmıştır. Tüm test ve devreye alma süreçleri başarıyla tamamlanarak tesis, güvenli, sürdürülebilir ve uzun ömürlü bir elektrik altyapısıyla hizmete hazır hale getirilmiştir.",
+
+  scope: [
+    "Müze sergi alanları elektrik tesisatları",
+    "Mimari ve eser aydınlatma sistemleri",
+    "Yangın algılama ve güvenlik altyapısı",
+    "Data, CCTV ve kartlı geçiş sistemleri",
+    "Elektrik panoları, topraklama ve devreye alma",
+  ],
+
+  tagline: "Tarihi mirası modern elektrik altyapısıyla geleceğe taşıyan mühendislik çözümleri.",
+},
   {
     id: "izmir-ab-okul",
     title: "İzmir Avrupa Birliği 6 Adet 32 Derslik Okul Projesi",
@@ -61,6 +139,55 @@ const PROJECTS: Project[] = [
     scope: ["Ana dağıtım–kompanzasyon", "Laboratuvar güç & aydınlatma", "Spor salonu projektörleri", "Yangın & acil yönlendirme"],
     tagline: "Kampüs genelinde standart, her binada kalite.",
   },
+   {
+   id: "batman-baski-mudurlugu",
+  title: "Batman Belediyesi BASKİ Müdürlüğü",
+  location: "Batman",
+  meta: "Kamu Projesi",
+  cover: "/proje/batmanbelediyesimakineikmal.webp",
+  images: [
+    "/proje/batmanbelediyesimakineikmal.webp",
+  ],
+  summary:
+    "Batman Belediyesi BASKİ Müdürlüğü hizmet binası kapsamında, tesisin elektrik altyapısı, OG/AG enerji dağıtım sistemleri, kuvvetli akım tesisatları, aydınlatma sistemleri ve zayıf akım altyapıları anahtar teslim olarak uygulanmıştır. İdari birimler, teknik çalışma alanları ve operasyon merkezlerinin ihtiyaç duyduğu enerji altyapısı yüksek güvenilirlik ve kesintisiz işletme esas alınarak projelendirilmiş, tüm sistemler ilgili teknik şartnamelere uygun şekilde devreye alınmıştır.\n\n" +
+    "Proje kapsamında enerji dağıtım panoları, iç ve dış aydınlatma sistemleri, data ve haberleşme altyapısı, yangın algılama sistemleri, CCTV altyapısı, kartlı geçiş sistemleri, topraklama ve yıldırımdan korunma tesisatları eksiksiz olarak tamamlanmıştır. Yapılan test ve devreye alma işlemlerinin ardından tesis, BASKİ'nin su ve kanalizasyon hizmetlerini destekleyen operasyonlarını güvenli, verimli ve sürdürülebilir şekilde destekleyecek modern bir elektrik altyapısıyla teslim edilmiştir.",
+
+
+  scope: [
+    "İdari hizmet binası elektrik tesisatları",
+    "SCADA ve otomasyon merkezleri enerji altyapısı",
+    "Pompa kontrol ve kumanda panoları beslemeleri",
+    "Teknik işletme alanları kuvvetli ve zayıf akım sistemleri",
+    "Su ve kanalizasyon operasyonlarına yönelik elektrik altyapısı",
+  ],
+
+  tagline: "Su altyapısını kesintisiz enerjiyle buluşturan güvenilir mühendislik çözümleri.",
+},
+{
+  id: "batman-makina-ikmal-binasi",
+  title: "Batman Belediyesi Makina İkmal Binası Yapım İşi",
+  location: "Batman",
+  meta: "Kamu Projesi",
+  cover: "/proje/makineikmal.webp",
+  images: [
+    "/proje/makineikmal1.webp",
+    "/proje/makineikmal2.webp",
+    "/proje/makineikmal3.webp",
+  ],
+  summary:
+    "Batman Belediyesi Makina İkmal Binası Yapım İşi kapsamında, tesisin elektrik altyapısı, OG/AG enerji dağıtım sistemleri, kuvvetli akım tesisatları, aydınlatma çözümleri ve zayıf akım sistemleri anahtar teslim olarak uygulanmıştır. Araç bakım atölyeleri, teknik servis alanları, depo bölümleri ve idari birimlerin ihtiyaç duyduğu enerji altyapısı yüksek güvenilirlik ve işletme sürekliliği esas alınarak projelendirilmiş, tüm sistemler ilgili teknik şartnamelere uygun şekilde tamamlanmıştır.\n\n" +
+    "Proje kapsamında enerji dağıtım panoları, bakım ekipmanlarının enerji beslemeleri, iç ve dış saha aydınlatmaları, yangın algılama sistemleri, data ve haberleşme altyapısı, topraklama ve yıldırımdan korunma sistemleri eksiksiz olarak hayata geçirilmiştir. Devreye alma testleri başarıyla tamamlanarak tesis, belediyenin bakım, onarım ve lojistik faaliyetlerini güvenli ve verimli şekilde destekleyecek modern bir elektrik altyapısıyla hizmete sunulmuştur.",
+
+  scope: [
+    "Makina ikmal atölyeleri elektrik altyapısı",
+    "Araç bakım ekipmanları enerji besleme sistemleri",
+    "Depo ve idari bina elektrik tesisatları",
+    "Saha aydınlatma ve enerji dağıtım sistemleri",
+    "Yangın algılama, topraklama ve devreye alma hizmetleri",
+  ],
+
+  tagline: "Belediye hizmetlerine güç veren güvenilir ve sürdürülebilir elektrik altyapısı.",
+},
   {
     id: "bartin-rifat-efendi-erkek-yurdu",
     title: "Bartın Mehmet Rıfat Efendi Erkek Öğrenci Yurdu",
@@ -74,6 +201,32 @@ const PROJECTS: Project[] = [
     scope: ["Dağıtım panoları ve sayaçlama", "Ortak alan & oda aydınlatma", "Yangın algılama ve anons", "TV–data altyapısı"],
     tagline: "Güvenli konaklama için sağlam elektrik.",
   },
+  {
+  id: "ankara-golbasi-sante-park-yasam-merkezi",
+  title: "Ankara Gölbaşı Sante Park Yaşam Merkezi",
+  location: "Ankara",
+  meta: "Özel Proje",
+  cover: "/proje/santepark.webp",
+  images: [
+    "/proje/santepark1.webp",
+    "/proje/santepark2.webp",
+    "/proje/santepark3.webp",
+    "/proje/santepark4.webp",
+  ],
+  summary:
+    "Ankara Gölbaşı Sante Park Yaşam Merkezi projesi kapsamında, yaşam alanlarının ihtiyaç duyduğu elektrik altyapısı, OG/AG enerji dağıtım sistemleri, kuvvetli akım tesisatları, mimari aydınlatma çözümleri ve zayıf akım sistemleri anahtar teslim olarak uygulanmıştır. Ortak kullanım alanları, sosyal tesisler, ticari birimler ve çevre düzenlemelerine ait elektrik sistemleri yüksek enerji verimliliği ve kullanıcı güvenliği esas alınarak projelendirilmiş, tüm uygulamalar ulusal standartlara uygun şekilde tamamlanmıştır.\n\n" +
+    "Proje süresince enerji dağıtım panoları, iç ve dış mekân aydınlatmaları, peyzaj aydınlatmaları, yangın algılama sistemleri, CCTV güvenlik altyapısı, data ve haberleşme sistemleri, kartlı geçiş çözümleri ile topraklama ve yıldırımdan korunma tesisatları eksiksiz olarak devreye alınmıştır. Tüm sistemler detaylı testlerden geçirilerek uzun ömürlü, güvenli ve sürdürülebilir bir elektrik altyapısıyla hizmete sunulmuştur.",
+
+  scope: [
+    "Yaşam merkezi elektrik altyapısı",
+    "Peyzaj ve çevre aydınlatma sistemleri",
+    "Sosyal alanlar kuvvetli ve zayıf akım tesisatları",
+    "CCTV, yangın algılama ve kartlı geçiş sistemleri",
+    "Enerji dağıtım panoları ve devreye alma hizmetleri",
+  ],
+
+  tagline: "Modern yaşam alanlarını güvenilir enerji ve akıllı altyapıyla buluşturuyoruz.",
+},
   {
     id: "bartin-ibrahim-pasa-kiz-yurdu",
     title: "Bartın Hacı İbrahim Paşa Kız Öğrenci Yurdu",
